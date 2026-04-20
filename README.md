@@ -1,6 +1,6 @@
 ## 🛡️ NRA Sentinel - Inteligência de Ameaças (V33.5)
 
-O **NRA Sentinel** é um projeto desenvolvido com o objetivo de auxiliar profissionais de segurança e redes na proteção de suas infraestruturas. Ele automatiza a coleta e a organização de dados de novas ameaças globais, entregando listas limpas e prontas para uso nos **External Connectors** do FortiGate. Este motor não busca ser uma "solução milagrosa", mas sim uma ferramenta de apoio que soma forças aos recursos que você já utiliza no dia a dia, ideal para quem busca reforçar ainda mais a segurança.
+O **NRA Sentinel** é um projeto desenvolvido com o objetivo de auxiliar profissionais de segurança e redes na proteção de suas infraestruturas contra 0-days, Botnets, Malware e Ransomware. Ele automatiza a coleta e a organização de dados de novas ameaças globais, entregando listas limpas e prontas para uso nos **External Connectors** do FortiGate. Este motor não busca ser uma "solução milagrosa", mas sim uma ferramenta de apoio que soma forças aos recursos que você já utiliza no dia a dia, ideal para quem busca reforçar ainda mais a segurança.
 
 <img src="image_4cc9b7.png" width="800" alt="NRA Sentinel FortiGate Integration">
 <p><i>Exemplo da integração dos conectores NRA Sentinel operando em ambiente FortiOS.</i></p>
@@ -44,13 +44,13 @@ Ao se tornar um apoiador, você terá acesso aos seguintes conectores:
 
 Gostaria de compartilhar com vocês o racional por trás deste projeto:
 
-Eu adoraria poder distribuir essa infraestrutura de forma totalmente aberta para toda a comunidade. Porém, o desenvolvimento do NRA Sentinel exige muitas horas de estudo, programação e tempo para manter o projeto ativo.
+Eu adoraria poder distribuir essa infraestrutura de forma totalmente aberta para toda a comunidade. Porém, o desenvolvimento do NRA Sentinel exige muitas horas de estudo, pesquisa e tempo para manter o projeto ativo.
 
 A decisão de manter o acesso exclusivo para os membros do canal **não visa o enriquecimento próprio**, mas sim:
 
 1. **Ser justo com quem apoia meu trabalho:** Basicamente é uma forma de retribuir aos amigos que acreditam e contribuem com o canal NetworkRA.
 2. **Sustentabilidade do Projeto:** O apoio dos inscritos/membros é sempre muito importante e me mantém motivado a continuar evoluindo o projeto em busca de melhorias contínuas.
-3. **Valorização Profissional:** Acredito que o compartilhamento técnico deve andar junto com a valorização do tempo e do esforço de cada um. Valorizar o tempo dedicado à engenharia de dados é o que transforma uma simples lista em uma solução real de proteção. O tempo é o nosso bem mais precioso; nunca o desmereça.
+3. **Valorização Profissional:** Acredito que o compartilhamento técnico deve andar junto com a valorização do tempo e do esforço de cada um. Valorizar o tempo dedicado à engenharia de dados é o que transforma uma simples lista em uma solução real de proteção 0-day. O tempo é o nosso bem mais precioso; nunca o desmereça.
 
 ---
 
@@ -69,10 +69,12 @@ O canal **NetworkRA** é especializado em **Arquitetura MSSP e Segurança de Red
 
 ### 💎 Como solicitar seu acesso
 
+Para utilizar os feeds do **NRA Sentinel** e acessar os materiais exclusivos do canal, siga o fluxo abaixo:
+
 1. **Seja Membro:** Torne-se um membro do [Canal NetworkRA no YouTube](https://www.youtube.com/channel/UCs8isxhuF4phuQXimE52tOg/join).
-2. **Aguarde 7 dias:** Por questões de complaince, o acesso é liberado após a primeira semana de assinatura.
+2. **Aguarde 7 dias:** Por questões de **compliance**, o acesso é liberado após a primeira semana de assinatura ativa.
 3. **Fale comigo no LinkedIn:** Envie uma mensagem no meu [chat privado do LinkedIn](https://www.linkedin.com/in/networkra/) informando seu usuário de membro.
-4. **Liberação:** Eu mesmo irei validar, enviando seu **Token Pessoal** de acesso com o Script de Configuração.
+4. **Liberação:** Eu mesmo irei validar e enviar seu **Token Pessoal** junto com o **Script de Configuração** completo, incluindo também as listas de acesso mais utilizadas do mercado que agregarão valor ao NRA Sentinel.
 
 ---
 
