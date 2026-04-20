@@ -32,6 +32,13 @@ O motor busca informações em fontes respeitadas mundialmente, garantindo que o
 
 ---
 
+### 📦 Feeds Disponíveis para Membros:
+* **IP Threat Feed:** Lista de endereços IPs validados para políticas de bloqueio (Firewall Policy).
+* **Domain Threat Feed:** FQDNs e URLs para proteção de DNS, Web Filter ou políticas de bloqueio (Firewall Policy).
+* **Malware Hash Feed:** Assinaturas de arquivos para reforço do motor de Antivírus (AV Profile).
+
+---
+
 ### ⚙️ Detalhes do Funcionamento
 
 * **Atualização:** Os feeds são processados a cada 4 horas.
@@ -45,7 +52,7 @@ O motor busca informações em fontes respeitadas mundialmente, garantindo que o
 
 Se você deseja utilizar esses feeds no seu ambiente e apoiar o canal, o fluxo é simples:
 
-1. **Seja Membro:** Torne-se um membro do Canal NetworkRA no YouTube.
+1. **Seja Membro:** Torne-se um membro do [Canal NetworkRA no YouTube](https://www.youtube.com/channel/UCs8isxhuF4phuQXimE52tOg/join).
 2. **Aguarde 7 dias:** Por questões de segurança, o acesso é liberado após a primeira semana de assinatura.
 3. **Fale comigo no LinkedIn:** Envie uma mensagem no meu **chat privado do LinkedIn** (link abaixo) informando seu usuário de membro.
 4. **Liberação:** Eu mesmo farei a validação e enviarei seu **Token Pessoal** de acesso para configuração do External Connector.
