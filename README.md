@@ -70,7 +70,7 @@ O canal **NetworkRA** é especializado em **Arquitetura MSSP e Segurança de Red
 ### 💎 Como solicitar seu acesso
 
 1. **Seja Membro:** Torne-se um membro do [Canal NetworkRA no YouTube](https://www.youtube.com/channel/UCs8isxhuF4phuQXimE52tOg/join).
-2. **Aguarde 7 dias:** Por questões de complaince do canal/youtube, o acesso é liberado após a primeira semana de assinatura.
+2. **Aguarde 7 dias:** Por questões de complaince, o acesso é liberado após a primeira semana de assinatura.
 3. **Fale comigo no LinkedIn:** Envie uma mensagem no meu [chat privado do LinkedIn](https://www.linkedin.com/in/networkra/) informando seu usuário de membro.
 4. **Liberação:** Eu mesmo irei validar, enviando seu **Token Pessoal** de acesso com o Script de Configuração.
 
