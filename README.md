@@ -12,9 +12,9 @@ Eu adoraria poder distribuir essa infraestrutura de forma totalmente aberta para
 
 A decisão de manter o acesso exclusivo para os membros do canal **não visa o enriquecimento próprio**, mas sim:
 
-1. **Ser justo com quem apoia meu trabalho:** É uma forma de retribuir aos amigos que acreditam e contribuem no canal NetworkRA.
-2. **Sustentabilidade do Projeto:** O apoio dos membros é sempre muito importante e me mantém motivado a continuar evoluindo o projeto em busca de melhorias contínuas.
-3. **Valorização Profissional:** Acredito que o compartilhamento técnico deve andar junto com a valorização do tempo e do esforço do profissional.
+1. **Ser justo com quem apoia meu trabalho:** Basicamente é uma forma de retribuir aos amigos que acreditam e contribuem com o canal NetworkRA.
+2. **Sustentabilidade do Projeto:** O apoio dos inscritos/membros é sempre muito importante e me mantém motivado a continuar evoluindo o projeto em busca de melhorias contínuas.
+3. **Valorização Profissional:** Acredito que o compartilhamento técnico deve andar junto com a valorização do tempo e do esforço de cada um. Valorizar o tempo dedicado à engenharia de dados é o que transforma uma simples lista em uma solução real de proteção. O tempo é o nosso bem mais precioso; nunca o desmereça.
 
 ---
 
@@ -37,7 +37,7 @@ O motor busca informações em fontes respeitadas mundialmente, garantindo que o
 Ao se tornar um apoiador, você terá acesso aos seguintes conectores:
 
 * **IP Threat Feed:** Lista de endereços IPs validados para políticas de bloqueio (Firewall Policy).
-* **Domain Threat Feed:** FQDNs e URLs para proteção de DNS, Web Filter ou políticas de bloqueio.
+* **Domain Threat Feed:** FQDNs e URLs para proteção de DNS, Web Filter ou políticas de bloqueio (Firewall Policy).
 * **Malware Hash Feed:** Assinaturas de arquivos para reforço do motor de Antivírus (AV Profile).
 
 ---
@@ -53,12 +53,10 @@ Ao se tornar um apoiador, você terá acesso aos seguintes conectores:
 
 ### 💎 Como solicitar seu acesso
 
-Se você deseja utilizar esses feeds no seu ambiente e apoiar o canal, o fluxo é simples:
-
 1. **Seja Membro:** Torne-se um membro do [Canal NetworkRA no YouTube](https://www.youtube.com/channel/UCs8isxhuF4phuQXimE52tOg/join).
-2. **Aguarde 7 dias:** Por questões de segurança, o acesso é liberado após a primeira semana de assinatura.
+2. **Aguarde 7 dias:** Por questões de complaince do canal/youtube, o acesso é liberado após a primeira semana de assinatura.
 3. **Fale comigo no LinkedIn:** Envie uma mensagem no meu [chat privado do LinkedIn](https://www.linkedin.com/in/networkra/) informando seu usuário de membro.
-4. **Liberação:** Eu mesmo farei a validação e enviarei seu **Token Pessoal** de acesso para configuração.
+4. **Liberação:** Eu mesmo farei a validação e enviarei seu **Token Pessoal** de acesso com o Script de Configuração.
 
 ---
 
