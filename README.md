@@ -2,8 +2,9 @@
 
 O **NRA Sentinel** é um projeto desenvolvido com o objetivo de auxiliar profissionais de segurança e redes na proteção de suas infraestruturas. Ele automatiza a coleta e a organização de dados de novas ameaças globais, entregando listas limpas e prontas para uso nos **External Connectors** do FortiGate. Este motor não busca ser uma "solução milagrosa", mas sim uma ferramenta de apoio que soma forças aos recursos que você já utiliza no dia a dia, ideal para quem busca reforçar ainda mais a segurança.
 
-![NRA Sentinel FortiGate](img/image_4cc9b7.png)
-*Exemplo da integração dos conectores NRA Sentinel operando em ambiente FortiOS.*
+<img src="image_4cc9b7.png" width="800" alt="NRA Sentinel FortiGate Integration">
+<p><i>Exemplo da integração dos conectores NRA Sentinel operando em ambiente FortiOS.</i></p>
+
 ---
 
 ### 🧠 Fontes de Dados
