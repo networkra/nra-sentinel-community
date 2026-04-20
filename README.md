@@ -51,15 +51,6 @@ A decisão de manter o acesso exclusivo para os membros do canal **não visa o e
 
 ---
 
-### 💎 Como solicitar seu acesso
-
-1. **Seja Membro:** Torne-se um membro do [Canal NetworkRA no YouTube](https://www.youtube.com/channel/UCs8isxhuF4phuQXimE52tOg/join).
-2. **Aguarde 7 dias:** Por questões de complaince do canal/youtube, o acesso é liberado após a primeira semana de assinatura.
-3. **Fale comigo no LinkedIn:** Envie uma mensagem no meu [chat privado do LinkedIn](https://www.linkedin.com/in/networkra/) informando seu usuário de membro.
-4. **Liberação:** Eu mesmo irei validar, enviando seu **Token Pessoal** de acesso com o Script de Configuração.
-
----
-
 ### 🚀 O Foco do Canal (The Core Focus)
 
 O canal **NetworkRA** é especializado em **Arquitetura SD-WAN MSSP**, com foco em soluções de alta disponibilidade e laboratórios práticos (**Hands-on**):
@@ -69,11 +60,20 @@ O canal **NetworkRA** é especializado em **Arquitetura SD-WAN MSSP**, com foco 
 
 ---
 
-### 🌐 Idiomas e Acessibilidade (Trilingual Support)
+### 💎 Como solicitar seu acesso
+
+1. **Seja Membro:** Torne-se um membro do [Canal NetworkRA no YouTube](https://www.youtube.com/channel/UCs8isxhuF4phuQXimE52tOg/join).
+2. **Aguarde 7 dias:** Por questões de complaince do canal/youtube, o acesso é liberado após a primeira semana de assinatura.
+3. **Fale comigo no LinkedIn:** Envie uma mensagem no meu [chat privado do LinkedIn](https://www.linkedin.com/in/networkra/) informando seu usuário de membro.
+4. **Liberação:** Eu mesmo irei validar, enviando seu **Token Pessoal** de acesso com o Script de Configuração.
+
+---
+
+### 🌐 Idiomas e Acessibilidade
 
 Embora o idioma principal do canal seja o **Português**, acreditamos na democratização do conhecimento técnico:
 * **Legendas Profissionais:** Todos os vídeos possuem legendas revisadas manualmente em **Inglês** e **Espanhol**.
-* **Comunidade Global:** Profissionais de diversos países já utilizam as nossas arquiteturas como referência.
+* **Comunidade Global:** Profissionais à nível global já utilizam as nossas arquiteturas como referência.
 
 ---
 
