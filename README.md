@@ -45,7 +45,7 @@ Ao se tornar um apoiador, você terá acesso aos seguintes conectores:
 
 ---
 
-### 🛡️ Inteligência de Alta Fidelidade & Rolling Buffer (Rotação)
+### 🛡️ Rolling Buffer (Rotação)
 
 No cenário de ameaças cibernéticas, o volume de hashes de malware cresce exponencialmente. Para manter a filosofia **Sniper** (precisão sobre volume) e garantir que o **NRA Sentinel** não sobrecarregue o hardware do seu FortiGate (especialmente modelos de entrada como 40F, 60F e 80F), implementamos uma lógica de **Rolling Buffer**:
 
