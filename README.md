@@ -1,6 +1,8 @@
 ## 🛡️ NRA Sentinel - Inteligência de Ameaças (V33.5)
 
-O **NRA Sentinel** é um projeto desenvolvido com o objetivo de auxiliar profissionais de segurança e redes na proteção de suas infraestruturas. Ele automatiza a coleta e a organização de dados de ameaças globais, entregando listas limpas e prontas para uso nos **External Connectors** do FortiGate. Este motor não busca ser uma "solução milagrosa", mas sim uma ferramenta de apoio que soma forças aos recursos que você já utiliza no dia a dia.
+O **NRA Sentinel** é um projeto desenvolvido com o objetivo de auxiliar profissionais de segurança e redes na proteção de suas infraestruturas. Ele automatiza a coleta e a organização de dados de ameaças globais, entregando listas limpas e prontas para uso nos **External Connectors** do FortiGate. 
+
+Este motor não busca ser uma "solução milagrosa", mas sim uma ferramenta de apoio que soma forças aos recursos que você já utiliza no dia a dia.
 
 ---
 
@@ -32,19 +34,22 @@ O motor busca informações em fontes respeitadas mundialmente, garantindo que o
 
 ---
 
-### 📦 Feeds Disponíveis para Membros:
+### 📦 Feeds Disponíveis para Membros
+
+Ao se tornar um apoiador, você terá acesso aos seguintes conectores:
+
 * **IP Threat Feed:** Lista de endereços IPs validados para políticas de bloqueio (Firewall Policy).
-* **Domain Threat Feed:** FQDNs e URLs para proteção de DNS, Web Filter ou políticas de bloqueio (Firewall Policy).
+* **Domain Threat Feed:** FQDNs e URLs para proteção de DNS, Web Filter ou políticas de bloqueio.
 * **Malware Hash Feed:** Assinaturas de arquivos para reforço do motor de Antivírus (AV Profile).
 
 ---
 
 ### ⚙️ Detalhes do Funcionamento
 
-* **Atualização:** Os feeds são processados a cada 4 horas.
-* **Persistência:** O motor mantém o histórico, não apagando o que já foi validado anteriormente.
+* **Atualização:** Os feeds são processados a cada 4 horas automaticamente.
+* **Persistência:** O motor mantém o histórico acumulado (não apaga registros antigos validados).
 * **Otimização:** Arquivos organizados com até 49.999 linhas para garantir performance no FortiOS.
-* **Limpeza:** Todos os dados passam por uma sanitização para remover protocolos e caminhos, mantendo apenas o que o firewall precisa ler.
+* **Limpeza:** Dados sanitizados (sem protocolos ou portas), prontos para leitura nativa do firewall.
 
 ---
 
@@ -54,8 +59,8 @@ Se você deseja utilizar esses feeds no seu ambiente e apoiar o canal, o fluxo �
 
 1. **Seja Membro:** Torne-se um membro do [Canal NetworkRA no YouTube](https://www.youtube.com/channel/UCs8isxhuF4phuQXimE52tOg/join).
 2. **Aguarde 7 dias:** Por questões de segurança, o acesso é liberado após a primeira semana de assinatura.
-3. **Fale comigo no LinkedIn:** Envie uma mensagem no meu **chat privado do LinkedIn** (link abaixo) informando seu usuário de membro.
-4. **Liberação:** Eu mesmo farei a validação e enviarei seu **Token Pessoal** de acesso para configuração do External Connector.
+3. **Fale comigo no LinkedIn:** Envie uma mensagem no meu [chat privado do LinkedIn](https://www.linkedin.com/in/networkra/) informando seu usuário de membro.
+4. **Liberação:** Eu mesmo farei a validação e enviarei seu **Token Pessoal** de acesso para configuração.
 
 ---
 
@@ -69,5 +74,5 @@ Se você deseja utilizar esses feeds no seu ambiente e apoiar o canal, o fluxo �
 ---
 
 > [!CAUTION]
-> **Nota de Responsabilidade:**
+> **Nota de Responsabilidade**
 > A inteligência do Sentinel é baseada em fontes de terceiros. Embora o esforço para minimizar erros seja constante, a decisão final de bloqueio e o monitoramento do tráfego são de responsabilidade do administrador da rede. Vamos sempre trabalhar com cautela e monitoramento.
