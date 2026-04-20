@@ -51,12 +51,16 @@ A decisão de manter o acesso exclusivo para os membros do canal **não visa o e
 
 ---
 
-### 🚀 O Foco do Canal (The Core Focus)
+### 🚀 O Foco do Canal
 
-O canal **NetworkRA** é especializado em **Arquitetura SD-WAN MSSP**, com foco em soluções de alta disponibilidade e laboratórios práticos (**Hands-on**):
-* **SD-WAN Self-Healing:** Implementações avançadas com BGP e SLA-based steering.
-* **Topologias Complexas:** Estruturas de ADVPN, Hub-and-Spoke e redundância de túneis.
-* **Laboratórios EVE-NG:** Todo o conteúdo é demonstrado em cenários reais utilizando o EVE-NG.
+O canal **NetworkRA** é especializado em **Arquitetura MSSP e Segurança de Redes**, focado em desmistificar cenários reais de infraestrutura através de laboratórios práticos (**Hands-on**). Nosso objetivo é transformar teoria complexa em implementações funcionais e resilientes.
+
+* **SD-WAN Expert:** Especialização em estruturas de *Self-Healing* utilizando BGP e *SLA-based steering* (Lowest Cost, Preferência de Network), além de técnicas de **Hardening** para proteger o plano de controle.
+* **VPN & ADVPN Profissional:** Domínio completo de topologias *Hub-and-Spoke*, ADVPN (Single/Multiple Hub), integrações com OSPF (HUBs) Regionais e Hardening proposto com IKEv2 e local-in-policy.
+* **Remote Access & Autenticação:** Implementações robustas de VPN Client com **IKEv2 + EAP**, integração com **RADIUS** (Multi-group membership) e autenticação by DC.
+* **Automação & Gestão:** Desenvolvimento de ferramentas de automação (Python Scripts) como o *SD-WAN Builder* e gestão centralizada via FortiManager/FortiAnalyzer.
+* **Metodologia Hands-on:** Todo o conteúdo é validado em cenários reais utilizando o **EVE-NG**, com arquivos de laboratório exclusivos para membros no Google Drive.
+* **Acessibilidade Global:** Vídeos produzidos em Português com legendas profissionais revisadas em **Inglês** e **Espanhol**.
 
 ---
 
