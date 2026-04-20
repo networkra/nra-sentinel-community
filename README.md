@@ -108,5 +108,5 @@ Acredito que o compartilhamento técnico deve caminhar junto com a valorização
 * [![YouTube](https://img.shields.io/badge/YouTube-NetworkRA-red?style=flat&logo=youtube)](https://www.youtube.com/@NetworkRA)
 ---
 
-> **Nota de Responsabilidade**
+> **Nota de Responsabilidade**:
 > A inteligência do Sentinel é baseada em fontes de terceiros. Embora o esforço para minimizar erros seja constante, a decisão final de bloqueio e o monitoramento do tráfego são de responsabilidade do administrador da rede. Vamos sempre trabalhar com cautela e monitoramento.
