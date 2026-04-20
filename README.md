@@ -1,8 +1,6 @@
 ## 🛡️ NRA Sentinel - Inteligência de Ameaças (V33.5)
 
-O **NRA Sentinel** é um projeto desenvolvido com o objetivo de auxiliar profissionais de segurança e redes na proteção de suas infraestruturas. Ele automatiza a coleta e a organização de dados de ameaças globais, entregando listas limpas e prontas para uso nos **External Connectors** do FortiGate. 
-
-Este motor não busca ser uma "solução milagrosa", mas sim uma ferramenta de apoio que soma forças aos recursos que você já utiliza no dia a dia.
+O **NRA Sentinel** é um projeto desenvolvido com o objetivo de auxiliar profissionais de segurança e redes na proteção de suas infraestruturas. Ele automatiza a coleta e a organização de dados de novas ameaças globais, entregando listas limpas e prontas para uso nos **External Connectors** do FortiGate. Este motor não busca ser uma "solução milagrosa", mas sim uma ferramenta de apoio que soma forças aos recursos que você já utiliza no dia a dia, ideal para quem busca reforçar ainda mais a segurança.
 
 ---
 
@@ -10,12 +8,12 @@ Este motor não busca ser uma "solução milagrosa", mas sim uma ferramenta de a
 
 Gostaria de compartilhar com vocês o racional por trás deste projeto:
 
-Eu adoraria poder distribuir essa infraestrutura de forma totalmente aberta para toda a comunidade. Porém, o desenvolvimento do NRA Sentinel exige muitas horas de estudo, programação e tempo dedicado para manter o projeto ativo.
+Eu adoraria poder distribuir essa infraestrutura de forma totalmente aberta para toda a comunidade. Porém, o desenvolvimento do NRA Sentinel exige muitas horas de estudo, programação e tempo para manter o projeto ativo.
 
 A decisão de manter o acesso exclusivo para os membros do canal **não visa o enriquecimento próprio**, mas sim:
 
 1. **Ser justo com quem apoia meu trabalho:** É uma forma de retribuir aos amigos que acreditam e contribuem no canal NetworkRA.
-2. **Sustentabilidade do Projeto:** O apoio dos membros é sempre muito importante e me motiva a continuar evoluindo a ferramenta para todos nós.
+2. **Sustentabilidade do Projeto:** O apoio dos membros é sempre muito importante e me mantém motivado a continuar evoluindo o projeto em busca de melhorias contínuas.
 3. **Valorização Profissional:** Acredito que o compartilhamento técnico deve andar junto com a valorização do tempo e do esforço do profissional.
 
 ---
