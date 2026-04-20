@@ -90,7 +90,7 @@ Embora o idioma principal do canal seja o **Português**, acreditamos na democra
 
 Acredito que o compartilhamento técnico deve caminhar junto com a valorização do tempo e do esforço. O tempo é o nosso recurso mais escasso; valorizá-lo é respeitar a sua própria jornada.
 
-#### 🎓 Certificações Fortinet (Trilha de Especialista)
+#### 🎓 Certificações Fortinet
 
 | Certificação | Tecnologia | Status |
 | :--- | :--- | :--- |
