@@ -4,20 +4,6 @@ O **NRA Sentinel** é um projeto desenvolvido com o objetivo de auxiliar profiss
 
 ---
 
-### 🤝 Valorização e Colaboração
-
-Gostaria de compartilhar com vocês o racional por trás deste projeto:
-
-Eu adoraria poder distribuir essa infraestrutura de forma totalmente aberta para toda a comunidade. Porém, o desenvolvimento do NRA Sentinel exige muitas horas de estudo, programação e tempo para manter o projeto ativo.
-
-A decisão de manter o acesso exclusivo para os membros do canal **não visa o enriquecimento próprio**, mas sim:
-
-1. **Ser justo com quem apoia meu trabalho:** Basicamente é uma forma de retribuir aos amigos que acreditam e contribuem com o canal NetworkRA.
-2. **Sustentabilidade do Projeto:** O apoio dos inscritos/membros é sempre muito importante e me mantém motivado a continuar evoluindo o projeto em busca de melhorias contínuas.
-3. **Valorização Profissional:** Acredito que o compartilhamento técnico deve andar junto com a valorização do tempo e do esforço de cada um. Valorizar o tempo dedicado à engenharia de dados é o que transforma uma simples lista em uma solução real de proteção. O tempo é o nosso bem mais precioso; nunca o desmereça.
-
----
-
 ### 🧠 Fontes de Dados
 
 O motor busca informações em fontes respeitadas mundialmente, garantindo que o que chega ao seu firewall tenha passado por um processo de filtragem:
@@ -51,6 +37,20 @@ Ao se tornar um apoiador, você terá acesso aos seguintes conectores:
 
 ---
 
+### 🤝 Valorização e Colaboração
+
+Gostaria de compartilhar com vocês o racional por trás deste projeto:
+
+Eu adoraria poder distribuir essa infraestrutura de forma totalmente aberta para toda a comunidade. Porém, o desenvolvimento do NRA Sentinel exige muitas horas de estudo, programação e tempo para manter o projeto ativo.
+
+A decisão de manter o acesso exclusivo para os membros do canal **não visa o enriquecimento próprio**, mas sim:
+
+1. **Ser justo com quem apoia meu trabalho:** Basicamente é uma forma de retribuir aos amigos que acreditam e contribuem com o canal NetworkRA.
+2. **Sustentabilidade do Projeto:** O apoio dos inscritos/membros é sempre muito importante e me mantém motivado a continuar evoluindo o projeto em busca de melhorias contínuas.
+3. **Valorização Profissional:** Acredito que o compartilhamento técnico deve andar junto com a valorização do tempo e do esforço de cada um. Valorizar o tempo dedicado à engenharia de dados é o que transforma uma simples lista em uma solução real de proteção. O tempo é o nosso bem mais precioso; nunca o desmereça.
+
+---
+
 ### 💎 Como solicitar seu acesso
 
 1. **Seja Membro:** Torne-se um membro do [Canal NetworkRA no YouTube](https://www.youtube.com/channel/UCs8isxhuF4phuQXimE52tOg/join).
@@ -60,20 +60,20 @@ Ao se tornar um apoiador, você terá acesso aos seguintes conectores:
 
 ---
 
-### 🌐 Idiomas e Acessibilidade (Trilingual Support)
-
-Embora o idioma principal do canal seja o **Português**, acreditamos na democratização do conhecimento técnico:
-* **Legendas Profissionais:** Todos os vídeos possuem legendas revisadas manualmente em **Inglês** e **Espanhol**.
-* **Comunidade Global:** Profissionais de diversos países já utilizam as nossas arquiteturas como referência.
-
----
-
 ### 🚀 O Foco do Canal (The Core Focus)
 
 O canal **NetworkRA** é especializado em **Arquitetura SD-WAN MSSP**, com foco em soluções de alta disponibilidade e laboratórios práticos (**Hands-on**):
 * **SD-WAN Self-Healing:** Implementações avançadas com BGP e SLA-based steering.
 * **Topologias Complexas:** Estruturas de ADVPN, Hub-and-Spoke e redundância de túneis.
 * **Laboratórios EVE-NG:** Todo o conteúdo é demonstrado em cenários reais utilizando o EVE-NG.
+
+---
+
+### 🌐 Idiomas e Acessibilidade (Trilingual Support)
+
+Embora o idioma principal do canal seja o **Português**, acreditamos na democratização do conhecimento técnico:
+* **Legendas Profissionais:** Todos os vídeos possuem legendas revisadas manualmente em **Inglês** e **Espanhol**.
+* **Comunidade Global:** Profissionais de diversos países já utilizam as nossas arquiteturas como referência.
 
 ---
 
