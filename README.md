@@ -56,19 +56,50 @@ Ao se tornar um apoiador, você terá acesso aos seguintes conectores:
 1. **Seja Membro:** Torne-se um membro do [Canal NetworkRA no YouTube](https://www.youtube.com/channel/UCs8isxhuF4phuQXimE52tOg/join).
 2. **Aguarde 7 dias:** Por questões de complaince do canal/youtube, o acesso é liberado após a primeira semana de assinatura.
 3. **Fale comigo no LinkedIn:** Envie uma mensagem no meu [chat privado do LinkedIn](https://www.linkedin.com/in/networkra/) informando seu usuário de membro.
-4. **Liberação:** Eu mesmo farei a validação e enviarei seu **Token Pessoal** de acesso com o Script de Configuração.
+4. **Liberação:** Eu mesmo irei validar, enviando seu **Token Pessoal** de acesso com o Script de Configuração.
+
+---
+
+### 🌐 Idiomas e Acessibilidade (Trilingual Support)
+
+Embora o idioma principal do canal seja o **Português**, acreditamos na democratização do conhecimento técnico:
+* **Legendas Profissionais:** Todos os vídeos possuem legendas revisadas manualmente em **Inglês** e **Espanhol**.
+* **Comunidade Global:** Profissionais de diversos países já utilizam as nossas arquiteturas como referência.
+
+---
+
+### 🚀 O Foco do Canal (The Core Focus)
+
+O canal **NetworkRA** é especializado em **Arquitetura SD-WAN MSSP**, com foco em soluções de alta disponibilidade e laboratórios práticos (**Hands-on**):
+* **SD-WAN Self-Healing:** Implementações avançadas com BGP e SLA-based steering.
+* **Topologias Complexas:** Estruturas de ADVPN, Hub-and-Spoke e redundância de túneis.
+* **Laboratórios EVE-NG:** Todo o conteúdo é demonstrado em cenários reais utilizando o EVE-NG.
 
 ---
 
 ### 👨‍💻 Sobre o Autor
 
-**Robert Alexandrino (NetworkRA)** - Analista de Redes e Segurança.
+**Robert Alexandrino (NetworkRA)** - *Especialista em Arquiteturas MSSP (SD-WAN) & Network Security Engineer*
 
-* [![LinkedIn](https://img.shields.io/badge/LinkedIn-NetworkRA-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/networkra/)
-* [![YouTube](https://img.shields.io/badge/YouTube-NetworkRA-red?style=flat&logo=youtube)](https://www.youtube.com/@NetworkRA)
+Acredito que o compartilhamento técnico deve caminhar junto com a valorização do tempo e do esforço. O tempo é o nosso recurso mais escasso; valorizá-lo é respeitar a sua própria jornada.
+
+#### 🎓 Certificações Fortinet (Trilha de Especialista)
+
+| Certificação | Tecnologia | Status |
+| :--- | :--- | :--- |
+| **FCSS** | Enterprise Firewall 7.4 Administrator | Pass (2025) |
+| **FCSS** | Network Security 7.4 Support Engineer | Pass (2025) |
+| **NSE 7** | SD-WAN 7.2 | Pass (2024) |
+| **NSE 7** | Enterprise Firewall 7.0 | Pass (2023) |
+| **NSE 5** | FortiAnalyzer 6.4 | Pass (2022) |
+| **NSE 5** | FortiManager 6.4 | Pass (2022) |
+| **NSE 4** | FortiOS 6.4 | Pass (2021) |
 
 ---
 
-> [!CAUTION]
+* [![LinkedIn](https://img.shields.io/badge/LinkedIn-NetworkRA-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/networkra/)
+* [![YouTube](https://img.shields.io/badge/YouTube-NetworkRA-red?style=flat&logo=youtube)](https://www.youtube.com/@NetworkRA)
+---
+
 > **Nota de Responsabilidade**
 > A inteligência do Sentinel é baseada em fontes de terceiros. Embora o esforço para minimizar erros seja constante, a decisão final de bloqueio e o monitoramento do tráfego são de responsabilidade do administrador da rede. Vamos sempre trabalhar com cautela e monitoramento.
