@@ -132,3 +132,128 @@ Acredito que o compartilhamento técnico deve caminhar junto com a valorização
 
 > **Nota de Responsabilidade**:
 > A inteligência do Sentinel é baseada em fontes de terceiros. Embora o esforço para minimizar erros seja constante, a decisão final de bloqueio e o monitoramento do tráfego são de responsabilidade do administrador da rede. Vamos sempre trabalhar com cautela e monitoramento.
+
+---
+
+🚀 Guia de Configuração Rápida (FortiOS CLI)
+
+<details>
+<summary><b>Clique para expandir o Script CLI</b></summary>
+
+#### --- CONFIGURAÇÃO DOS RECURSOS EXTERNOS (LISTAS GLOBAIS) ---
+```
+config system external-resource
+    edit "OpenDBL_blocklist.de"
+        set type address
+        set resource "https://opendbl.net/lists/blocklistde-all.list"
+        set refresh-rate 1440
+    next
+    edit "OpenDBL_BruteForce"
+        set type address
+        set resource "https://opendbl.net/lists/bruteforce.list"
+        set refresh-rate 1450
+    next
+    edit "OpenDBL_TOR"
+        set type address
+        set resource "https://opendbl.net/lists/tor-exit.list"
+        set refresh-rate 1460
+    next
+    edit "OpenDBL_Threats"
+        set type address
+        set resource "https://opendbl.net/lists/etknown.list"
+        set refresh-rate 1470
+    next
+    edit "OpenDBL_IPSum"
+        set type address
+        set resource "https://opendbl.net/lists/ipsum.list"
+        set refresh-rate 1490
+    next
+    edit "blocklist.de"
+        set type address
+        set resource "https://blocklist.de/lists/all.txt"
+        set refresh-rate 1440
+    next
+    edit "cinsscore"
+        set type address
+        set resource "http://cinsscore.com/list/ci-badguys.txt"
+        set refresh-rate 1480
+    next
+    edit "Serpro"
+        set type address
+        set resource "https://s3.i02.estaleiro.serpro.gov.br/blocklist/blocklist.txt"
+        set refresh-rate 1490
+    next
+end
+```
+#### --- CONFIGURAÇÃO DO NRA SENTINEL (TIER 1) ---
+#### IMPORTANTE: Substitua 'SEU_TOKEN_AQUI' pelo seu TOKEN recebido no chat do Linkedin
+```
+config system external-resource
+    edit "NRA_Sentinel_IPs"
+        set type address
+        set username "networkra"
+        set password SEU_TOKEN_AQUI
+        set resource "https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-ips-critical-1.txt"
+        set refresh-rate 60
+    next
+    edit "NRA_Sentinel_Doms"
+        set type domain
+        set category 192
+        set username "networkra"
+        set password SEU_TOKEN_AQUI
+        set resource "https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-dom-critical-1.txt"
+        set refresh-rate 60
+    next
+    edit "NRA_Sentinel_Hash"
+        set type malware
+        set username "networkra"
+        set password SEU_TOKEN_AQUI
+        set resource "https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-hash-critical-1.txt"
+        set refresh-rate 60
+    next
+end
+```
+#### --- CRIAÇÃO DA POLÍTICA DE DENY (TOP OF POLICY) ---
+#### Nota: Neste exemplo estruturamos a Policy com o ID 816598
+```
+config firewall policy
+    edit 816598
+        set name "NRA_Sentinel_Block_Drop"
+        set srcintf "Lan"
+        set dstintf "virtual-wan-link"
+        set srcaddr "all"
+        set dstaddr "OpenDBL_blocklist.de" "OpenDBL_BruteForce" "OpenDBL_TOR" "OpenDBL_Threats" "OpenDBL_IPSum" "blocklist.de" "cinsscore" "Serpro" "NRA_Sentinel_IPs"
+        set schedule "always"
+        set service "ALL"
+        set action deny
+        set logtraffic all
+    next
+end
+```
+#### Mover a regra para o topo (substitua 'ID_DA_PRIMEIRA_REGRA' pelo ID real)
+```
+config firewall policy
+    move 816598 before ID_DA_PRIMEIRA_REGRA
+end
+```
+#### --- APLICAÇÃO NOS PROFILES DE SEGURANÇA ---
+```
+config antivirus profile
+    edit "SEU_PROFILE_AV"
+        set external-blocklist "NRA_Sentinel_Hash"
+    next
+end
+
+config dnsfilter profile
+    edit "SEU_PROFILE_DNS"
+        config ftgd-dns
+            config filters
+                edit 192
+                    set category 192
+                    set action block
+                next
+            end
+        end
+end
+```
+</details>
