@@ -290,3 +290,13 @@ config webfilter profile
 end
 ```
 </details>
+
+---
+### ⚖️ Licença e Copyright
+
+Este projeto é desenvolvido e mantido por **Robert Alexandrino (NetworkRA)**.
+
+© 2026 NetworkRA. Todos os direitos reservados.
+O uso deste feed é exclusivo para os membros do canal NetworkRA.
+
+🔗 **[Acompanhe no LinkedIn](https://www.linkedin.com/in/networkra/)** | 📺 **[Inscreva-se no Canal NetworkRA](https://www.youtube.com/@NetworkRA)**
