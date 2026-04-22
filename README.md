@@ -31,7 +31,7 @@ O motor busca informações em fontes respeitadas mundialmente, garantindo que o
 Ao se tornar um apoiador, você terá acesso aos seguintes conectores:
 
 * **IP Threat Feed:** Lista de endereços IPs validados para políticas de bloqueio (Firewall Policy).
-* **Domain Threat Feed:** FQDNs e URLs para proteção de DNS (DNS Filter).
+* **Domain Threat Feed:** FQDNs e URLs para proteção de DNS (DNS Filter) ou URL (Web Filter).
 * **Malware Hash Feed:** Assinaturas de arquivos para reforço do motor de Antivírus (AV Profile).
 
 ---
@@ -196,7 +196,7 @@ config system external-resource
         set resource "https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-ips-critical-1.txt"
         set refresh-rate 60
     next
-    edit "NRA_Sentinel_Doms"
+    edit "NRA_Sentinel_Domain-DNS"
         set type domain
         set category 192
         set username "networkra"
@@ -204,7 +204,14 @@ config system external-resource
         set resource "https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-dom-critical-1.txt"
         set refresh-rate 60
     next
-    edit "NRA_Sentinel_Hash"
+    edit "NRA_Sentinel_Domain-WF"
+        set category 193
+        set username "networkra"
+        set password SEU_TOKEN_AQUI
+        set resource "https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-dom-critical-1.txt"
+        set refresh-rate 60
+    next
+    edit "NRA_Sentinel_Malware-Hash"
         set type malware
         set username "networkra"
         set password SEU_TOKEN_AQUI
@@ -218,7 +225,7 @@ end
 ```
 config firewall policy
     edit 816598
-        set name "NRA_Sentinel_Block_Drop"
+        set name "SEU_NOME_SUGESTIVO"
         set srcintf "Lan"
         set dstintf "virtual-wan-link"
         set srcaddr "all"
@@ -239,21 +246,39 @@ end
 #### --- APLICAÇÃO NOS PROFILES DE SEGURANÇA ---
 ```
 config antivirus profile
-    edit "SEU_PROFILE_AV"
-        set external-blocklist "NRA_Sentinel_Hash"
-    next
+edit "SEU_PROFILE_AV"
+set external-blocklist "NRA_Sentinel_Malware-Hash"
+next
 end
 
+Observação: O feed de domínios nra-dom-critical-1.txt ("NRA_Sentinel_Domain-DNS" ou "NRA_Sentinel_Domain-WF") pode ser utilizado tanto como conector de Domínios (DNS Filter) quanto de URL (Web Filter).
+
 config dnsfilter profile
-    edit "SEU_PROFILE_DNS"
-        config ftgd-dns
-            config filters
-                edit 192
-                    set category 192
-                    set action block
-                next
-            end
-        end
+edit "SEU_PROFILE_DNS"
+config ftgd-dns
+config filters
+edit 192
+set category 192
+set action block
+next
 end
+end
+end
+
+OU
+
+config webfilter profile
+edit "SEU_PROFILE_WF"
+config ftgd-wf
+unset options
+config filters
+edit 193
+set category 193
+set action block
+next
+end
+end
+end
+
 ```
 </details>
