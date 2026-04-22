@@ -31,7 +31,7 @@ O motor busca informações em fontes respeitadas mundialmente, garantindo que o
 Ao se tornar um apoiador, você terá acesso aos seguintes conectores:
 
 * **IP Threat Feed:** Lista de endereços IPs validados para políticas de bloqueio (Firewall Policy).
-* **Domain Threat Feed:** FQDNs e URLs para proteção de DNS (DNS Filter) ou URL (Web Filter).
+* **Domain Threat / FortiGuard Category Feed:** FQDNs e URLs para proteção de DNS (DNS Filter) ou URL (Web Filter).
 * **Malware Hash Feed:** Assinaturas de arquivos para reforço do motor de Antivírus (AV Profile).
 
 ---
