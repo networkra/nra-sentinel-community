@@ -257,7 +257,7 @@ config dnsfilter profile
 edit "SEU_PROFILE_DNS"
 config ftgd-dns
 config filters
-edit 192
+edit 0
 set category 192
 set action block
 next
@@ -272,7 +272,7 @@ edit "SEU_PROFILE_WF"
 config ftgd-wf
 unset options
 config filters
-edit 193
+edit 0
 set category 193
 set action block
 next
