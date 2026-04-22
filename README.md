@@ -221,7 +221,7 @@ config system external-resource
 end
 ```
 #### --- CRIAÇÃO DA POLÍTICA DE DENY (TOP OF POLICY) ---
-#### Nota: Neste exemplo estruturamos a Policy com o ID 816598
+#### Nota: Neste exemplo estruturamos a Policy com o ID 816598, considerando interface Lan e virtual-wan-link.
 ```
 config firewall policy
     edit 816598
