@@ -259,7 +259,6 @@ end
 O feed nra-dom-critical-1.txt pode ser usado tanto no DNS Filter (recomendado para pegar ataques na raiz/resolução) quanto no Web Filter (para inspeção de URL/SNI). Você pode aplicar em um deles ou em ambos, dependendo da arquitetura do seu ambiente.
 
 Opção A: Aplicação via DNS Filter (Categoria 192)
-Observação: O feed de domínios nra-dom-critical-1.txt ("NRA_Sentinel_Domain-DNS" ou "NRA_Sentinel_Domain-WF") pode ser utilizado tanto como conector de Domínios (DNS Filter) quanto de URL (Web Filter).
 ```
 config dnsfilter profile
     edit "SEU_PROFILE_DNS"
