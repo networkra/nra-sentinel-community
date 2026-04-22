@@ -225,7 +225,7 @@ end
 ```
 config firewall policy
     edit 816598
-        set name "SEU_NOME_SUGESTIVO"
+        set name "Deny_Threat-Intel"
         set srcintf "Lan"
         set dstintf "virtual-wan-link"
         set srcaddr "all"
