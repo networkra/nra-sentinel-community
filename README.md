@@ -244,41 +244,50 @@ config firewall policy
 end
 ```
 #### --- APLICAÇÃO NOS PROFILES DE SEGURANÇA ---
+Além dos IPs, a inteligência do NRA Sentinel atua nas camadas de inspeção. Aplique os conectores criados aos profiles de segurança que você já utiliza nas suas regras de acesso (Accept).
+
+**1. Proteção contra Malware (Obrigatório)**
+Aplica a lista de hashes bloqueados globalmente pelo Sentinel.
 ```
 config antivirus profile
-edit "SEU_PROFILE_AV"
-set external-blocklist "NRA_Sentinel_Malware-Hash"
-next
+    edit "SEU_PROFILE_AV"
+        set external-blocklist "NRA_Sentinel_Malware-Hash"
+    next
 end
+```
+**2. Bloqueio de Domínios Maliciosos (Escolha sua estratégia)**
+O feed nra-dom-critical-1.txt pode ser usado tanto no DNS Filter (recomendado para pegar ataques na raiz/resolução) quanto no Web Filter (para inspeção de URL/SNI). Você pode aplicar em um deles ou em ambos, dependendo da arquitetura do seu ambiente.
 
+Opção A: Aplicação via DNS Filter (Categoria 192)
 Observação: O feed de domínios nra-dom-critical-1.txt ("NRA_Sentinel_Domain-DNS" ou "NRA_Sentinel_Domain-WF") pode ser utilizado tanto como conector de Domínios (DNS Filter) quanto de URL (Web Filter).
-
+```
 config dnsfilter profile
-edit "SEU_PROFILE_DNS"
-config ftgd-dns
-config filters
-edit 0
-set category 192
-set action block
-next
+    edit "SEU_PROFILE_DNS"
+        config ftgd-dns
+            config filters
+                edit 0
+                    set category 192
+                    set action block
+                next
+            end
+        end
+    next
 end
-end
-end
-
-OU
-
+```
+Opção B: Aplicação via Web Filter (Categoria 193)
+```
 config webfilter profile
-edit "SEU_PROFILE_WF"
-config ftgd-wf
-unset options
-config filters
-edit 0
-set category 193
-set action block
-next
+    edit "SEU_PROFILE_WF"
+        config ftgd-wf
+            unset options
+            config filters
+                edit 0
+                    set category 193
+                    set action block
+                next
+            end
+        end
+    next
 end
-end
-end
-
 ```
 </details>
