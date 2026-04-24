@@ -26,7 +26,7 @@ O motor busca informações em fontes respeitadas mundialmente, garantindo que o
 
 ---
 
-### 🛡️ Prevenção de Falsos Positivos e Validação de Confiança
+### 🛡️ Prevenção de Falsos Positivos
 Para garantir que infraestruturas legítimas não sejam bloqueadas acidentalmente, o NRA Sentinel conta com uma esteira de dupla validação antes de aprovar qualquer bloqueio:
 
 1. **Safelist (Exceção Absoluta):** Todo IP extraído dos feeds é cruzado com o arquivo local `nra-safelist.txt`. Se o IP constar nesta lista, ele é imediatamente descartado, protegendo a sua infraestrutura.
