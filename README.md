@@ -37,16 +37,6 @@ Para garantir que infraestruturas legítimas não sejam bloqueadas acidentalment
 
 ---
 
-### 📦 Feeds Disponíveis para Membros
-
-Ao se tornar um apoiador, você terá acesso aos seguintes conectores:
-
-* **IP Threat Feed:** Lista de endereços IPs validados para políticas de bloqueio (Firewall Policy).
-* **Domain Threat / FortiGuard Category Feed:** FQDNs e URLs para proteção de DNS (DNS Filter) ou URL (Web Filter).
-* **Malware Hash Feed:** Assinaturas de arquivos para reforço do motor de Antivírus (AV Profile).
-
----
-
 ### ⚙️ Detalhes do Funcionamento
 
 * **Atualização:** Os feeds são processados a cada 4 horas automaticamente.
@@ -82,6 +72,16 @@ A decisão de manter o acesso exclusivo para os membros do canal **não visa o e
 1. **Ser justo com quem apoia meu trabalho:** Basicamente é uma forma de retribuir aos amigos que acreditam e contribuem com o canal NetworkRA.
 2. **Sustentabilidade do Projeto:** O apoio dos inscritos/membros é sempre muito importante e me mantém motivado a continuar evoluindo o projeto em busca de melhorias contínuas.
 3. **Valorização Profissional:** Acredito que o compartilhamento técnico deve andar junto com a valorização do tempo e do esforço de cada um. Valorizar o tempo dedicado à engenharia de dados é o que transforma uma simples lista em uma solução real de proteção 0-day. O tempo é o nosso bem mais precioso; nunca o desmereça.
+
+---
+
+### 📦 Feeds Disponíveis para Membros
+
+Ao se tornar um apoiador, você terá acesso aos seguintes conectores:
+
+* **IP Threat Feed:** Lista de endereços IPs validados para políticas de bloqueio (Firewall Policy).
+* **Domain Threat / FortiGuard Category Feed:** FQDNs e URLs para proteção de DNS (DNS Filter) ou URL (Web Filter).
+* **Malware Hash Feed:** Assinaturas de arquivos para reforço do motor de Antivírus (AV Profile).
 
 ---
 
