@@ -127,6 +127,7 @@ Acredito que o compartilhamento técnico deve caminhar junto com a valorização
 
 | Certificação | Tecnologia | Status |
 | :--- | :--- | :--- |
+| **FCSS** | Enterprise Firewall 7.6 Administrator | Pass (2026) |
 | **FCSS** | Enterprise Firewall 7.4 Administrator | Pass (2025) |
 | **FCSS** | Network Security 7.4 Support Engineer | Pass (2025) |
 | **NSE 7** | SD-WAN 7.2 | Pass (2024) |
