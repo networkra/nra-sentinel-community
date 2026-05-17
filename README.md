@@ -103,9 +103,10 @@ O canal **NetworkRA** é especializado em **Arquitetura MSSP e Segurança de Red
 Para utilizar os feeds do **NRA Sentinel** e acessar os materiais exclusivos do canal, siga o fluxo abaixo:
 
 1. **Seja Membro:** Torne-se um membro do [Canal NetworkRA no YouTube](https://www.youtube.com/channel/UCs8isxhuF4phuQXimE52tOg/join).
-2. **Aguarde 7 dias:** Por questões de **compliance**, o acesso é liberado após a primeira semana de assinatura ativa.
-3. **Fale comigo no LinkedIn:** Envie uma mensagem no meu [chat privado do LinkedIn](https://www.linkedin.com/in/networkra/) informando seu usuário de membro.
-4. **Liberação:** Eu mesmo irei validar e enviar seu **Token Pessoal** junto com o **Script de Configuração** completo, incluindo também as listas de acesso mais utilizadas do mercado que agregarão valor ao NRA Sentinel.
+2. **Preencha o Forms**: Na área de membros (comunidade do youtube) você encontra um Forms para cadastro.
+3. **Aguarde os 7 dias:** Por questões de **compliance**, assim como o Google-Drive (UNL, Scripts, Labs e Recursos), GEMS Pro e o NRA Sentinel, o acesso é liberado após a primeira semana de assinatura ativa.
+4. **Fale comigo no LinkedIn:** Envie uma mensagem no meu [chat privado do LinkedIn](https://www.linkedin.com/in/networkra/) informando seu interesse e usuário de membro.
+5. **Liberação:** Eu mesmo irei validar e enviar seu **Token Pessoal** junto com o **Script de Configuração** completo, incluindo também as listas de acesso mais utilizadas do mercado que agregarão valor ao NRA Sentinel.
 
 ---
 
