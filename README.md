@@ -305,6 +305,17 @@ end
 </details>
 
 ---
+
+### 🚀 Changelog: NRA Sentinel V33.5 (24/05/2026)
+**Foco da Atualização: Auditoria de Memória**
+
+Nesta versão, a arquitetura do Sentinel recebeu aprimoramentos voltados para operações de missão crítica em ambientes MSSP:
+
+* ⚙️ **Engenharia de Memória FIFO Absoluta:** O motor de armazenamento local foi reescrito (migração de `sets` para `dicts`) para garantir ordem cronológica perfeita (First-In, First-Out). Novos IoCs (IPs, Domínios e Hashes) entram estritamente no fim da fila, mantendo a integridade temporal da esteira de ameaças.
+* 📊 **Auditoria de Rotação (Churn Visibility):** Visibilidade total sobre o descarte de artefatos antigos. Ao atingir o limite de proteção de RAM dos equipamentos (35.000 indicadores por categoria), o pipeline do GitHub Actions agora registra no console o cálculo exato do excedente e exibe os artefatos antigos que estão sendo removidos para dar lugar aos novos *0-days*.
+
+---
+
 ### ⚖️ Licença e Copyright
 
 Este projeto é desenvolvido e mantido por **Robert Alexandrino (NetworkRA)**.
