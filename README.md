@@ -61,27 +61,23 @@ No cenário de ameaças cibernéticas, o volume de hashes de malware cresce expo
 
 ---
 
-### 🤝 Valorização e Colaboração
+### 🤝 De Projeto Fechado para Open Source
 
-Gostaria de compartilhar com vocês o racional por trás deste projeto:
+O NRA Sentinel nasceu como um projeto exclusivo para os membros do canal NetworkRA. Essa fase restrita foi essencial como um período de homologação, onde validamos a estabilidade do código, a precisão da Safelist e a performance do motor no FortiOS.
 
-Eu adoraria poder distribuir essa infraestrutura de forma totalmente aberta para toda a comunidade. Porém, o desenvolvimento do NRA Sentinel exige muitas horas de estudo, pesquisa e tempo para manter o projeto ativo.
+Hoje, com o motor maduro e provado em combate (incluindo *0-days* e infraestruturas maliciosas antes mesmo das assinaturas oficiais de mercado), decidi **abrir 100% do projeto para a comunidade**. Acredito que a defesa cibernética se faz em conjunto e que proteger infraestruturas críticas não deve ter barreiras. 
 
-A decisão de manter o acesso exclusivo para os membros do canal **não visa o enriquecimento próprio**, mas sim:
-
-1. **Ser justo com quem apoia meu trabalho:** Basicamente é uma forma de retribuir aos amigos que acreditam e contribuem com o canal NetworkRA.
-2. **Sustentabilidade do Projeto:** O apoio dos inscritos/membros é sempre muito importante e me mantém motivado a continuar evoluindo o projeto em busca de melhorias contínuas.
-3. **Valorização Profissional:** Acredito que o compartilhamento técnico deve andar junto com a valorização do tempo e do esforço de cada um. Valorizar o tempo dedicado à engenharia de dados é o que transforma uma simples lista em uma solução real de proteção 0-day. O tempo é o nosso bem mais precioso; nunca o desmereça.
+A ferramenta agora é gratuita. O tempo dedicado à engenharia de dados e infraestrutura é a minha contribuição para fortalecer o nosso ecossistema.
 
 ---
 
-### 📦 Feeds Disponíveis para Membros
+### 📦 Feeds Disponíveis (Aberto à Comunidade)
 
-Ao se tornar um apoiador, você terá acesso aos seguintes conectores:
+O acesso agora é público. Você tem à disposição os seguintes conectores para o seu firewall:
 
 * **IP Threat Feed:** Lista de endereços IPs validados para políticas de bloqueio (Firewall Policy).
 * **Domain Threat / FortiGuard Category Feed:** FQDNs e URLs para proteção de DNS (DNS Filter) ou URL (Web Filter).
-* **Malware Hash Feed:** Assinaturas de arquivos para reforço do motor de Antivírus (AV Profile).
+* **Malware Hash Feed:** Assinaturas de arquivos para reforço do motor de Antivírus com a nossa lógica de *Rolling Buffer* (AV Profile).
 
 ---
 
@@ -199,13 +195,12 @@ config system external-resource
 end
 ```
 #### --- CONFIGURAÇÃO DO NRA SENTINEL (TIER 1) ---
-#### IMPORTANTE: Substitua 'SEU_TOKEN_AQUI' pelo seu TOKEN recebido no chat do Linkedin
 ```
 config system external-resource
     edit "NRA_Sentinel_IPs"
         set type address
         set username "networkra"
-        set password SEU_TOKEN_AQUI
+        set password ENC weGSO5BLSuVszyE4uZR3Ch/6rVXkC9IRunTQm9QlA5xLErpSM6Ihs4HObBNz5OatXT/Yi/9Ja7xH32mvy0hh2MUxW3T7PaxkMZNdDWCwayrUJwBd4F53SewLaHfQljZoYaYtUHXTsYev9uvDFxX+ofz/CMs/55Na24wLxCW/PUIsS5j9mAphzUVXBwRgfHNVy2RlZ1lmMjY3dkVA
         set resource "https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-ips-critical-1.txt"
         set refresh-rate 60
     next
@@ -213,21 +208,21 @@ config system external-resource
         set type domain
         set category 192
         set username "networkra"
-        set password SEU_TOKEN_AQUI
+        set password ENC 4D5FFvClLvwyL5Ybt7t/6eSh5uTb66LAu1DMzfmkyXnvP/akMhEqPYD6geMHoUAE6CSpJ84G+JC+OqanQTFpJ5pPeSoR8khdJln4otfX6NhnO3lTXvwFQtMRZxcM2Cthi+y01s3Wtn5/lBeyWf5dOprfwXxwcQ2Tet4/FgyXcbd4OH1uuwbiIoKfOqITkSLFQz9EHllmMjY3dkVA
         set resource "https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-dom-critical-1.txt"
         set refresh-rate 60
     next
     edit "NRA_Sentinel_Domain-WF"
         set category 193
         set username "networkra"
-        set password SEU_TOKEN_AQUI
+        set password ENC z002m8awkQtezNKjUdnrdmezsHqmgNLINfP9mkJELYn4p0V4R9zqkdqYhusisbpFL56baGW+k7GGov6jKI8B084mLcp+p7qWwbA6VsNrmPlp9+YrG9pKo+EIAYdx7X2qq9GF9sXdxkQoPxvaLnMzr17Bh6iEyke5SwalpgrhKixaa4P4LMZQZGrkH1prnsrCeY3Xc1lmMjY3dkVA
         set resource "https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-dom-critical-1.txt"
         set refresh-rate 60
     next
     edit "NRA_Sentinel_Malware-Hash"
         set type malware
         set username "networkra"
-        set password SEU_TOKEN_AQUI
+        set password ENC ajetWcf3r0vpYq/CgQbCUzN4RU1mGo2edJxKZlAHseAoPJVZ/u72nsScyIFRTRf3GJAwlX43cYcdkd2gCbG7Bo2kR4Li9YSM7mOPl+iKNlmK5ONSG0W6VrTT5Frq8Wo3csdc3Xj3cEgd/3BoRdZbP2id8xi+FNxWJenoMW/+7v4RvlB2POobmFyRpFWfHgVXdhgNcFlmMjY3dkVA
         set resource "https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-hash-critical-1.txt"
         set refresh-rate 60
     next
