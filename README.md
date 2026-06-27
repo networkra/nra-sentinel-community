@@ -41,7 +41,7 @@ Para garantir que infraestruturas legítimas não sejam bloqueadas acidentalment
 
 * **Atualização:** Os feeds são processados a cada 4 horas automaticamente.
 * **Persistência:** O motor mantém o histórico acumulado (não apaga registros antigos validados).
-* **Otimização:** Arquivos organizados com até 49.999 linhas para garantir performance no FortiOS.
+* **Otimização:** Arquivos organizados com até 35.000 linhas para garantir performance no FortiOS.
 * **Limpeza:** Dados sanitizados (sem protocolos ou portas), prontos para leitura nativa do firewall.
 
 ---
