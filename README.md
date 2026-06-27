@@ -69,15 +69,22 @@ Hoje, com o motor maduro e provado em combate (incluindo *0-days* e infraestrutu
 
 A ferramenta agora é gratuita. O tempo dedicado à engenharia de dados e infraestrutura é a minha contribuição para fortalecer o nosso ecossistema.
 
----
-
-### 📦 Feeds Disponíveis (Aberto à Comunidade)
-
 O acesso agora é público. Você tem à disposição os seguintes conectores para o seu firewall:
 
 * **IP Threat Feed:** Lista de endereços IPs validados para políticas de bloqueio (Firewall Policy).
 * **Domain Threat / FortiGuard Category Feed:** FQDNs e URLs para proteção de DNS (DNS Filter) ou URL (Web Filter).
 * **Malware Hash Feed:** Assinaturas de arquivos para reforço do motor de Antivírus com a nossa lógica de *Rolling Buffer* (AV Profile).
+
+---
+
+### 💎 Como Acessar e Acompanhar
+
+A barreira de entrada acabou! Você não precisa mais preencher formulários ou aguardar tokens de liberação. Siga os passos abaixo para proteger o seu ambiente:
+
+1. **Implementação Direta:** Vá até o final desta página, abra o **Guia de Configuração Rápida (FortiOS CLI)**, copie os scripts e aplique diretamente no seu equipamento.
+2. **Acompanhe ao Vivo (O Pulse do Sentinel):** Criei um canal exclusivo no Telegram onde a nossa API dispara alertas em tempo real sempre que um novo *0-day*, IP malicioso ou hash entra na lista de bloqueio.
+🔗 **Entre no grupo e acompanhe os bloqueios:** [Telegram - NRA Sentinel Alerts](https://t.me/+jHlbAlp-7Xg0MTJh)
+3. **Apoie o Canal (Opcional):** O uso do Sentinel é 100% gratuito. No entanto, se o projeto agregar valor à sua operação corporativa e você quiser apoiar a evolução da ferramenta e de mais recursos, considere se tornar membro do [Canal NetworkRA no YouTube](https://www.youtube.com/channel/UCs8isxhuF4phuQXimE52tOg/join). Além de apoiar o projeto, você ganha acesso a Laboratórios Práticos (Hands-on): Tudo o que você precisa para montar seu lab do zero. Imagens, arquivos VMware e topologias .unl prontas para importar no EVE-NG, simulando as estruturas MSSP mais procuradas do mercado. Automação & Gestão: Automações em Python, rotinas de backup e Study Guides completos. Inteligência para FortiAnalyzer: Templates de relatórios (Reports) avançados, Handlers e Correlation Handlers prontos para implementar. Agentes de IA (GEMS Pro): Acesso direto aos nossos agentes personalizados do Gemini Pro, altamente treinados e especializados em arquitetura e troubleshooting de produtos Fortinet.
 
 ---
 
@@ -91,18 +98,6 @@ O canal **NetworkRA** é especializado em **Arquitetura MSSP e Segurança de Red
 * **Automação & Gestão:** Desenvolvimento de ferramentas de automação (Python Scripts) como o *SD-WAN Builder* e gestão centralizada via FortiManager/FortiAnalyzer.
 * **Metodologia Hands-on:** Todo o conteúdo é validado em cenários reais utilizando o **EVE-NG**, com arquivos de laboratório exclusivos para membros no Google Drive.
 * **Acessibilidade Global:** Vídeos produzidos em Português com legendas profissionais revisadas em **Inglês** e **Espanhol**.
-
----
-
-### 💎 Como solicitar seu acesso
-
-Para utilizar os feeds do **NRA Sentinel** e acessar os materiais exclusivos do canal, siga o fluxo abaixo:
-
-1. **Seja Membro:** Torne-se um membro do [Canal NetworkRA no YouTube](https://www.youtube.com/channel/UCs8isxhuF4phuQXimE52tOg/join).
-2. **Preencha o Forms**: Na área de membros (comunidade do youtube) você encontra um Forms para cadastro.
-3. **Aguarde os 7 dias:** Por questões de **compliance**, assim como o Google-Drive (UNL, Scripts, Labs e Recursos), GEMS Pro e o NRA Sentinel, o acesso é liberado após a primeira semana de assinatura ativa.
-4. **Fale comigo no LinkedIn:** Envie uma mensagem no meu [chat privado do LinkedIn](https://www.linkedin.com/in/networkra/) informando seu interesse e usuário de membro.
-5. **Liberação:** Eu mesmo irei validar e enviar seu **Token Pessoal** junto com o **Script de Configuração** completo, incluindo também as listas de acesso mais utilizadas do mercado que agregarão valor ao NRA Sentinel.
 
 ---
 
