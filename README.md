@@ -69,7 +69,7 @@ Hoje, com o motor maduro e provado em combate (incluindo *0-days* e infraestrutu
 
 A ferramenta agora é gratuita. O tempo dedicado à engenharia de dados e infraestrutura é a minha contribuição para fortalecer o nosso ecossistema.
 
-O acesso agora é público. Você tem à disposição os seguintes conectores para o seu firewall:
+Você tem à disposição os seguintes conectores para o seu firewall:
 
 * **IP Threat Feed:** Lista de endereços IPs validados para políticas de bloqueio (Firewall Policy).
 * **Domain Threat / FortiGuard Category Feed:** FQDNs e URLs para proteção de DNS (DNS Filter) ou URL (Web Filter).
