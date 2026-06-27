@@ -65,9 +65,9 @@ No cenário de ameaças cibernéticas, o volume de hashes de malware cresce expo
 
 O NRA Sentinel nasceu como um projeto exclusivo para os membros do canal NetworkRA. Essa fase restrita foi essencial como um período de homologação, onde validamos a estabilidade do código, a precisão da Safelist e a performance do motor no FortiOS.
 
-Hoje, com o motor maduro e provado em combate (incluindo *0-days* e infraestruturas maliciosas antes mesmo das assinaturas oficiais de mercado), decidi **abrir 100% do projeto para a comunidade**. Acredito que a defesa cibernética se faz em conjunto e que proteger infraestruturas críticas não deve ter barreiras. 
+Hoje, com o motor maduro e validado (incluindo *0-days* e infraestruturas maliciosas antes mesmo das assinaturas oficiais), decidi **abrir 100% do projeto para a comunidade**. Acredito que a defesa cibernética se faz em conjunto e que proteger infraestruturas críticas não deve ter barreiras. 
 
-A ferramenta agora é gratuita. O tempo dedicado à engenharia de dados e infraestrutura é a minha contribuição para fortalecer o nosso ecossistema.
+O tempo dedicado a este projeto é a minha contribuição para fortalecer o nosso ecossistema.
 
 Você tem à disposição os seguintes conectores para o seu firewall:
 
@@ -79,7 +79,7 @@ Você tem à disposição os seguintes conectores para o seu firewall:
 
 ### 💎 Como Acessar e Acompanhar
 
-A barreira de entrada acabou! Você não precisa mais preencher formulários ou aguardar tokens de liberação. Siga os passos abaixo para proteger o seu ambiente:
+Siga os passos abaixo para proteger o seu ambiente:
 
 1. **Implementação Direta:** Vá até o final desta página, abra o **Guia de Configuração Rápida (FortiOS CLI)**, copie os scripts e aplique diretamente no seu equipamento.
 2. **Acompanhe ao Vivo (O Pulse do Sentinel):** Criei um canal exclusivo no Telegram onde a nossa API dispara alertas em tempo real sempre que um novo *0-day*, IP malicioso ou hash entra na lista de bloqueio.
