@@ -186,7 +186,7 @@ config system external-resource
     next
 end
 ```
-#### --- CONFIGURAÇÃO DO NRA SENTINEL (TIER 1) ---
+#### --- CONFIGURAÇÃO DO NRA SENTINEL ---
 ```
 config system external-resource
     edit "NRA_Sentinel_IPs"
