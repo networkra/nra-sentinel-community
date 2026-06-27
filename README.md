@@ -99,11 +99,8 @@ O canal **NetworkRA** é especializado em **Arquitetura MSSP e Segurança de Red
 * **Metodologia Hands-on:** Todo o conteúdo é validado em cenários reais utilizando o **EVE-NG**, com arquivos de laboratório exclusivos para membros no Google Drive.
 * **Acessibilidade Global:** Vídeos produzidos em Português com legendas profissionais revisadas em **Inglês** e **Espanhol**.
 
----
-
-### 🌐 Idiomas e Acessibilidade
-
 Embora o idioma principal do canal seja o **Português**, acreditamos na democratização do conhecimento técnico:
+
 * **Legendas Profissionais:** Todos os vídeos possuem legendas revisadas manualmente em **Inglês** e **Espanhol**.
 * **Comunidade Global:** Profissionais à nível global já utilizam as nossas arquiteturas como referência.
 
