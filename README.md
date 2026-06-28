@@ -122,15 +122,6 @@ Siga os passos abaixo para proteger o seu ambiente:
 
 ---
 
-### 🤝 Créditos e Comunidade
-
-O **NRA Sentinel** cresce graças ao feedback e às contribuições de profissionais que testam o motor em ambientes reais de produção:
-
-*   **@caldeira4229:** Pela curadoria essencial da base de provedores de DNS utilizada na nossa Safelist (AdGuard).
-*   **@RodrigoAssinger:** Pela visão de arquiteto que guiou a implementação da nossa esteira segmentada (Multi-Tier), permitindo o suporte escalável para hardwares Mid-Range e High-End.
-
----
-
 ### <mark>&nbsp;🚀 Guia de Configuração Rápida (FortiOS CLI)&nbsp;</mark>
 
 ---
@@ -533,6 +524,15 @@ config webfilter profile
 end
 ```
 </details>
+
+---
+
+### 🤝 Créditos e Comunidade
+
+O **NRA Sentinel** cresce graças ao feedback e às contribuições de profissionais que testam o motor em ambientes reais de produção:
+
+*   **@caldeira4229:** Pela curadoria essencial da base de provedores de DNS utilizada na nossa Safelist (AdGuard).
+*   **@RodrigoAssinger:** Pela visão de arquiteto que guiou a implementação da nossa esteira segmentada (Multi-Tier), permitindo o suporte escalável para hardwares Mid-Range e High-End.
 
 ---
 
