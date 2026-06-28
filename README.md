@@ -39,25 +39,31 @@ Para garantir que infraestruturas legítimas não sejam bloqueadas acidentalment
 
 ### ⚙️ Detalhes do Funcionamento
 
-* **Atualização:** Os feeds são processados a cada 4 horas automaticamente.
-* **Persistência:** O motor mantém o histórico acumulado (não apaga registros antigos validados).
-* **Otimização:** Arquivos organizados com até 35.000 linhas para garantir performance no FortiOS.
-* **Limpeza:** Dados sanitizados (sem protocolos ou portas), prontos para leitura nativa do firewall.
+* **Atualização:** Os feeds são processados automaticamente a cada 4 horas.
+* **Persistência:** O motor mantém o histórico acumulado (regra FIFO para rotatividade).
+* **Limpeza:** Dados sanitizados (removidos protocolos, portas e *query strings*), prontos para leitura nativa via CLI.
+* **Segmentação por Hardware (Tiers):** Entregamos inteligência dimensionada conforme a capacidade de memória RAM do seu appliance.
 
 ---
 
-### 🛡️ Rotação
+### 🛡️ Rotação e Performance (Multi-Tier)
 
-No cenário de ameaças cibernéticas, o volume de hashes de malware cresce exponencialmente. Para manter a filosofia **Sniper** (precisão sobre volume) e garantir que o **NRA Sentinel** não sobrecarregue o hardware do seu FortiGate (especialmente modelos de entrada como 40F, 60F e 80F), implementamos uma lógica de **Rolling Buffer**:
+Para manter a filosofia **Sniper** (precisão sobre volume), o NRA Sentinel agora entrega a inteligência na medida certa para o seu hardware, garantindo estabilidade no **WAD/IPS Engine** e trabalhando para manter seu FortiOS fora de *Conserve Mode*:
 
-* **Capacidade Inteligente:** O feed de hashes é limitado automaticamente aos **35.000 registros mais recentes**.
-* **Performance Garantida:** Mantemos a lista bem abaixo do limite técnico de 50.000 entradas do FortiOS, garantindo que o consumo de memória (**WAD/IPS Engine**) permaneça estável e o sistema opere fora do *Conserve Mode*.
-* **Foco no que é Ativo:** Malwares de campanhas obsoletas são "podados" automaticamente, garantindo que sua proteção esteja sempre focada em ameaças ativas e variantes de **0-day**.
+| Tier de Hardware | Modelo de Referência | Capacidade por Feed |
+| :--- | :--- | :--- |
+| **Entry-Level** | 40F, 60F, 80F (2GB RAM) | 35.000 IoCs |
+| **Mid-Range** | 100F a 600F (4GB-8GB RAM) | 150.000 IoCs |
+| **High-End** | Data Centers / Clusters | 300.000 IoCs |
+
+> [!NOTE]
+> **Como escolher o seu feed?**
+> A escolha do Tier deve ser feita com base na memória RAM do seu appliance. Se o dispositivo possui 2GB de RAM, utilize obrigatoriamente a versão `critical` (Entry). Se você gerencia ambientes com caixas de maior porte (Mid ou High), pode escalar o nível de proteção utilizando os arquivos `mid-critical` ou `high-critical` para uma maior abrangência de ameaças.
 
 > [!IMPORTANT]
-> **Complemento, não Substituição:** O NRA Sentinel **não tem o objetivo de substituir a base de dados do FortiGuard**. O FortiGuard é a sua infantaria global e essencial. O Sentinel atua como um **Sniper de elite**: uma camada extra de inteligência cirúrgica, focada em indicadores de alta fidelidade e ameaças emergentes que acabaram de ser detectadas nos laboratórios.
+> **Complemento, não Substituição:** O NRA Sentinel **não substitui a base de dados do FortiGuard**. O FortiGuard é a sua defesa global. O Sentinel atua como um **Sniper de elite**: uma camada extra de inteligência cirúrgica focada em indicadores de altíssima fidelidade e ameaças emergentes (*0-day*) que acabaram de ser catalogadas.
 
-*A eficiência de um feed de Threat Intel não é medida por quantos itens ele contém, mas pela relevância do que ele bloqueia hoje.*
+*A eficiência de um feed de Threat Intel não é medida pela quantidade de itens, mas pela relevância do que ele bloqueia no seu ambiente hoje.*
 
 ---
 
@@ -90,6 +96,12 @@ Siga os passos abaixo para proteger o seu ambiente:
 
 ### 🚀 Changelog: NRA Sentinel V33.5
 
+**Escalabilidade de Hardware (28/06/2026)**
+
+* 🏗️ **Arquitetura Multi-Tier:** O motor agora compila três níveis de feeds distintos (`Entry`, `Mid-Range`, `High-End`). Isso respeita o uso de memória (RAM) conforme a capacidade do seu FortiGate, evitando *Conserve Mode* em caixas menores enquanto entrega um arsenal de até 300.000 IoCs para ambientes de missão crítica.
+* ⚡ **Segregação de Pipelines:** Implementamos novos fluxos de automação (GitHub Actions) escalonados com offset de tempo, garantindo a atualização contínua e simultânea de todos os Tiers sem colisão de requisições às APIs (evitando *Rate Limit*).
+* 📊 **Telemetria Operacional:** O relatório de sincronização (Telegram) agora entrega mensagens de status para cada Tier, permitindo que o administrador acompanhe os feeds em tempo real.
+
 **Sanitização Avançada de IoCs e Estabilidade (28/06/2026)**
 * 🧹 **Filtro de Query Strings (URL Clean-up):** Aprimoramento da função `clean_indicator` no Python para identificar e remover automaticamente parâmetros de busca web e caracteres especiais (como `?` e `&`) de domínios reportados "sujos" pelas fontes globais. O motor agora extrai estritamente o FQDN (Fully Qualified Domain Name).
 * 🛡️ **Prevenção de Falhas no External Connector:** Esse tratamento resolve erros pontuais de *parsing* (falha de leitura de sintaxe) que faziam o *daemon* do FortiOS rejeitar linhas inválidas. Isso garante que o firewall absorva a lista de ameaças na íntegra, sem abortar a sincronização.
@@ -103,8 +115,10 @@ Siga os passos abaixo para proteger o seu ambiente:
 
 ### <mark>&nbsp;🚀 Guia de Configuração Rápida (FortiOS CLI)&nbsp;</mark>
 
+---
+
 <details>
-<summary><b>👉 Clique aqui para expandir o Script de Configuração</b></summary>
+<summary><b>👉 Entry-Level - Clique aqui para expandir o Script de Configuração</b></summary>
 
 <br>
 
@@ -175,6 +189,273 @@ config system external-resource
         set username "networkra"
         set password ENC ajetWcf3r0vpYq/CgQbCUzN4RU1mGo2edJxKZlAHseAoPJVZ/u72nsScyIFRTRf3GJAwlX43cYcdkd2gCbG7Bo2kR4Li9YSM7mOPl+iKNlmK5ONSG0W6VrTT5Frq8Wo3csdc3Xj3cEgd/3BoRdZbP2id8xi+FNxWJenoMW/+7v4RvlB2POobmFyRpFWfHgVXdhgNcFlmMjY3dkVA
         set resource "https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-hash-critical-1.txt"
+        set refresh-rate 60
+    next
+end
+```
+#### --- CRIAÇÃO DA POLÍTICA DE DENY (TOP OF POLICY) ---
+#### Nota: Neste exemplo estruturamos a Policy com o ID 816598, considerando interface Lan e virtual-wan-link.
+```
+config firewall policy
+    edit 816598
+        set name "Deny_Threat-Intel"
+        set srcintf "Lan"
+        set dstintf "virtual-wan-link"
+        set srcaddr "all"
+        set dstaddr "OpenDBL_blocklist.de" "OpenDBL_BruteForce" "OpenDBL_TOR" "OpenDBL_Threats" "OpenDBL_IPSum" "blocklist.de" "cinsscore" "Serpro" "NRA_Sentinel_IPs"
+        set schedule "always"
+        set service "ALL"
+        set action deny
+        set logtraffic all
+    next
+end
+```
+#### Mover a regra para o topo (substitua 'ID_DA_PRIMEIRA_REGRA' pelo ID real)
+```
+config firewall policy
+    move 816598 before ID_DA_PRIMEIRA_REGRA
+end
+```
+#### --- APLICAÇÃO NOS PROFILES DE SEGURANÇA ---
+Além dos IPs, a inteligência do NRA Sentinel atua nas camadas de inspeção. Aplique os conectores criados aos profiles de segurança que você já utiliza nas suas regras de acesso (Accept).
+
+**1. Proteção contra Malware**
+Aplica a lista de hashes bloqueados globalmente pelo Sentinel.
+```
+config antivirus profile
+    edit "SEU_PROFILE_AV"
+        set external-blocklist "NRA_Sentinel_Malware-Hash"
+    next
+end
+```
+**2. Bloqueio de Domínios Maliciosos**
+O feed nra-dom-critical-1.txt pode ser usado tanto no DNS Filter (recomendado para pegar ataques na raiz/resolução) quanto no Web Filter (para inspeção de URL/SNI). Você pode aplicar em um deles ou em ambos, dependendo da arquitetura do seu ambiente. Por experiência, recomendamos o uso no profile de Web Filter.
+
+Opção: Aplicação via Web Filter (Categoria 193)
+```
+config webfilter profile
+    edit "SEU_PROFILE_WF"
+        config ftgd-wf
+            unset options
+            config filters
+                edit 0
+                    set category 193
+                    set action block
+                next
+            end
+        end
+    next
+end
+```
+</details>
+
+---
+<details>
+<summary><b>👉 Midrange - Clique aqui para expandir o Script de Configuração</b></summary>
+
+<br>
+
+#### --- CONFIGURAÇÃO DOS RECURSOS EXTERNOS (LISTAS GLOBAIS) ---
+```
+config system external-resource
+    edit "OpenDBL_blocklist.de"
+        set type address
+        set resource "https://opendbl.net/lists/blocklistde-all.list"
+        set refresh-rate 1440
+    next
+    edit "OpenDBL_BruteForce"
+        set type address
+        set resource "https://opendbl.net/lists/bruteforce.list"
+        set refresh-rate 1450
+    next
+    edit "OpenDBL_TOR"
+        set type address
+        set resource "https://opendbl.net/lists/tor-exit.list"
+        set refresh-rate 1460
+    next
+    edit "OpenDBL_Threats"
+        set type address
+        set resource "https://opendbl.net/lists/etknown.list"
+        set refresh-rate 1470
+    next
+    edit "OpenDBL_IPSum"
+        set type address
+        set resource "https://opendbl.net/lists/ipsum.list"
+        set refresh-rate 1490
+    next
+    edit "blocklist.de"
+        set type address
+        set resource "https://blocklist.de/lists/all.txt"
+        set refresh-rate 1440
+    next
+    edit "cinsscore"
+        set type address
+        set resource "http://cinsscore.com/list/ci-badguys.txt"
+        set refresh-rate 1480
+    next
+    edit "Serpro"
+        set type address
+        set resource "https://s3.i02.estaleiro.serpro.gov.br/blocklist/blocklist.txt"
+        set refresh-rate 1490
+    next
+end
+```
+#### --- CONFIGURAÇÃO DO NRA SENTINEL ---
+```
+config system external-resource
+    edit "NRA_Sentinel_IPs"
+        set type address
+        set username "networkra"
+        set password ENC weGSO5BLSuVszyE4uZR3Ch/6rVXkC9IRunTQm9QlA5xLErpSM6Ihs4HObBNz5OatXT/Yi/9Ja7xH32mvy0hh2MUxW3T7PaxkMZNdDWCwayrUJwBd4F53SewLaHfQljZoYaYtUHXTsYev9uvDFxX+ofz/CMs/55Na24wLxCW/PUIsS5j9mAphzUVXBwRgfHNVy2RlZ1lmMjY3dkVA
+        set resource "https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-ips-mid-critical-1.txt"
+        set refresh-rate 60
+    next
+    edit "NRA_Sentinel_Domain-WF"
+        set category 193
+        set username "networkra"
+        set password ENC z002m8awkQtezNKjUdnrdmezsHqmgNLINfP9mkJELYn4p0V4R9zqkdqYhusisbpFL56baGW+k7GGov6jKI8B084mLcp+p7qWwbA6VsNrmPlp9+YrG9pKo+EIAYdx7X2qq9GF9sXdxkQoPxvaLnMzr17Bh6iEyke5SwalpgrhKixaa4P4LMZQZGrkH1prnsrCeY3Xc1lmMjY3dkVA
+        set resource "https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-dom-mid-critical-1.txt"
+        set refresh-rate 60
+    next
+    edit "NRA_Sentinel_Malware-Hash"
+        set type malware
+        set username "networkra"
+        set password ENC ajetWcf3r0vpYq/CgQbCUzN4RU1mGo2edJxKZlAHseAoPJVZ/u72nsScyIFRTRf3GJAwlX43cYcdkd2gCbG7Bo2kR4Li9YSM7mOPl+iKNlmK5ONSG0W6VrTT5Frq8Wo3csdc3Xj3cEgd/3BoRdZbP2id8xi+FNxWJenoMW/+7v4RvlB2POobmFyRpFWfHgVXdhgNcFlmMjY3dkVA
+        set resource "https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-hash-mid-critical-1.txt"
+        set refresh-rate 60
+    next
+end
+```
+#### --- CRIAÇÃO DA POLÍTICA DE DENY (TOP OF POLICY) ---
+#### Nota: Neste exemplo estruturamos a Policy com o ID 816598, considerando interface Lan e virtual-wan-link.
+```
+config firewall policy
+    edit 816598
+        set name "Deny_Threat-Intel"
+        set srcintf "Lan"
+        set dstintf "virtual-wan-link"
+        set srcaddr "all"
+        set dstaddr "OpenDBL_blocklist.de" "OpenDBL_BruteForce" "OpenDBL_TOR" "OpenDBL_Threats" "OpenDBL_IPSum" "blocklist.de" "cinsscore" "Serpro" "NRA_Sentinel_IPs"
+        set schedule "always"
+        set service "ALL"
+        set action deny
+        set logtraffic all
+    next
+end
+```
+#### Mover a regra para o topo (substitua 'ID_DA_PRIMEIRA_REGRA' pelo ID real)
+```
+config firewall policy
+    move 816598 before ID_DA_PRIMEIRA_REGRA
+end
+```
+#### --- APLICAÇÃO NOS PROFILES DE SEGURANÇA ---
+Além dos IPs, a inteligência do NRA Sentinel atua nas camadas de inspeção. Aplique os conectores criados aos profiles de segurança que você já utiliza nas suas regras de acesso (Accept).
+
+**1. Proteção contra Malware**
+Aplica a lista de hashes bloqueados globalmente pelo Sentinel.
+```
+config antivirus profile
+    edit "SEU_PROFILE_AV"
+        set external-blocklist "NRA_Sentinel_Malware-Hash"
+    next
+end
+```
+**2. Bloqueio de Domínios Maliciosos**
+O feed nra-dom-critical-1.txt pode ser usado tanto no DNS Filter (recomendado para pegar ataques na raiz/resolução) quanto no Web Filter (para inspeção de URL/SNI). Você pode aplicar em um deles ou em ambos, dependendo da arquitetura do seu ambiente. Por experiência, recomendamos o uso no profile de Web Filter.
+
+Opção: Aplicação via Web Filter (Categoria 193)
+```
+config webfilter profile
+    edit "SEU_PROFILE_WF"
+        config ftgd-wf
+            unset options
+            config filters
+                edit 0
+                    set category 193
+                    set action block
+                next
+            end
+        end
+    next
+end
+```
+</details>
+
+---
+
+<details>
+<summary><b>👉 High-End - Clique aqui para expandir o Script de Configuração</b></summary>
+
+<br>
+
+#### --- CONFIGURAÇÃO DOS RECURSOS EXTERNOS (LISTAS GLOBAIS) ---
+```
+config system external-resource
+    edit "OpenDBL_blocklist.de"
+        set type address
+        set resource "https://opendbl.net/lists/blocklistde-all.list"
+        set refresh-rate 1440
+    next
+    edit "OpenDBL_BruteForce"
+        set type address
+        set resource "https://opendbl.net/lists/bruteforce.list"
+        set refresh-rate 1450
+    next
+    edit "OpenDBL_TOR"
+        set type address
+        set resource "https://opendbl.net/lists/tor-exit.list"
+        set refresh-rate 1460
+    next
+    edit "OpenDBL_Threats"
+        set type address
+        set resource "https://opendbl.net/lists/etknown.list"
+        set refresh-rate 1470
+    next
+    edit "OpenDBL_IPSum"
+        set type address
+        set resource "https://opendbl.net/lists/ipsum.list"
+        set refresh-rate 1490
+    next
+    edit "blocklist.de"
+        set type address
+        set resource "https://blocklist.de/lists/all.txt"
+        set refresh-rate 1440
+    next
+    edit "cinsscore"
+        set type address
+        set resource "http://cinsscore.com/list/ci-badguys.txt"
+        set refresh-rate 1480
+    next
+    edit "Serpro"
+        set type address
+        set resource "https://s3.i02.estaleiro.serpro.gov.br/blocklist/blocklist.txt"
+        set refresh-rate 1490
+    next
+end
+```
+#### --- CONFIGURAÇÃO DO NRA SENTINEL ---
+```
+config system external-resource
+    edit "NRA_Sentinel_IPs"
+        set type address
+        set username "networkra"
+        set password ENC weGSO5BLSuVszyE4uZR3Ch/6rVXkC9IRunTQm9QlA5xLErpSM6Ihs4HObBNz5OatXT/Yi/9Ja7xH32mvy0hh2MUxW3T7PaxkMZNdDWCwayrUJwBd4F53SewLaHfQljZoYaYtUHXTsYev9uvDFxX+ofz/CMs/55Na24wLxCW/PUIsS5j9mAphzUVXBwRgfHNVy2RlZ1lmMjY3dkVA
+        set resource "https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-ips-high-critical-1.txt"
+        set refresh-rate 60
+    next
+    edit "NRA_Sentinel_Domain-WF"
+        set category 193
+        set username "networkra"
+        set password ENC z002m8awkQtezNKjUdnrdmezsHqmgNLINfP9mkJELYn4p0V4R9zqkdqYhusisbpFL56baGW+k7GGov6jKI8B084mLcp+p7qWwbA6VsNrmPlp9+YrG9pKo+EIAYdx7X2qq9GF9sXdxkQoPxvaLnMzr17Bh6iEyke5SwalpgrhKixaa4P4LMZQZGrkH1prnsrCeY3Xc1lmMjY3dkVA
+        set resource "https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-dom-high-critical-1.txt"
+        set refresh-rate 60
+    next
+    edit "NRA_Sentinel_Malware-Hash"
+        set type malware
+        set username "networkra"
+        set password ENC ajetWcf3r0vpYq/CgQbCUzN4RU1mGo2edJxKZlAHseAoPJVZ/u72nsScyIFRTRf3GJAwlX43cYcdkd2gCbG7Bo2kR4Li9YSM7mOPl+iKNlmK5ONSG0W6VrTT5Frq8Wo3csdc3Xj3cEgd/3BoRdZbP2id8xi+FNxWJenoMW/+7v4RvlB2POobmFyRpFWfHgVXdhgNcFlmMjY3dkVA
+        set resource "https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-hash-high-critical-1.txt"
         set refresh-rate 60
     next
 end
