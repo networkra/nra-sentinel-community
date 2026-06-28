@@ -98,8 +98,12 @@ Siga os passos abaixo para proteger o seu ambiente:
 
 1. **Implementação Direta:** Vá até o final desta página, abra o **Guia de Configuração Rápida (FortiOS CLI)**, copie os scripts e aplique diretamente no seu equipamento.
 2. **Acompanhe ao Vivo (O Pulse do Sentinel):** Criei um canal exclusivo no Telegram onde a nossa API dispara alertas em tempo real sempre que um novo *0-day*, IP malicioso ou hash entra na lista de bloqueio.
-🔗 **Entre no grupo e acompanhe os bloqueios:** [Telegram - NRA Sentinel Alerts](https://t.me/+jHlbAlp-7Xg0MTJh)
-3. **Apoie o Canal (Opcional):** O uso do Sentinel é 100% gratuito. No entanto, se o projeto agregar valor à sua operação corporativa e você quiser apoiar a evolução da ferramenta e de mais recursos, considere se tornar membro do [Canal NetworkRA no YouTube](https://www.youtube.com/channel/UCs8isxhuF4phuQXimE52tOg/join). Além de apoiar o projeto, você ganha acesso a Laboratórios Práticos (Hands-on): Tudo o que você precisa para montar seu lab do zero. Imagens, arquivos VMware e topologias .unl prontas para importar no EVE-NG, simulando as estruturas MSSP mais procuradas do mercado. Automação & Gestão: Automações em Python, rotinas de backup e Study Guides completos. Inteligência para FortiAnalyzer: Templates de relatórios (Reports) avançados, Handlers e Correlation Handlers prontos para implementar. Agentes de IA (GEMS Pro): Acesso direto aos nossos agentes personalizados do Gemini Pro, altamente treinados e especializados em arquitetura e troubleshooting de produtos Fortinet.
+- 🔗 **Entre no grupo e acompanhe os bloqueios:** [Telegram - NRA Sentinel Alerts](https://t.me/+jHlbAlp-7Xg0MTJh)
+3. **Apoie o Canal (Opcional):** O uso do Sentinel é 100% gratuito. No entanto, se o projeto agregar valor à sua operação corporativa e você quiser apoiar a evolução da ferramenta e de mais recursos, considere se tornar membro do [Canal NetworkRA no YouTube](https://www.youtube.com/channel/UCs8isxhuF4phuQXimE52tOg/join). Além de apoiar o projeto, você ganha acesso:
+- Laboratórios Práticos (Hands-on): Tudo o que você precisa para montar seu lab do zero. Imagens, arquivos VMware e topologias .unl prontas para importar no EVE-NG, simulando as estruturas MSSP mais procuradas do mercado.
+- Automação & Gestão: Automações em Python, rotinas de backup e Study Guides completos.
+- Inteligência para FortiAnalyzer: Templates de relatórios avançados, Handlers e Correlation Handlers prontos para implementar.
+- Agentes de IA (GEMS Pro): Acesso direto aos nossos agentes personalizados do Gemini Pro, altamente treinados e especializados em arquitetura e troubleshooting de produtos Fortinet.
 
 ---
 
