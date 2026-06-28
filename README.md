@@ -88,19 +88,13 @@ Siga os passos abaixo para proteger o seu ambiente:
 
 ---
 
-### 🚀 Changelog: NRA Sentinel V33.5 (28/06/2026)
-**Foco da Atualização: Sanitização Avançada de IoCs e Estabilidade (FortiOS)**
+### 🚀 Changelog: NRA Sentinel V33.5
 
-Nesta atualização, aplicamos um patch crítico na engenharia de higienização de dados (Data Sanitization) para garantir 100% de compatibilidade com o motor de leitura do FortiGate:
-
+**Sanitização Avançada de IoCs e Estabilidade (28/06/2026)**
 * 🧹 **Filtro de Query Strings (URL Clean-up):** Aprimoramento da função `clean_indicator` no Python para identificar e remover automaticamente parâmetros de busca web e caracteres especiais (como `?` e `&`) de domínios reportados "sujos" pelas fontes globais. O motor agora extrai estritamente o FQDN (Fully Qualified Domain Name).
 * 🛡️ **Prevenção de Falhas no External Connector:** Esse tratamento resolve erros pontuais de *parsing* (falha de leitura de sintaxe) que faziam o *daemon* do FortiOS rejeitar linhas inválidas. Isso garante que o firewall absorva a lista de ameaças na íntegra, sem abortar a sincronização.
 
-### 🚀 Changelog: NRA Sentinel V33.5 (24/05/2026)
-**Foco da Atualização: Zero Falsos Positivos e Auditoria de Memória**
-
-Nesta versão, a arquitetura do Sentinel recebeu aprimoramentos críticos voltados para operações de missão crítica em ambientes MSSP:
-
+**Zero Falsos Positivos e Auditoria de Memória (24/05/2026)**
 * 🛡️ **Motor de Exceção Híbrida (Safelist):** Introduzido o arquivo `nra-safelist.txt` na raiz do repositório. Atuando como *Single Source of Truth*, o motor cruza IPs táticos identificados contra uma base de provedores DNS globais legítimos antes da aplicação do bloqueio. Isso mitiga riscos de indisponibilidade acidental em redes de produção.
 * ⚙️ **Engenharia de Memória FIFO Absoluta:** O motor de armazenamento local foi reescrito (migração de `sets` para `dicts`) para garantir ordem cronológica perfeita (First-In, First-Out). Novos IoCs (IPs, Domínios e Hashes) entram estritamente no fim da fila, mantendo a integridade temporal da esteira de ameaças.
 * 📊 **Auditoria de Rotação (Churn Visibility):** Visibilidade total sobre o descarte de artefatos antigos. Ao atingir o limite de proteção de RAM dos equipamentos (35.000 indicadores por categoria), o pipeline do GitHub Actions agora registra no console o cálculo exato do excedente e exibe os artefatos antigos que estão sendo removidos para dar lugar aos novos *0-days*.
