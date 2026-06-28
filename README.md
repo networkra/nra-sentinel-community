@@ -540,6 +540,27 @@ O **NRA Sentinel** cresce graças ao feedback e às contribuições de profissio
 
 ---
 
+### 🏆 Hall da Fama: Apoiadores Oficiais (NetworkRA MSSP)
+
+Hoje, o motor **NRA Sentinel** é **100% gratuito e de código aberto**. No entanto, a pesquisa, o desenvolvimento contínuo (horas de engenharia) e os custos exigem recursos.
+
+Esta seção é dedicada a agradecer publicamente aos arquitetos, analistas e provedores de serviços gerenciados (MSSPs) que reconhecem o valor corporativo gerado por esta ferramenta e optaram por patrocinar diretamente o projeto através do nível **NetworkRA MSSP**.
+
+Graças a vocês, o Sentinel continua evoluindo, gratuito e sem amarras comerciais.
+
+| 🛡️ Patrono / Empresa | 🔗 Perfil Profissional | 📅 Apoiador Desde |
+| :--- | :--- | :--- |
+| **Seu Nome ou Empresa Aqui** | [LinkedIn / Site](#) | Junho/2026 |
+| *Vaga disponível* | - | - |
+| *Vaga disponível* | - | - |
+
+> 💡 **Como ter o seu nome aqui?**
+> Se este projeto economiza tempo da sua equipe ou traz segurança para os seus clientes, considere apoiar a manutenção do código. Torne-se um membro **NetworkRA MSSP** no nosso canal e faça parte da elite que mantém essa inteligência rodando!
+> 
+> 👉 **[Apoie o Projeto Aqui](https://www.youtube.com/@NetworkRA/join)**
+
+---
+
 ### 🚀 O Foco do Canal
 
 O canal **NetworkRA** é especializado em **Arquitetura MSSP e Segurança de Redes**, focado em desmistificar cenários reais de infraestrutura através de laboratórios práticos (**Hands-on**). Nosso objetivo é transformar teoria complexa em implementações funcionais e resilientes.
