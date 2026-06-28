@@ -58,8 +58,17 @@ Para manter a filosofia **Sniper** (precisão sobre volume), o NRA Sentinel agor
 
 > [!NOTE]
 > **Como escolher o seu feed?**
-> A escolha do Tier deve ser feita com base na memória RAM do seu appliance. Se o dispositivo possui 2GB de RAM, utilize obrigatoriamente a versão `critical` (Entry). Se você gerencia ambientes com caixas de maior porte (Mid ou High), pode escalar o nível de proteção utilizando os arquivos `mid-critical` ou `high-critical` para uma maior abrangência de ameaças.
-
+> A escolha do Tier deve ser feita com base na memória RAM do seu appliance. Se o dispositivo possui 2GB de RAM, utilize obrigatoriamente a versão `critical` (Entry). Se você gerencia ambientes com caixas de maior porte (Mid ou High), pode escalar o nível de proteção utilizando os arquivos `mid-critical` ou `high-critical` para uma maior abrangência de ameaças. Exemplo de como validar sua memória:
+```
+NetworkRA # diagnose hardware sysinfo conserve 
+memory conserve mode:                        off
+total RAM:                                         1917 MB
+memory used:                                        796 MB   41% of total RAM
+memory freeable:                                    270 MB   14% of total RAM
+memory used + freeable threshold extreme:          1821 MB   95% of total RAM
+memory used threshold red:                         1687 MB   88% of total RAM
+memory used threshold green:                       1572 MB   82% of total RAM
+```
 > [!IMPORTANT]
 > **Complemento, não Substituição:** O NRA Sentinel **não substitui a base de dados do FortiGuard**. O FortiGuard é a sua defesa global. O Sentinel atua como um **Sniper de elite**: uma camada extra de inteligência cirúrgica focada em indicadores de altíssima fidelidade e ameaças emergentes (*0-day*) que acabaram de ser catalogadas.
 
