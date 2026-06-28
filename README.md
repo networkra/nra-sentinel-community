@@ -52,7 +52,7 @@ Para manter a filosofia **Sniper** (precisão sobre volume), o NRA Sentinel agor
 
 | Tier de Hardware | Modelo de Referência | Capacidade por Feed |
 | :--- | :--- | :--- |
-| **Entry-Level** | 40F, 60F, 80F (2GB RAM) | 35.000 IoCs |
+| **Entry-Level** | 40F, 60F, 80F (2GB-3GB RAM) | 35.000 IoCs |
 | **Mid-Range** | 100F a 600F (4GB-8GB RAM) | 150.000 IoCs |
 | **High-End** | Data Centers / Clusters | 300.000 IoCs |
 
