@@ -88,58 +88,22 @@ Siga os passos abaixo para proteger o seu ambiente:
 
 ---
 
-### 🚀 O Foco do Canal
+### 🚀 Changelog: NRA Sentinel V33.5 (24/05/2026)
+**Foco da Atualização: Auditoria de Memória**
 
-O canal **NetworkRA** é especializado em **Arquitetura MSSP e Segurança de Redes**, focado em desmistificar cenários reais de infraestrutura através de laboratórios práticos (**Hands-on**). Nosso objetivo é transformar teoria complexa em implementações funcionais e resilientes.
+Nesta versão, a arquitetura do Sentinel recebeu aprimoramentos voltados para operações de missão crítica em ambientes MSSP:
 
-* **SD-WAN Expert:** Especialização em estruturas de *Self-Healing* utilizando BGP e *SLA-based steering* (Lowest Cost, Preferência de Network), além de técnicas de **Hardening** para proteger o plano de controle.
-* **VPN & ADVPN Profissional:** Domínio completo de topologias *Hub-and-Spoke*, ADVPN (Single/Multiple Hub), integrações com OSPF (HUBs) Regionais e Hardening proposto com IKEv2 e local-in-policy.
-* **Remote Access & Autenticação:** Implementações robustas de VPN Client com **IKEv2 + EAP**, integração com **RADIUS** (Multi-group membership) e autenticação by DC.
-* **Automação & Gestão:** Desenvolvimento de ferramentas de automação (Python Scripts) como o *SD-WAN Builder* e gestão centralizada via FortiManager/FortiAnalyzer.
-* **Metodologia Hands-on:** Todo o conteúdo é validado em cenários reais utilizando o **EVE-NG**, com arquivos de laboratório exclusivos para membros no Google Drive.
-* **Acessibilidade Global:** Vídeos produzidos em Português com legendas profissionais revisadas em **Inglês** e **Espanhol**.
-
-Embora o idioma principal do canal seja o **Português**, acreditamos na democratização do conhecimento técnico:
-
-* **Legendas Profissionais:** Todos os vídeos possuem legendas revisadas manualmente em **Inglês** e **Espanhol**.
-* **Comunidade Global:** Profissionais à nível global já utilizam as nossas arquiteturas como referência.
+* ⚙️ **Engenharia de Memória FIFO Absoluta:** O motor de armazenamento local foi reescrito (migração de `sets` para `dicts`) para garantir ordem cronológica perfeita (First-In, First-Out). Novos IoCs (IPs, Domínios e Hashes) entram estritamente no fim da fila, mantendo a integridade temporal da esteira de ameaças.
+* 📊 **Auditoria de Rotação (Churn Visibility):** Visibilidade total sobre o descarte de artefatos antigos. Ao atingir o limite de proteção de RAM dos equipamentos (35.000 indicadores por categoria), o pipeline do GitHub Actions agora registra no console o cálculo exato do excedente e exibe os artefatos antigos que estão sendo removidos para dar lugar aos novos *0-days*.
 
 ---
 
-### 👨‍💻 Sobre o Autor
-
-**Robert Alexandrino (NetworkRA)** - *Especialista em Arquiteturas MSSP (SD-WAN) & Network Security Engineer*
-
-Acredito que o compartilhamento técnico deve caminhar junto com a valorização do tempo e do esforço. O tempo é o nosso recurso mais escasso; valorizá-lo é respeitar a sua própria jornada.
-
-#### 🎓 Certificações Fortinet
-
-| Certificação | Tecnologia | Status |
-| :--- | :--- | :--- |
-| **FCSS** | Enterprise Firewall 7.6 Administrator | Pass (2026) |
-| **FCSS** | Enterprise Firewall 7.4 Administrator | Pass (2025) |
-| **FCSS** | Network Security 7.4 Support Engineer | Pass (2025) |
-| **NSE 7** | SD-WAN 7.2 | Pass (2024) |
-| **NSE 7** | Enterprise Firewall 7.0 | Pass (2023) |
-| **NSE 5** | FortiAnalyzer 6.4 | Pass (2022) |
-| **NSE 5** | FortiManager 6.4 | Pass (2022) |
-| **NSE 4** | FortiOS 6.4 | Pass (2021) |
-
----
-
-* [![LinkedIn](https://img.shields.io/badge/LinkedIn-NetworkRA-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/networkra/)
-* [![YouTube](https://img.shields.io/badge/YouTube-NetworkRA-red?style=flat&logo=youtube)](https://www.youtube.com/@NetworkRA)
----
-
-> **Nota de Responsabilidade**:
-> A inteligência do Sentinel é baseada em fontes de terceiros. Embora o esforço para minimizar erros seja constante, a decisão final de bloqueio e o monitoramento do tráfego são de responsabilidade do administrador da rede. Vamos sempre trabalhar com cautela e monitoramento.
-
----
-
-🚀 Guia de Configuração Rápida (FortiOS CLI)
+### <mark>&nbsp;🚀 Guia de Configuração Rápida (FortiOS CLI)&nbsp;</mark>
 
 <details>
-<summary><b>Clique para expandir o Script CLI</b></summary>
+<summary><b>👉 Clique aqui para expandir o Script de Configuração</b></summary>
+
+<br>
 
 #### --- CONFIGURAÇÃO DOS RECURSOS EXTERNOS (LISTAS GLOBAIS) ---
 ```
@@ -196,14 +160,6 @@ config system external-resource
         set resource "https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-ips-critical-1.txt"
         set refresh-rate 60
     next
-    edit "NRA_Sentinel_Domain-DNS"
-        set type domain
-        set category 192
-        set username "networkra"
-        set password ENC 4D5FFvClLvwyL5Ybt7t/6eSh5uTb66LAu1DMzfmkyXnvP/akMhEqPYD6geMHoUAE6CSpJ84G+JC+OqanQTFpJ5pPeSoR8khdJln4otfX6NhnO3lTXvwFQtMRZxcM2Cthi+y01s3Wtn5/lBeyWf5dOprfwXxwcQ2Tet4/FgyXcbd4OH1uuwbiIoKfOqITkSLFQz9EHllmMjY3dkVA
-        set resource "https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-dom-critical-1.txt"
-        set refresh-rate 60
-    next
     edit "NRA_Sentinel_Domain-WF"
         set category 193
         set username "networkra"
@@ -246,7 +202,7 @@ end
 #### --- APLICAÇÃO NOS PROFILES DE SEGURANÇA ---
 Além dos IPs, a inteligência do NRA Sentinel atua nas camadas de inspeção. Aplique os conectores criados aos profiles de segurança que você já utiliza nas suas regras de acesso (Accept).
 
-**1. Proteção contra Malware (Obrigatório)**
+**1. Proteção contra Malware**
 Aplica a lista de hashes bloqueados globalmente pelo Sentinel.
 ```
 config antivirus profile
@@ -255,25 +211,10 @@ config antivirus profile
     next
 end
 ```
-**2. Bloqueio de Domínios Maliciosos (Escolha sua estratégia)**
-O feed nra-dom-critical-1.txt pode ser usado tanto no DNS Filter (recomendado para pegar ataques na raiz/resolução) quanto no Web Filter (para inspeção de URL/SNI). Você pode aplicar em um deles ou em ambos, dependendo da arquitetura do seu ambiente.
+**2. Bloqueio de Domínios Maliciosos**
+O feed nra-dom-critical-1.txt pode ser usado tanto no DNS Filter (recomendado para pegar ataques na raiz/resolução) quanto no Web Filter (para inspeção de URL/SNI). Você pode aplicar em um deles ou em ambos, dependendo da arquitetura do seu ambiente. Por experiência, recomendamos o uso no profile de Web Filter.
 
-Opção A: Aplicação via DNS Filter (Categoria 192)
-```
-config dnsfilter profile
-    edit "SEU_PROFILE_DNS"
-        config ftgd-dns
-            config filters
-                edit 0
-                    set category 192
-                    set action block
-                next
-            end
-        end
-    next
-end
-```
-Opção B: Aplicação via Web Filter (Categoria 193)
+Opção: Aplicação via Web Filter (Categoria 193)
 ```
 config webfilter profile
     edit "SEU_PROFILE_WF"
@@ -293,13 +234,51 @@ end
 
 ---
 
-### 🚀 Changelog: NRA Sentinel V33.5 (24/05/2026)
-**Foco da Atualização: Auditoria de Memória**
+### 🚀 O Foco do Canal
 
-Nesta versão, a arquitetura do Sentinel recebeu aprimoramentos voltados para operações de missão crítica em ambientes MSSP:
+O canal **NetworkRA** é especializado em **Arquitetura MSSP e Segurança de Redes**, focado em desmistificar cenários reais de infraestrutura através de laboratórios práticos (**Hands-on**). Nosso objetivo é transformar teoria complexa em implementações funcionais e resilientes.
 
-* ⚙️ **Engenharia de Memória FIFO Absoluta:** O motor de armazenamento local foi reescrito (migração de `sets` para `dicts`) para garantir ordem cronológica perfeita (First-In, First-Out). Novos IoCs (IPs, Domínios e Hashes) entram estritamente no fim da fila, mantendo a integridade temporal da esteira de ameaças.
-* 📊 **Auditoria de Rotação (Churn Visibility):** Visibilidade total sobre o descarte de artefatos antigos. Ao atingir o limite de proteção de RAM dos equipamentos (35.000 indicadores por categoria), o pipeline do GitHub Actions agora registra no console o cálculo exato do excedente e exibe os artefatos antigos que estão sendo removidos para dar lugar aos novos *0-days*.
+* **SD-WAN Expert:** Especialização em estruturas de *Self-Healing* utilizando BGP e *SLA-based steering* (Lowest Cost, Preferência de Network), além de técnicas de **Hardening** para proteger o plano de controle.
+* **VPN & ADVPN Profissional:** Domínio completo de topologias *Hub-and-Spoke*, ADVPN (Single/Multiple Hub), integrações com OSPF (HUBs) Regionais e Hardening proposto com IKEv2 e local-in-policy.
+* **Remote Access & Autenticação:** Implementações robustas de VPN Client com **IKEv2 + EAP**, integração com **RADIUS** (Multi-group membership) e autenticação by DC.
+* **Automação & Gestão:** Desenvolvimento de ferramentas de automação (Python Scripts) como o *SD-WAN Builder* e gestão centralizada via FortiManager/FortiAnalyzer.
+* **Metodologia Hands-on:** Todo o conteúdo é validado em cenários reais utilizando o **EVE-NG**, com arquivos de laboratório exclusivos para membros no Google Drive.
+* **Acessibilidade Global:** Vídeos produzidos em Português com legendas profissionais revisadas em **Inglês** e **Espanhol**.
+
+Embora o idioma principal do canal seja o **Português**, acreditamos na democratização do conhecimento técnico:
+
+* **Legendas Profissionais:** Todos os vídeos possuem legendas revisadas manualmente em **Inglês** e **Espanhol**.
+* **Comunidade Global:** Profissionais à nível global já utilizam as nossas arquiteturas como referência.
+
+---
+
+### 👨‍💻 Sobre o Autor
+
+**Robert Alexandrino (NetworkRA)** - *Especialista em Arquiteturas MSSP (SD-WAN) & Network Security Engineer*
+
+Acredito que o compartilhamento técnico deve caminhar junto com a valorização do tempo e do esforço. O tempo é o nosso recurso mais escasso; valorizá-lo é respeitar a sua própria jornada.
+
+#### 🎓 Certificações Fortinet
+
+| Certificação | Tecnologia | Status |
+| :--- | :--- | :--- |
+| **FCSS** | Enterprise Firewall 7.6 Administrator | Pass (2026) |
+| **FCSS** | Enterprise Firewall 7.4 Administrator | Pass (2025) |
+| **FCSS** | Network Security 7.4 Support Engineer | Pass (2025) |
+| **NSE 7** | SD-WAN 7.2 | Pass (2024) |
+| **NSE 7** | Enterprise Firewall 7.0 | Pass (2023) |
+| **NSE 5** | FortiAnalyzer 6.4 | Pass (2022) |
+| **NSE 5** | FortiManager 6.4 | Pass (2022) |
+| **NSE 4** | FortiOS 6.4 | Pass (2021) |
+
+---
+
+* [![LinkedIn](https://img.shields.io/badge/LinkedIn-NetworkRA-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/networkra/)
+* [![YouTube](https://img.shields.io/badge/YouTube-NetworkRA-red?style=flat&logo=youtube)](https://www.youtube.com/@NetworkRA)
+---
+
+> **Nota de Responsabilidade**:
+> A inteligência do Sentinel é baseada em fontes de terceiros. Embora o esforço para minimizar erros seja constante, a decisão final de bloqueio e o monitoramento do tráfego são de responsabilidade do administrador da rede. Vamos sempre trabalhar com cautela e monitoramento.
 
 ---
 
@@ -311,3 +290,4 @@ Este projeto é desenvolvido e mantido por **Robert Alexandrino (NetworkRA)**.
 O uso deste feed é exclusivo para os membros do canal NetworkRA.
 
 🔗 **[Acompanhe no LinkedIn](https://www.linkedin.com/in/networkra/)** | 📺 **[Inscreva-se no Canal NetworkRA](https://www.youtube.com/@NetworkRA)**
+🔗 **Entre no grupo e acompanhe os bloqueios:** [Telegram - NRA Sentinel Alerts](https://t.me/+jHlbAlp-7Xg0MTJh)
