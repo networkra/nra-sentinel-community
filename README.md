@@ -557,7 +557,7 @@ Graças a vocês, o Sentinel continua evoluindo.
 | *Vaga disponível* | - | - |
 
 > 💡 **Como ter o seu nome aqui?**
-> Se este projeto economiza tempo da sua equipe ou traz segurança para os seus clientes, considere apoiar a manutenção do código. Torne-se um membro **NetworkRA MSSP** no nosso canal e faça parte da elite que mantém essa inteligência rodando!
+> Se este projeto economiza tempo da sua equipe ou traz segurança para os seus clientes, considere apoiar a manutenção do código. Torne-se um membro **NetworkRA MSSP** no nosso canal do YouTube e faça parte da elite que mantém essa inteligência rodando!
 > 
 > 👉 **[Apoie o Projeto Aqui](https://www.youtube.com/@NetworkRA/join)**
 
