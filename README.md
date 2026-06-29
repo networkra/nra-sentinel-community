@@ -618,7 +618,6 @@ Acredito que o compartilhamento técnico deve caminhar junto com a valorização
 Este projeto é desenvolvido e mantido por **Robert Alexandrino (NetworkRA)**.
 
 © 2026 NetworkRA. Todos os direitos reservados.
-O uso deste feed é exclusivo para os membros do canal NetworkRA.
+O uso deste feed é **100% gratuito e aberto para toda a comunidade** de cibersegurança. Sinta-se livre para utilizá-lo na proteção dos seus ambientes e laboratórios.
 
-🔗 **[Acompanhe no LinkedIn](https://www.linkedin.com/in/networkra/)** | 📺 **[Inscreva-se no Canal NetworkRA](https://www.youtube.com/@NetworkRA)**
-🔗 **Entre no grupo e acompanhe os bloqueios:** [Telegram - NRA Sentinel Alerts](https://t.me/+jHlbAlp-7Xg0MTJh)
+🔗 **[LinkedIn - Robert Alexandrino](https://www.linkedin.com/in/networkra/)** | 📺 **[YouTube - NetworkRA](https://www.youtube.com/@NetworkRA)** | 🔗 **[Telegram - NRA Sentinel](https://t.me/+jHlbAlp-7Xg0MTJh)**
