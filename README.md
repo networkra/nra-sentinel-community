@@ -552,7 +552,7 @@ Esta seção é dedicada a agradecer publicamente aos arquitetos, analistas e pr
 
 Graças a vocês, o Sentinel continua evoluindo, gratuito e sem amarras comerciais.
 
-| 🛡️ Patrono / Empresa | 🔗 Perfil Profissional | 📅 Apoiador Desde |
+| 🛡️ Nome / Empresa | 🔗 Perfil Profissional | 📅 Apoiador Desde |
 | :--- | :--- | :--- |
 | **Seu Nome ou Empresa Aqui** | [LinkedIn / Site](#) | Junho/2026 |
 | *Vaga disponível* | - | - |
