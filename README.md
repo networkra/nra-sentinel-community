@@ -544,7 +544,7 @@ O **NRA Sentinel** cresce graças ao feedback e às contribuições de profissio
 
 ---
 
-### 🏆 Hall da Fama: Apoiadores Oficiais (NetworkRA MSSP)
+### 🏆 Hall da Fama: Apoiadores Oficiais
 
 Hoje, o motor **NRA Sentinel** é **100% gratuito e de código aberto**. No entanto, a pesquisa, o desenvolvimento contínuo (horas de engenharia) e os custos exigem recursos.
 
