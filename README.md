@@ -554,7 +554,7 @@ Graças a vocês, o Sentinel continua evoluindo, gratuito e sem amarras comercia
 
 | 🛡️ Nome / Empresa | 🔗 Perfil Profissional | 📅 Apoiador Desde |
 | :--- | :--- | :--- |
-| **Seu Nome ou Empresa Aqui** | [LinkedIn / Site](#) | Junho/2026 |
+| *Seu Nome ou Empresa Aqui* | *LinkedIn / Site* | *Junho/2026* |
 | *Vaga disponível* | - | - |
 | *Vaga disponível* | - | - |
 
