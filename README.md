@@ -539,7 +539,7 @@ end
 
 O **NRA Sentinel** cresce graças ao feedback e às contribuições de profissionais que testam o motor em ambientes reais de produção:
 
-*   **@caldeira4229:** Pela curadoria essencial da base de provedores de DNS utilizada na nossa Safelist (AdGuard).
+*   **@caldeira4229:** Pela curadoria essencial da base de provedores DNS utilizada na nossa Safelist (AdGuard), ajudando a prevenir falsos positivos e erros humanos.
 *   **@RodrigoAssinger:** Pela visão de arquiteto que guiou a implementação da nossa esteira segmentada (Multi-Tier), permitindo o suporte escalável para hardwares Mid-Range e High-End.
 
 ---
