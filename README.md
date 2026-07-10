@@ -198,7 +198,7 @@ config system external-resource
 		# set password ENC weGSO5BLSuVszyE4uZR3Ch/6rVXkC9IRunTQm9QlA5xLErpSM6Ihs4HObBNz5OatXT/Yi/9Ja7xH32mvy0hh2MUxW3T7PaxkMZNdDWCwayrUJwBd4F53SewLaHfQljZoYaYtUHXTsYev9uvDFxX+ofz/CMs/55Na24wLxCW/PUIsS5j9mAphzUVXBwRgfHNVy2RlZ1lmMjY3dkVA
 		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
 		# set password ENC Yeqps04c8j0pMaSrHMQxxezGdtEo6QtvGsYPZ5Wb4TCEtYYRbPgDg2IhoqiaBVUNEEigZ/5w6ubxENB9/w5Lc2feJ3XO7EakEAHGHV/X7omS8hr4QlbiLZAIMM1Yh48bW1XK++pHQPYYkM03ZmybnROdmMaCgS/nDdtwBlkATNvyRUQfCRmEd1jZ2OeWTxht5wgQhg==
-		set resource "[https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-ips-critical-1.txt](https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-ips-critical-1.txt)"
+		set resource https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-ips-critical-1.txt
 		set refresh-rate 60
 	next
 	edit "NRA_Sentinel_Domain-WF"
@@ -208,7 +208,7 @@ config system external-resource
 		# set password ENC weGSO5BLSuVszyE4uZR3Ch/6rVXkC9IRunTQm9QlA5xLErpSM6Ihs4HObBNz5OatXT/Yi/9Ja7xH32mvy0hh2MUxW3T7PaxkMZNdDWCwayrUJwBd4F53SewLaHfQljZoYaYtUHXTsYev9uvDFxX+ofz/CMs/55Na24wLxCW/PUIsS5j9mAphzUVXBwRgfHNVy2RlZ1lmMjY3dkVA
 		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
 		# set password ENC Yeqps04c8j0pMaSrHMQxxezGdtEo6QtvGsYPZ5Wb4TCEtYYRbPgDg2IhoqiaBVUNEEigZ/5w6ubxENB9/w5Lc2feJ3XO7EakEAHGHV/X7omS8hr4QlbiLZAIMM1Yh48bW1XK++pHQPYYkM03ZmybnROdmMaCgS/nDdtwBlkATNvyRUQfCRmEd1jZ2OeWTxht5wgQhg==
-		set resource "[https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-dom-critical-1.txt](https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-dom-critical-1.txt)"
+		set resource https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-dom-critical-1.txt
 		set refresh-rate 60
 	next
 	edit "NRA_Sentinel_Malware-Hash"
@@ -218,7 +218,7 @@ config system external-resource
 		# set password ENC weGSO5BLSuVszyE4uZR3Ch/6rVXkC9IRunTQm9QlA5xLErpSM6Ihs4HObBNz5OatXT/Yi/9Ja7xH32mvy0hh2MUxW3T7PaxkMZNdDWCwayrUJwBd4F53SewLaHfQljZoYaYtUHXTsYev9uvDFxX+ofz/CMs/55Na24wLxCW/PUIsS5j9mAphzUVXBwRgfHNVy2RlZ1lmMjY3dkVA
 		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
 		# set password ENC Yeqps04c8j0pMaSrHMQxxezGdtEo6QtvGsYPZ5Wb4TCEtYYRbPgDg2IhoqiaBVUNEEigZ/5w6ubxENB9/w5Lc2feJ3XO7EakEAHGHV/X7omS8hr4QlbiLZAIMM1Yh48bW1XK++pHQPYYkM03ZmybnROdmMaCgS/nDdtwBlkATNvyRUQfCRmEd1jZ2OeWTxht5wgQhg==
-		set resource "[https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-hash-critical-1.txt](https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-hash-critical-1.txt)"
+		set resource https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-hash-critical-1.txt
 		set refresh-rate 60
 	next
 end
@@ -340,7 +340,7 @@ config system external-resource
 		# set password ENC weGSO5BLSuVszyE4uZR3Ch/6rVXkC9IRunTQm9QlA5xLErpSM6Ihs4HObBNz5OatXT/Yi/9Ja7xH32mvy0hh2MUxW3T7PaxkMZNdDWCwayrUJwBd4F53SewLaHfQljZoYaYtUHXTsYev9uvDFxX+ofz/CMs/55Na24wLxCW/PUIsS5j9mAphzUVXBwRgfHNVy2RlZ1lmMjY3dkVA
 		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
 		# set password ENC Yeqps04c8j0pMaSrHMQxxezGdtEo6QtvGsYPZ5Wb4TCEtYYRbPgDg2IhoqiaBVUNEEigZ/5w6ubxENB9/w5Lc2feJ3XO7EakEAHGHV/X7omS8hr4QlbiLZAIMM1Yh48bW1XK++pHQPYYkM03ZmybnROdmMaCgS/nDdtwBlkATNvyRUQfCRmEd1jZ2OeWTxht5wgQhg==
-		set resource "[https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-ips-critical-1.txt](https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-ips-critical-1.txt)"
+		set resource https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-ips-critical-1.txt
 		set refresh-rate 60
 	next
 	edit "NRA_Sentinel_Domain-WF"
@@ -350,7 +350,7 @@ config system external-resource
 		# set password ENC weGSO5BLSuVszyE4uZR3Ch/6rVXkC9IRunTQm9QlA5xLErpSM6Ihs4HObBNz5OatXT/Yi/9Ja7xH32mvy0hh2MUxW3T7PaxkMZNdDWCwayrUJwBd4F53SewLaHfQljZoYaYtUHXTsYev9uvDFxX+ofz/CMs/55Na24wLxCW/PUIsS5j9mAphzUVXBwRgfHNVy2RlZ1lmMjY3dkVA
 		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
 		# set password ENC Yeqps04c8j0pMaSrHMQxxezGdtEo6QtvGsYPZ5Wb4TCEtYYRbPgDg2IhoqiaBVUNEEigZ/5w6ubxENB9/w5Lc2feJ3XO7EakEAHGHV/X7omS8hr4QlbiLZAIMM1Yh48bW1XK++pHQPYYkM03ZmybnROdmMaCgS/nDdtwBlkATNvyRUQfCRmEd1jZ2OeWTxht5wgQhg==
-		set resource "[https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-dom-critical-1.txt](https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-dom-critical-1.txt)"
+		set resource https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-dom-critical-1.txt
 		set refresh-rate 60
 	next
 	edit "NRA_Sentinel_Malware-Hash"
@@ -360,7 +360,7 @@ config system external-resource
 		# set password ENC weGSO5BLSuVszyE4uZR3Ch/6rVXkC9IRunTQm9QlA5xLErpSM6Ihs4HObBNz5OatXT/Yi/9Ja7xH32mvy0hh2MUxW3T7PaxkMZNdDWCwayrUJwBd4F53SewLaHfQljZoYaYtUHXTsYev9uvDFxX+ofz/CMs/55Na24wLxCW/PUIsS5j9mAphzUVXBwRgfHNVy2RlZ1lmMjY3dkVA
 		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
 		# set password ENC Yeqps04c8j0pMaSrHMQxxezGdtEo6QtvGsYPZ5Wb4TCEtYYRbPgDg2IhoqiaBVUNEEigZ/5w6ubxENB9/w5Lc2feJ3XO7EakEAHGHV/X7omS8hr4QlbiLZAIMM1Yh48bW1XK++pHQPYYkM03ZmybnROdmMaCgS/nDdtwBlkATNvyRUQfCRmEd1jZ2OeWTxht5wgQhg==
-		set resource "[https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-hash-critical-1.txt](https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-hash-critical-1.txt)"
+		set resource https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-hash-critical-1.txt
 		set refresh-rate 60
 	next
 end
@@ -483,7 +483,7 @@ config system external-resource
 		# set password ENC weGSO5BLSuVszyE4uZR3Ch/6rVXkC9IRunTQm9QlA5xLErpSM6Ihs4HObBNz5OatXT/Yi/9Ja7xH32mvy0hh2MUxW3T7PaxkMZNdDWCwayrUJwBd4F53SewLaHfQljZoYaYtUHXTsYev9uvDFxX+ofz/CMs/55Na24wLxCW/PUIsS5j9mAphzUVXBwRgfHNVy2RlZ1lmMjY3dkVA
 		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
 		# set password ENC Yeqps04c8j0pMaSrHMQxxezGdtEo6QtvGsYPZ5Wb4TCEtYYRbPgDg2IhoqiaBVUNEEigZ/5w6ubxENB9/w5Lc2feJ3XO7EakEAHGHV/X7omS8hr4QlbiLZAIMM1Yh48bW1XK++pHQPYYkM03ZmybnROdmMaCgS/nDdtwBlkATNvyRUQfCRmEd1jZ2OeWTxht5wgQhg==
-		set resource "[https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-ips-critical-1.txt](https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-ips-critical-1.txt)"
+		set resource https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-ips-critical-1.txt
 		set refresh-rate 60
 	next
 	edit "NRA_Sentinel_Domain-WF"
@@ -493,7 +493,7 @@ config system external-resource
 		# set password ENC weGSO5BLSuVszyE4uZR3Ch/6rVXkC9IRunTQm9QlA5xLErpSM6Ihs4HObBNz5OatXT/Yi/9Ja7xH32mvy0hh2MUxW3T7PaxkMZNdDWCwayrUJwBd4F53SewLaHfQljZoYaYtUHXTsYev9uvDFxX+ofz/CMs/55Na24wLxCW/PUIsS5j9mAphzUVXBwRgfHNVy2RlZ1lmMjY3dkVA
 		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
 		# set password ENC Yeqps04c8j0pMaSrHMQxxezGdtEo6QtvGsYPZ5Wb4TCEtYYRbPgDg2IhoqiaBVUNEEigZ/5w6ubxENB9/w5Lc2feJ3XO7EakEAHGHV/X7omS8hr4QlbiLZAIMM1Yh48bW1XK++pHQPYYkM03ZmybnROdmMaCgS/nDdtwBlkATNvyRUQfCRmEd1jZ2OeWTxht5wgQhg==
-		set resource "[https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-dom-critical-1.txt](https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-dom-critical-1.txt)"
+		set resource https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-dom-critical-1.txt
 		set refresh-rate 60
 	next
 	edit "NRA_Sentinel_Malware-Hash"
@@ -503,7 +503,7 @@ config system external-resource
 		# set password ENC weGSO5BLSuVszyE4uZR3Ch/6rVXkC9IRunTQm9QlA5xLErpSM6Ihs4HObBNz5OatXT/Yi/9Ja7xH32mvy0hh2MUxW3T7PaxkMZNdDWCwayrUJwBd4F53SewLaHfQljZoYaYtUHXTsYev9uvDFxX+ofz/CMs/55Na24wLxCW/PUIsS5j9mAphzUVXBwRgfHNVy2RlZ1lmMjY3dkVA
 		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
 		# set password ENC Yeqps04c8j0pMaSrHMQxxezGdtEo6QtvGsYPZ5Wb4TCEtYYRbPgDg2IhoqiaBVUNEEigZ/5w6ubxENB9/w5Lc2feJ3XO7EakEAHGHV/X7omS8hr4QlbiLZAIMM1Yh48bW1XK++pHQPYYkM03ZmybnROdmMaCgS/nDdtwBlkATNvyRUQfCRmEd1jZ2OeWTxht5wgQhg==
-		set resource "[https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-hash-critical-1.txt](https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-hash-critical-1.txt)"
+		set resource https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-hash-critical-1.txt
 		set refresh-rate 60
 	next
 end
