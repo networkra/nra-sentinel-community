@@ -333,27 +333,36 @@ end
 #### --- CONFIGURAÇÃO DO NRA SENTINEL ---
 ```
 config system external-resource
-    edit "NRA_Sentinel_IPs"
-        set type address
-        set username "networkra"
-        set password ENC weGSO5BLSuVszyE4uZR3Ch/6rVXkC9IRunTQm9QlA5xLErpSM6Ihs4HObBNz5OatXT/Yi/9Ja7xH32mvy0hh2MUxW3T7PaxkMZNdDWCwayrUJwBd4F53SewLaHfQljZoYaYtUHXTsYev9uvDFxX+ofz/CMs/55Na24wLxCW/PUIsS5j9mAphzUVXBwRgfHNVy2RlZ1lmMjY3dkVA
-        set resource "https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-ips-mid-critical-1.txt"
-        set refresh-rate 60
-    next
-    edit "NRA_Sentinel_Domain-WF"
-        set category 193
-        set username "networkra"
-        set password ENC z002m8awkQtezNKjUdnrdmezsHqmgNLINfP9mkJELYn4p0V4R9zqkdqYhusisbpFL56baGW+k7GGov6jKI8B084mLcp+p7qWwbA6VsNrmPlp9+YrG9pKo+EIAYdx7X2qq9GF9sXdxkQoPxvaLnMzr17Bh6iEyke5SwalpgrhKixaa4P4LMZQZGrkH1prnsrCeY3Xc1lmMjY3dkVA
-        set resource "https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-dom-mid-critical-1.txt"
-        set refresh-rate 60
-    next
-    edit "NRA_Sentinel_Malware-Hash"
-        set type malware
-        set username "networkra"
-        set password ENC ajetWcf3r0vpYq/CgQbCUzN4RU1mGo2edJxKZlAHseAoPJVZ/u72nsScyIFRTRf3GJAwlX43cYcdkd2gCbG7Bo2kR4Li9YSM7mOPl+iKNlmK5ONSG0W6VrTT5Frq8Wo3csdc3Xj3cEgd/3BoRdZbP2id8xi+FNxWJenoMW/+7v4RvlB2POobmFyRpFWfHgVXdhgNcFlmMjY3dkVA
-        set resource "https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-hash-mid-critical-1.txt"
-        set refresh-rate 60
-    next
+	edit "NRA_Sentinel_IPs"
+		set type address
+		set username "networkra"
+		# 👉 Se o seu FortiOS for 7.2.11+, 7.4.8+ ou 7.6.1+, use o password abaixo (PBKDF2):
+		# set password ENC weGSO5BLSuVszyE4uZR3Ch/6rVXkC9IRunTQm9QlA5xLErpSM6Ihs4HObBNz5OatXT/Yi/9Ja7xH32mvy0hh2MUxW3T7PaxkMZNdDWCwayrUJwBd4F53SewLaHfQljZoYaYtUHXTsYev9uvDFxX+ofz/CMs/55Na24wLxCW/PUIsS5j9mAphzUVXBwRgfHNVy2RlZ1lmMjY3dkVA
+		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
+		# set password ENC Yeqps04c8j0pMaSrHMQxxezGdtEo6QtvGsYPZ5Wb4TCEtYYRbPgDg2IhoqiaBVUNEEigZ/5w6ubxENB9/w5Lc2feJ3XO7EakEAHGHV/X7omS8hr4QlbiLZAIMM1Yh48bW1XK++pHQPYYkM03ZmybnROdmMaCgS/nDdtwBlkATNvyRUQfCRmEd1jZ2OeWTxht5wgQhg==
+		set resource "[https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-ips-critical-1.txt](https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-ips-critical-1.txt)"
+		set refresh-rate 60
+	next
+	edit "NRA_Sentinel_Domain-WF"
+		set category 193
+		set username "networkra"
+		# 👉 Se o seu FortiOS for 7.2.11+, 7.4.8+ ou 7.6.1+, use o password abaixo (PBKDF2):
+		# set password ENC weGSO5BLSuVszyE4uZR3Ch/6rVXkC9IRunTQm9QlA5xLErpSM6Ihs4HObBNz5OatXT/Yi/9Ja7xH32mvy0hh2MUxW3T7PaxkMZNdDWCwayrUJwBd4F53SewLaHfQljZoYaYtUHXTsYev9uvDFxX+ofz/CMs/55Na24wLxCW/PUIsS5j9mAphzUVXBwRgfHNVy2RlZ1lmMjY3dkVA
+		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
+		# set password ENC Yeqps04c8j0pMaSrHMQxxezGdtEo6QtvGsYPZ5Wb4TCEtYYRbPgDg2IhoqiaBVUNEEigZ/5w6ubxENB9/w5Lc2feJ3XO7EakEAHGHV/X7omS8hr4QlbiLZAIMM1Yh48bW1XK++pHQPYYkM03ZmybnROdmMaCgS/nDdtwBlkATNvyRUQfCRmEd1jZ2OeWTxht5wgQhg==
+		set resource "[https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-dom-critical-1.txt](https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-dom-critical-1.txt)"
+		set refresh-rate 60
+	next
+	edit "NRA_Sentinel_Malware-Hash"
+		set type malware
+		set username "networkra"
+		# 👉 Se o seu FortiOS for 7.2.11+, 7.4.8+ ou 7.6.1+, use o password abaixo (PBKDF2):
+		# set password ENC weGSO5BLSuVszyE4uZR3Ch/6rVXkC9IRunTQm9QlA5xLErpSM6Ihs4HObBNz5OatXT/Yi/9Ja7xH32mvy0hh2MUxW3T7PaxkMZNdDWCwayrUJwBd4F53SewLaHfQljZoYaYtUHXTsYev9uvDFxX+ofz/CMs/55Na24wLxCW/PUIsS5j9mAphzUVXBwRgfHNVy2RlZ1lmMjY3dkVA
+		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
+		# set password ENC Yeqps04c8j0pMaSrHMQxxezGdtEo6QtvGsYPZ5Wb4TCEtYYRbPgDg2IhoqiaBVUNEEigZ/5w6ubxENB9/w5Lc2feJ3XO7EakEAHGHV/X7omS8hr4QlbiLZAIMM1Yh48bW1XK++pHQPYYkM03ZmybnROdmMaCgS/nDdtwBlkATNvyRUQfCRmEd1jZ2OeWTxht5wgQhg==
+		set resource "[https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-hash-critical-1.txt](https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-hash-critical-1.txt)"
+		set refresh-rate 60
+	next
 end
 ```
 #### --- CRIAÇÃO DA POLÍTICA DE DENY (TOP OF POLICY) ---
@@ -467,27 +476,36 @@ end
 #### --- CONFIGURAÇÃO DO NRA SENTINEL ---
 ```
 config system external-resource
-    edit "NRA_Sentinel_IPs"
-        set type address
-        set username "networkra"
-        set password ENC weGSO5BLSuVszyE4uZR3Ch/6rVXkC9IRunTQm9QlA5xLErpSM6Ihs4HObBNz5OatXT/Yi/9Ja7xH32mvy0hh2MUxW3T7PaxkMZNdDWCwayrUJwBd4F53SewLaHfQljZoYaYtUHXTsYev9uvDFxX+ofz/CMs/55Na24wLxCW/PUIsS5j9mAphzUVXBwRgfHNVy2RlZ1lmMjY3dkVA
-        set resource "https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-ips-high-critical-1.txt"
-        set refresh-rate 60
-    next
-    edit "NRA_Sentinel_Domain-WF"
-        set category 193
-        set username "networkra"
-        set password ENC z002m8awkQtezNKjUdnrdmezsHqmgNLINfP9mkJELYn4p0V4R9zqkdqYhusisbpFL56baGW+k7GGov6jKI8B084mLcp+p7qWwbA6VsNrmPlp9+YrG9pKo+EIAYdx7X2qq9GF9sXdxkQoPxvaLnMzr17Bh6iEyke5SwalpgrhKixaa4P4LMZQZGrkH1prnsrCeY3Xc1lmMjY3dkVA
-        set resource "https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-dom-high-critical-1.txt"
-        set refresh-rate 60
-    next
-    edit "NRA_Sentinel_Malware-Hash"
-        set type malware
-        set username "networkra"
-        set password ENC ajetWcf3r0vpYq/CgQbCUzN4RU1mGo2edJxKZlAHseAoPJVZ/u72nsScyIFRTRf3GJAwlX43cYcdkd2gCbG7Bo2kR4Li9YSM7mOPl+iKNlmK5ONSG0W6VrTT5Frq8Wo3csdc3Xj3cEgd/3BoRdZbP2id8xi+FNxWJenoMW/+7v4RvlB2POobmFyRpFWfHgVXdhgNcFlmMjY3dkVA
-        set resource "https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-hash-high-critical-1.txt"
-        set refresh-rate 60
-    next
+	edit "NRA_Sentinel_IPs"
+		set type address
+		set username "networkra"
+		# 👉 Se o seu FortiOS for 7.2.11+, 7.4.8+ ou 7.6.1+, use o password abaixo (PBKDF2):
+		# set password ENC weGSO5BLSuVszyE4uZR3Ch/6rVXkC9IRunTQm9QlA5xLErpSM6Ihs4HObBNz5OatXT/Yi/9Ja7xH32mvy0hh2MUxW3T7PaxkMZNdDWCwayrUJwBd4F53SewLaHfQljZoYaYtUHXTsYev9uvDFxX+ofz/CMs/55Na24wLxCW/PUIsS5j9mAphzUVXBwRgfHNVy2RlZ1lmMjY3dkVA
+		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
+		# set password ENC Yeqps04c8j0pMaSrHMQxxezGdtEo6QtvGsYPZ5Wb4TCEtYYRbPgDg2IhoqiaBVUNEEigZ/5w6ubxENB9/w5Lc2feJ3XO7EakEAHGHV/X7omS8hr4QlbiLZAIMM1Yh48bW1XK++pHQPYYkM03ZmybnROdmMaCgS/nDdtwBlkATNvyRUQfCRmEd1jZ2OeWTxht5wgQhg==
+		set resource "[https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-ips-critical-1.txt](https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-ips-critical-1.txt)"
+		set refresh-rate 60
+	next
+	edit "NRA_Sentinel_Domain-WF"
+		set category 193
+		set username "networkra"
+		# 👉 Se o seu FortiOS for 7.2.11+, 7.4.8+ ou 7.6.1+, use o password abaixo (PBKDF2):
+		# set password ENC weGSO5BLSuVszyE4uZR3Ch/6rVXkC9IRunTQm9QlA5xLErpSM6Ihs4HObBNz5OatXT/Yi/9Ja7xH32mvy0hh2MUxW3T7PaxkMZNdDWCwayrUJwBd4F53SewLaHfQljZoYaYtUHXTsYev9uvDFxX+ofz/CMs/55Na24wLxCW/PUIsS5j9mAphzUVXBwRgfHNVy2RlZ1lmMjY3dkVA
+		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
+		# set password ENC Yeqps04c8j0pMaSrHMQxxezGdtEo6QtvGsYPZ5Wb4TCEtYYRbPgDg2IhoqiaBVUNEEigZ/5w6ubxENB9/w5Lc2feJ3XO7EakEAHGHV/X7omS8hr4QlbiLZAIMM1Yh48bW1XK++pHQPYYkM03ZmybnROdmMaCgS/nDdtwBlkATNvyRUQfCRmEd1jZ2OeWTxht5wgQhg==
+		set resource "[https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-dom-critical-1.txt](https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-dom-critical-1.txt)"
+		set refresh-rate 60
+	next
+	edit "NRA_Sentinel_Malware-Hash"
+		set type malware
+		set username "networkra"
+		# 👉 Se o seu FortiOS for 7.2.11+, 7.4.8+ ou 7.6.1+, use o password abaixo (PBKDF2):
+		# set password ENC weGSO5BLSuVszyE4uZR3Ch/6rVXkC9IRunTQm9QlA5xLErpSM6Ihs4HObBNz5OatXT/Yi/9Ja7xH32mvy0hh2MUxW3T7PaxkMZNdDWCwayrUJwBd4F53SewLaHfQljZoYaYtUHXTsYev9uvDFxX+ofz/CMs/55Na24wLxCW/PUIsS5j9mAphzUVXBwRgfHNVy2RlZ1lmMjY3dkVA
+		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
+		# set password ENC Yeqps04c8j0pMaSrHMQxxezGdtEo6QtvGsYPZ5Wb4TCEtYYRbPgDg2IhoqiaBVUNEEigZ/5w6ubxENB9/w5Lc2feJ3XO7EakEAHGHV/X7omS8hr4QlbiLZAIMM1Yh48bW1XK++pHQPYYkM03ZmybnROdmMaCgS/nDdtwBlkATNvyRUQfCRmEd1jZ2OeWTxht5wgQhg==
+		set resource "[https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-hash-critical-1.txt](https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-hash-critical-1.txt)"
+		set refresh-rate 60
+	next
 end
 ```
 #### --- CRIAÇÃO DA POLÍTICA DE DENY (TOP OF POLICY) ---
@@ -554,6 +572,7 @@ O **NRA Sentinel** cresce graças ao feedback e às contribuições de profissio
 
 *   **[@faustocaldeira](https://github.com/faustocaldeira/):** Pela curadoria essencial da base de provedores DNS utilizada na nossa Safelist (AdGuard), ajudando a prevenir falsos positivos e erros humanos.
 *   **@RodrigoAssinger:** Pela visão de arquiteto que guiou a implementação da nossa esteira segmentada (Multi-Tier), permitindo o suporte escalável para hardwares Mid-Range e High-End.
+*   **@MsAbreu000:** Pelo reporte do erro de autenticação nos conectores externos, que nos levou a mapear a mudança crítica do padrão de criptografia de senhas (PBKDF2) nas novas *releases* do FortiOS, resultando na documentação do script *Legacy* vs *Current*.
 
 ---
 
