@@ -31,14 +31,14 @@ Esta arquitetura não busca substituir o modelo comercial do fabricante, mas sim
 
 O motor busca informações em fontes respeitadas mundialmente, garantindo que o que chega ao seu Firewall tenha passado por um processo de filtragem:
 
-| Player | Função |
-| :--- | :--- |
-| **AlienVault (LevelBlue)** | Fornece inteligência estratégica sobre campanhas de Ransomware e 0-days. |
-| **MalwareBazaar (abuse.ch)** | Entrega assinaturas de arquivos (Hashes) validadas pela comunidade. |
-| **URLHaus (abuse.ch)** | Monitora links que estão distribuindo malware no exato momento. |
-| **AbuseIPDB** | Ajuda a validar a reputação dos IPs, evitando falsos positivos. |
-| **urlscan.io** | Verifica o histórico de segurança dos domínios e URLs processadas. |
-
+| Player / Fonte | Projeto | Função |
+| :--- | :---: | :--- |
+| **AlienVault (LevelBlue)** | ![Sentinel](https://img.shields.io/badge/NRA-Sentinel-0055ff?style=flat-square&logo=shield&logoColor=white) | Fornece inteligência estratégica sobre campanhas de Ransomware e 0-days. |
+| **MalwareBazaar (abuse.ch)** | ![Sentinel](https://img.shields.io/badge/NRA-Sentinel-0055ff?style=flat-square&logo=shield&logoColor=white) | Entrega assinaturas de arquivos (Hashes) validadas pela comunidade. |
+| **URLHaus (abuse.ch)** | ![Sentinel](https://img.shields.io/badge/NRA-Sentinel-0055ff?style=flat-square&logo=shield&logoColor=white) | Monitora links que estão distribuindo malware no exato momento. |
+| **AbuseIPDB** | ![Sentinel](https://img.shields.io/badge/NRA-Sentinel-0055ff?style=flat-square&logo=shield&logoColor=white) | Ajuda a validar a reputação dos IPs, evitando falsos positivos. |
+| **urlscan.io** | ![Sentinel](https://img.shields.io/badge/NRA-Sentinel-0055ff?style=flat-square&logo=shield&logoColor=white) | Verifica o histórico de segurança dos domínios e URLs processadas. |
+| **FortiGuard (ISDB)** | ![EDL](https://img.shields.io/badge/NRA-EDL-ff8800?style=flat-square&logo=fortinet&logoColor=white) | Espelha a reputação oficial de IPs de appliances licenciados (10 categorias críticas), democratizando o bloqueio na borda para caixas sem licença. |
 ---
 
 ### 🛡️ Prevenção de Falsos Positivos
@@ -54,22 +54,28 @@ Para garantir que infraestruturas legítimas não sejam bloqueadas acidentalment
 
 ### ⚙️ Detalhes do Funcionamento
 
-* **Atualização:** Os feeds são processados automaticamente a cada 4 horas.
-* **Persistência:** O motor mantém o histórico acumulado (regra FIFO para rotatividade).
-* **Limpeza:** Dados sanitizados (removidos protocolos, portas e *query strings*), prontos para leitura nativa via CLI.
-* **Segmentação por Hardware (Tiers):** Entregamos inteligência dimensionada conforme a capacidade de memória RAM do seu appliance.
+* **Atualização (NRA Sentinel):** Os feeds de *0-days* e IoCs são processados e atualizados automaticamente a cada **8 horas**.
+* **Atualização (NRA EDL):** O espelhamento da base oficial do FortiGuard é executado **1 vez ao dia**. Essa cadência diária garante uma lista sempre fresca sem gerar overhead de requisições ou consumo excessivo de API no firewall de origem.
+* **Persistência:** O motor mantém o histórico acumulado com regra cronológica estrita (regra FIFO para rotatividade e substituição de artefatos antigos).
+* **Limpeza:** Dados sanitizados (remoção automática de protocolos, portas, *query strings* e validação via Safelist), entregando listas limpas para leitura nativa via CLI.
+* **Segmentação e Espelhamento:** Entregamos inteligência dimensionada conforme a memória RAM do seu hardware (Tiers no Sentinel) e replicação nativa para caixas sem licença (EDL).
 
 ---
 
-### 🛡️ Rotação e Performance (Multi-Tier)
+### 🛡️ Rotação e Performance (Multi-Tier & EDL Mirror)
 
-Para manter a filosofia **Sniper** (precisão sobre volume), o NRA Sentinel agora entrega a inteligência na medida certa para o seu hardware, garantindo estabilidade no **WAD/IPS Engine** e trabalhando para manter seu FortiOS fora de *Conserve Mode*:
+Para manter a filosofia **Sniper** (precisão sobre volume), nosso ecossistema entrega a inteligência na medida certa para o seu hardware, garantindo estabilidade no **WAD/IPS Engine** e trabalhando para manter seu FortiOS fora de *Conserve Mode*:
 
-| Tier de Hardware | Modelo de Referência | Capacidade por Feed |
+| Projeto & Tier | Modelo de Referência | Capacidade / Trava Máxima |
 | :--- | :--- | :--- |
-| **Entry-Level** | 40F, 60F, 80F (2GB-3GB RAM) | 35.000 IoCs |
-| **Mid-Range** | 100F a 600F (4GB-8GB RAM) | 150.000 IoCs |
-| **High-End** | Data Centers / Clusters | 300.000 IoCs |
+| 🛡️ **Sentinel (Entry-Level)** | 40F, 60F, 80F (2GB-3GB RAM) | 35.000 IoCs por categoria |
+| 🛡️ **Sentinel (Mid-Range)** | 100F a 600F (4GB-8GB RAM) | 150.000 IoCs por categoria |
+| 🛡️ **Sentinel (High-End)** | Data Centers / Clusters | 300.000 IoCs por categoria |
+| 🌐 **NRA EDL (FortiGuard Mirror)** | **Universal** *(Caixas sem licença / SOC)* | **150.000 IoCs** *(Circuit Breaker)* |
+
+> [!NOTE]
+> **Por que o NRA EDL tem uma trava de 150.000 IoCs?**
+> A base diária do FortiGuard consolidada (sumarizada via CIDR) costuma girar entre 60.000 e 100.000 blocos únicos. Fixamos uma trava de segurança (*Circuit Breaker*) em exatamente **150.000 linhas** no código Python. Se por qualquer anomalia global de BGP ou na fonte original esse número for ultrapassado, o sistema aborta a sincronização e preserva a lista anterior intacta. Isso impede que appliances menores da comunidade (como 40F ou 60F) entrem em esgotamento de memória (*Conserve Mode/WAD*) ao tentar processar feeds anomalamente gigantescos.
 
 > [!NOTE]
 > **Como escolher o seu feed?**
