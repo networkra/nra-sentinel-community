@@ -113,26 +113,11 @@ Siga os passos abaixo para proteger o seu ambiente:
 
 ---
 
-### 🚀 Changelog: NRA Sentinel V33.5
-
-**Escalabilidade de Hardware (28/06/2026)**
-
-* 🏗️ **Arquitetura Multi-Tier:** O motor agora compila três níveis de feeds distintos (`Entry`, `Mid-Range`, `High-End`). Isso respeita o uso de memória (RAM) conforme a capacidade do seu FortiGate, evitando *Conserve Mode* em caixas menores enquanto entrega um arsenal de até 300.000 IoCs para ambientes de missão crítica.
-* ⚡ **Segregação de Pipelines:** Implementamos novos fluxos de automação (GitHub Actions) escalonados com offset de tempo, garantindo a atualização contínua e simultânea de todos os Tiers sem colisão de requisições às APIs (evitando *Rate Limit*).
-* 📊 **Telemetria Operacional:** O relatório de sincronização (Telegram) agora entrega mensagens de status para cada Tier, permitindo que o administrador acompanhe os feeds em tempo real.
-
-**Sanitização Avançada de IoCs e Estabilidade (28/06/2026)**
-* 🧹 **Filtro de Query Strings (URL Clean-up):** Aprimoramento da função `clean_indicator` no Python para identificar e remover automaticamente parâmetros de busca web e caracteres especiais (como `?` e `&`) de domínios reportados "sujos" pelas fontes globais. O motor agora extrai estritamente o FQDN (Fully Qualified Domain Name).
-* 🛡️ **Prevenção de Falhas no External Connector:** Esse tratamento resolve erros pontuais de *parsing* (falha de leitura de sintaxe) que faziam o *daemon* do FortiOS rejeitar linhas inválidas. Isso garante que o firewall absorva a lista de ameaças na íntegra, sem abortar a sincronização.
-
-**Falsos Positivos e Auditoria de Memória (24/05/2026)**
-* 🛡️ **Motor de Exceção Híbrida (Safelist):** Introduzido o arquivo `nra-safelist.txt` na raiz do repositório. Atuando como *Single Source of Truth*, o motor cruza IPs táticos identificados contra uma base de provedores DNS globais legítimos antes da aplicação do bloqueio. Isso mitiga riscos de indisponibilidade acidental em redes de produção.
-* ⚙️ **Engenharia de Memória FIFO Absoluta:** O motor de armazenamento local foi reescrito (migração de `sets` para `dicts`) para garantir ordem cronológica perfeita (First-In, First-Out). Novos IoCs (IPs, Domínios e Hashes) entram estritamente no fim da fila, mantendo a integridade temporal da esteira de ameaças.
-* 📊 **Auditoria de Rotação (Churn Visibility):** Visibilidade total sobre o descarte de artefatos antigos. Ao atingir o limite de proteção de RAM dos equipamentos (35.000 indicadores por categoria), o pipeline do GitHub Actions agora registra no console o cálculo exato do excedente e exibe os artefatos antigos que estão sendo removidos para dar lugar aos novos *0-days*.
-
----
-
 ### 🌐 NRA EDL - FortiGuard IP Reputation Database Mirror (Community Edition)
+
+Desenvolvemos o que muitos consideravam improvável: um motor de engenharia reversa tática capaz de democratizar o acesso à inteligência de ameaças de elite, provando que a proteção da borda não deve ser um privilégio, mas um direito de toda infraestrutura.
+
+Estamos entregando uma solução audaciosa que preenche a lacuna entre a 'segurança zero' e a 'proteção total'. É uma engenharia de guerrilha para tempos difíceis.
 
 > [!IMPORTANT]
 > **DEMOCRATIZANDO A SEGURANÇA NA BORDA (100% FREE)**
@@ -642,13 +627,22 @@ end
 
 ---
 
-### 🤝 Créditos e Comunidade
+### 🚀 Changelog: NRA Sentinel V33.5
 
-O **NRA Sentinel** cresce graças ao feedback e às contribuições de profissionais que testam o motor em ambientes reais de produção:
+**Escalabilidade de Hardware (28/06/2026)**
 
-*   **[@faustocaldeira](https://github.com/faustocaldeira/):** Pela curadoria essencial da base de provedores DNS utilizada na nossa Safelist (AdGuard), ajudando a prevenir falsos positivos e erros humanos.
-*   **@RodrigoAssinger:** Pela visão de arquiteto que guiou a implementação da nossa esteira segmentada (Multi-Tier), permitindo o suporte escalável para hardwares Mid-Range e High-End.
-*   **@MsAbreu000:** Pelo reporte do erro de autenticação nos conectores externos, que nos levou a mapear a mudança crítica do padrão de criptografia de senhas (PBKDF2) nas novas *releases* do FortiOS, resultando na documentação do script *Legacy* vs *Current*.
+* 🏗️ **Arquitetura Multi-Tier:** O motor agora compila três níveis de feeds distintos (`Entry`, `Mid-Range`, `High-End`). Isso respeita o uso de memória (RAM) conforme a capacidade do seu FortiGate, evitando *Conserve Mode* em caixas menores enquanto entrega um arsenal de até 300.000 IoCs para ambientes de missão crítica.
+* ⚡ **Segregação de Pipelines:** Implementamos novos fluxos de automação (GitHub Actions) escalonados com offset de tempo, garantindo a atualização contínua e simultânea de todos os Tiers sem colisão de requisições às APIs (evitando *Rate Limit*).
+* 📊 **Telemetria Operacional:** O relatório de sincronização (Telegram) agora entrega mensagens de status para cada Tier, permitindo que o administrador acompanhe os feeds em tempo real.
+
+**Sanitização Avançada de IoCs e Estabilidade (28/06/2026)**
+* 🧹 **Filtro de Query Strings (URL Clean-up):** Aprimoramento da função `clean_indicator` no Python para identificar e remover automaticamente parâmetros de busca web e caracteres especiais (como `?` e `&`) de domínios reportados "sujos" pelas fontes globais. O motor agora extrai estritamente o FQDN (Fully Qualified Domain Name).
+* 🛡️ **Prevenção de Falhas no External Connector:** Esse tratamento resolve erros pontuais de *parsing* (falha de leitura de sintaxe) que faziam o *daemon* do FortiOS rejeitar linhas inválidas. Isso garante que o firewall absorva a lista de ameaças na íntegra, sem abortar a sincronização.
+
+**Falsos Positivos e Auditoria de Memória (24/05/2026)**
+* 🛡️ **Motor de Exceção Híbrida (Safelist):** Introduzido o arquivo `nra-safelist.txt` na raiz do repositório. Atuando como *Single Source of Truth*, o motor cruza IPs táticos identificados contra uma base de provedores DNS globais legítimos antes da aplicação do bloqueio. Isso mitiga riscos de indisponibilidade acidental em redes de produção.
+* ⚙️ **Engenharia de Memória FIFO Absoluta:** O motor de armazenamento local foi reescrito (migração de `sets` para `dicts`) para garantir ordem cronológica perfeita (First-In, First-Out). Novos IoCs (IPs, Domínios e Hashes) entram estritamente no fim da fila, mantendo a integridade temporal da esteira de ameaças.
+* 📊 **Auditoria de Rotação (Churn Visibility):** Visibilidade total sobre o descarte de artefatos antigos. Ao atingir o limite de proteção de RAM dos equipamentos (35.000 indicadores por categoria), o pipeline do GitHub Actions agora registra no console o cálculo exato do excedente e exibe os artefatos antigos que estão sendo removidos para dar lugar aos novos *0-days*.
 
 ---
 
@@ -668,6 +662,16 @@ Graças a vocês, o Sentinel continua evoluindo.
 > Se este projeto economiza tempo da sua equipe ou traz segurança para os seus clientes, considere apoiar a manutenção do código. Torne-se um membro **NetworkRA MSSP** no nosso canal do YouTube e faça parte da elite que mantém essa inteligência rodando!
 > 
 > 👉 **[Apoie o Projeto Aqui](https://www.youtube.com/@NetworkRA/join)**
+
+---
+
+### 🤝 Créditos e Comunidade
+
+O **NRA Sentinel** cresce graças ao feedback e às contribuições de profissionais que testam o motor em ambientes reais de produção:
+
+*   **[@faustocaldeira](https://github.com/faustocaldeira/):** Pela curadoria essencial da base de provedores DNS utilizada na nossa Safelist (AdGuard), ajudando a prevenir falsos positivos e erros humanos.
+*   **@RodrigoAssinger:** Pela visão de arquiteto que guiou a implementação da nossa esteira segmentada (Multi-Tier), permitindo o suporte escalável para hardwares Mid-Range e High-End.
+*   **@MsAbreu000:** Pelo reporte do erro de autenticação nos conectores externos, que nos levou a mapear a mudança crítica do padrão de criptografia de senhas (PBKDF2) nas novas *releases* do FortiOS, resultando na documentação do script *Legacy* vs *Current*.
 
 ---
 
