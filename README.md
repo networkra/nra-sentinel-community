@@ -71,7 +71,7 @@ Para manter a filosofia **Sniper** (precisão sobre volume), nosso ecossistema e
 | 🛡️ **Sentinel (Entry-Level)** | 40F, 60F, 80F (2GB-3GB RAM) | 35.000 IoCs por categoria |
 | 🛡️ **Sentinel (Mid-Range)** | 100F a 600F (4GB-8GB RAM) | 150.000 IoCs por categoria |
 | 🛡️ **Sentinel (High-End)** | Data Centers / Clusters | 300.000 IoCs por categoria |
-| 🌐 **NRA EDL (FortiGuard Mirror)** | **Universal** *(Caixas sem licença / SOC)* | **150.000 IoCs** *(Circuit Breaker)* |
+| 🌐 **NRA EDL (FortiGuard Mirror)** | Universal *(Caixas sem licença / SOC)* | 150.000 IoCs *(Circuit Breaker)* |
 
 > [!NOTE]
 > **Por que o NRA EDL tem uma trava de 150.000 IoCs?**
@@ -115,16 +115,16 @@ Você tem à disposição os seguintes conectores para o seu firewall:
 
 ### 💎 Como Acessar e Acompanhar
 
-Siga os passos abaixo para proteger o seu ambiente:
+Todo o ecossistema **NRA Sentinel & EDL** é **100% gratuito, open-source e livre de restrições**. Nossa missão é fortalecer a segurança da comunidade sem barreiras financeiras. Siga os passos abaixo para blindar o seu ambiente hoje mesmo:
 
-1. **Implementação Direta:** Vá até o final desta página, abra o **Guia de Configuração Rápida (FortiOS CLI)**, copie os scripts e aplique diretamente no seu equipamento.
-2. **Acompanhe ao Vivo (O Pulse do Sentinel):** Criei um canal exclusivo no Telegram onde a nossa API dispara alertas em tempo real sempre que um novo *0-day*, IP malicioso ou hash entra na lista de bloqueio.
-- 🔗 **Entre no grupo e acompanhe os bloqueios:** [Telegram - NRA Sentinel Alerts](https://t.me/+jHlbAlp-7Xg0MTJh)
-3. **Apoie o Canal (Opcional):** O uso do Sentinel é 100% gratuito. No entanto, se o projeto agregar valor à sua operação corporativa e você quiser apoiar a evolução da ferramenta e de mais recursos, considere se tornar membro do [Canal NetworkRA no YouTube](https://www.youtube.com/channel/UCs8isxhuF4phuQXimE52tOg/join). Além de apoiar o projeto, você ganha acesso:
-- Laboratórios Práticos (Hands-on): Tudo o que você precisa para montar seu lab do zero. Imagens, arquivos VMware e topologias .unl prontas para importar no EVE-NG, simulando as estruturas MSSP mais procuradas do mercado.
-- Automação & Gestão: Automações em Python, rotinas de backup e Study Guides completos.
-- Inteligência para FortiAnalyzer: Templates de relatórios avançados, Handlers e Correlation Handlers prontos para implementar.
-- Agentes de IA (GEMS Pro): Acesso direto aos nossos agentes personalizados do Gemini Pro, altamente treinados e especializados em arquitetura e troubleshooting de produtos Fortinet.
+1. **Implementação Direta (Zero Custo):** Vá até o final desta página, abra o **Guia de Configuração Rápida (FortiOS CLI)**, copie os scripts correspondentes ao seu ambiente (Sentinel Tiers + EDL Mirror) e aplique diretamente no terminal do seu firewall.
+2. **Acompanhe a Telemetria ao Vivo (O Pulse do Projeto):** Mantemos um canal aberto e gratuito no Telegram onde nossa esteira de automação reporta, em tempo real, a entrada de novos *0-days*, hashes de malware e os relatórios diários de sincronização das bases ISDB do FortiGuard.
+   * 🔗 **Entre no grupo e acompanhe as execuções:** [Telegram - NRA Sentinel & EDL Alerts](https://t.me/+jHlbAlp-7Xg0MTJh)
+3. **Apoie a Evolução do Projeto (Opcional):** A pesquisa, as horas de engenharia e a infraestrutura de laboratório para manter esses motores rodando geram custos operacionais diários. Se este projeto economiza tempo da sua equipe ou agrega valor à segurança dos clientes da sua empresa/MSSP, considere apoiar a nossa iniciativa tornando-se um membro do [Canal NetworkRA no YouTube](https://www.youtube.com/channel/UCs8isxhuF4phuQXimE52tOg/join). Além de financiar a continuidade destas ferramentas gratuitas para toda a comunidade, você desbloqueia benefícios exclusivos no canal:
+   * 🧪 **Laboratórios Práticos (Hands-on):** Acesso a imagens, arquivos VMware e topologias `.unl` prontas para importar no EVE-NG, simulando as arquiteturas SD-WAN e VPN mais exigidas pelo mercado de MSSPs.
+   * 🐍 **Automação & Gestão:** Scripts exclusivos em Python para automação de tarefas de rede, rotinas de backup e *Study Guides* completos para exames de certificação.
+   * 📊 **Inteligência para FortiAnalyzer:** Templates de relatórios corporativos, *Handlers* e *Correlation Handlers* avançados prontos para implementação imediata em SOC.
+   * 🤖 **Agentes de IA (GEMS Pro):** Acesso direto aos nossos assistentes de IA personalizados (baseados no Gemini Pro), altamente treinados com documentações de elite e especializados em arquitetura e *troubleshooting* do ecossistema Fortinet.
 
 ---
 
@@ -670,7 +670,7 @@ end
 
 ### 🤝 Créditos e Comunidade
 
-O **NRA Sentinel** cresce graças ao feedback e às contribuições de profissionais que testam o motor em ambientes reais de produção:
+O **NRA Sentinel & EDL** crescem graças ao feedback e às contribuições de profissionais que testam o motor em ambientes reais de produção:
 
 *   **[@faustocaldeira](https://github.com/faustocaldeira/):** Pela curadoria essencial da base de provedores DNS utilizada na nossa Safelist (AdGuard), ajudando a prevenir falsos positivos e erros humanos.
 *   **@RodrigoAssinger:** Pela visão de arquiteto que guiou a implementação da nossa esteira segmentada (Multi-Tier), permitindo o suporte escalável para hardwares Mid-Range e High-End.
@@ -680,7 +680,7 @@ O **NRA Sentinel** cresce graças ao feedback e às contribuições de profissio
 
 ### 🏆 Hall da Fama: Apoiadores Oficiais
 
-Hoje, o motor **NRA Sentinel** é **100% gratuito e de código aberto**. No entanto, a pesquisa, o desenvolvimento contínuo (horas de engenharia) e os custos exigem recursos. Esta seção é dedicada a agradecer publicamente aos arquitetos, analistas e provedores de serviços gerenciados (MSSPs) que reconhecem o valor corporativo desta ferramenta e optaram por patrocinar diretamente o projeto através do nível **NetworkRA MSSP**.
+Hoje, o motor **NRA Sentinel & EDL** é **100% gratuito e de código aberto**. No entanto, a pesquisa, o desenvolvimento contínuo (horas de engenharia) e os custos exigem recursos. Esta seção é dedicada a agradecer publicamente aos arquitetos, analistas e provedores de serviços gerenciados (MSSPs) que reconhecem o valor corporativo desta ferramenta e optaram por patrocinar diretamente o projeto através do nível **NetworkRA MSSP**.
 
 Graças a vocês, o Sentinel continua evoluindo.
 
