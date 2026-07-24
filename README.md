@@ -160,7 +160,6 @@ Consulte o passo a passo logo abaixo, no Guia de Configuração Rápida (FortiOS
 *Seguimos trabalhando para que o conhecimento e a proteção permaneçam acessíveis a todos.*
 
 ---
-
 ### <mark>&nbsp;🚀 Guia de Configuração Rápida (FortiOS CLI)&nbsp;</mark>
 > [!WARNING]
 > **ATENÇÃO: MUDANÇA DE CRIPTOGRAFIA NO FORTIOS (PBKDF2)**
