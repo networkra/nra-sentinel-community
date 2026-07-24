@@ -130,6 +130,35 @@ Siga os passos abaixo para proteger o seu ambiente:
 
 ---
 
+### 🌐 NRA EDL - FortiGuard IP Reputation Database Mirror (Community Edition)
+
+> [!IMPORTANT]
+> **DEMOCRATIZANDO A SEGURANÇA NA BORDA (100% FREE)**
+> Sabemos que a realidade econômica atual impõe desafios severos aos orçamentos de TI. Muitas empresas, provedores (MSSPs) e analistas que mantêm laboratórios de estudos acabam operando appliances FortiGate sem o licenciamento ativo do FortiGuard devido aos altos custos de renovação. **A segurança da sua rede não pode ficar desamparada por restrições financeiras.**
+
+Com o objetivo de contribuir diretamente com a nossa comunidade e fortalecer o ecossistema nacional de cibersegurança, desenvolvemos o **NRA EDL - FortiGuard IP Reputation Database Mirror**. 
+
+Trata-se de uma engenharia de **Replicação e Espelhamento (Mirror)**: nosso motor automatizado extrai, sanitiza e consolida continuamente a base oficial de reputação de IPs do *Internet Service Database (ISDB)* de appliances licenciados e disponibiliza toda essa inteligência de forma gratuita através de nossa lista no GitHub.
+
+### 🛡️ O que estamos replicando para a sua caixa?
+Se o seu FortiGate está sem licença, ele perde a capacidade de consultar os servidores da Fortinet em tempo real. Com o **NRA EDL**, você contorna essa limitação aplicando nossa URL externa nativamente no seu firewall. 
+
+O feed atualiza automaticamente **Todas as categorias críticas de reputação** do FortiGuard:
+
+* 🚨 **Botnet-C&C.Server:** Servidores de Comando e Controle de Botnets globais.
+* 🛑 **Malicious-Malicious.Server:** Hosts catalogados em ataques ativos e drop de malwares.
+* 🎣 **Phishing-Phishing.Server:** Infraestruturas conhecidas por hospedagem de páginas de Phishing.
+* ⛏️ **Blockchain-Crypto.Mining.Pool:** Pools de mineração não autorizada (Cryptojacking).
+* 🧅 **Tor Nodes (Exit, Relay, Tor):** Nós da rede TOR frequentemente utilizados para anonimizar invasões.
+* 🕵️ **Proxy & Anonymous VPN:** Serviços de mascaramento de IP usados para burlar perímetros.
+
+### ⚙️ Como consumir em appliances sem licença?
+Consulte o passo a passo logo abaixo, no Guia de Configuração Rápida (FortiOS CLI).
+
+*Seguimos trabalhando para que o conhecimento e a proteção permaneçam acessíveis a todos.*
+
+---
+
 ### <mark>&nbsp;🚀 Guia de Configuração Rápida (FortiOS CLI)&nbsp;</mark>
 > [!WARNING]
 > **ATENÇÃO: MUDANÇA DE CRIPTOGRAFIA NO FORTIOS (PBKDF2)**
@@ -223,6 +252,21 @@ config system external-resource
 	next
 end
 ```
+#### --- CONFIGURAÇÃO DO NRA EDL - FortiGuard IP Reputation Database Mirror ---
+```
+config system external-resource
+	edit "NRA_Fortiguard_Reputation_IPs"
+		set type address
+		set username "networkra"
+		# 👉 Se o seu FortiOS for 7.2.11+, 7.4.8+ ou 7.6.1+, use o password abaixo (PBKDF2):
+		# set password ENC HBRrWW4aNbRlq+2MMMfnWp61ktrDsef9E9PB7cFI+2vRja5ijTdXBe6C/p3O+Osqid0L/tz/mgFfpfuhcdXgShcp3AY4dQOZdM95imh9FHJ70CQdGwx7CffIoCdZmF+GTcl7V7F50ZeCu9tO5joQDaaPfoL67CKd4uOtLp0e/LyRhw8m9jkqPL+aTqtuRCsxbpF57VlmMjY3dkVA
+		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
+		# set password ENC XUXp4Ctaoomn6uQKrtSuPwodh1W1xqE1Ow8GvhKkes0G4BcuQsJuMCR4/+Gn2bJ54gZcvnsRI+fr+KVu5BBeepf+6Ce3FD86DZCpXxS98zb830eDGPT9YmyHP/ivrYN1LHjdNuvzmRTKnl87Rqseu1l1LB+4h/uN2R1ecbwGzUj36GH3JFqZ2toUDOablwFnN8c/sg==
+		set resource "https://raw.githubusercontent.com/networkra/nra-fortiguard-edl/refs/heads/main/fortiguard_reputation_ips.txt"
+		set refresh-rate 60
+	next
+end
+```
 #### --- CRIAÇÃO DA POLÍTICA DE DENY (TOP OF POLICY) ---
 #### Nota: Neste exemplo estruturamos a Policy com o ID 816598, considerando interface Lan e virtual-wan-link.
 ```
@@ -232,7 +276,7 @@ config firewall policy
         set srcintf "Lan"
         set dstintf "virtual-wan-link"
         set srcaddr "all"
-        set dstaddr "OpenDBL_blocklist.de" "OpenDBL_BruteForce" "OpenDBL_TOR" "OpenDBL_Threats" "OpenDBL_IPSum" "blocklist.de" "cinsscore" "Serpro" "NRA_Sentinel_IPs"
+        set dstaddr "OpenDBL_blocklist.de" "OpenDBL_BruteForce" "OpenDBL_TOR" "OpenDBL_Threats" "OpenDBL_IPSum" "blocklist.de" "cinsscore" "Serpro" "NRA_Sentinel_IPs" "NRA_Fortiguard_Reputation_IPs"
         set schedule "always"
         set service "ALL"
         set action deny
@@ -365,6 +409,21 @@ config system external-resource
 	next
 end
 ```
+#### --- CONFIGURAÇÃO DO NRA EDL - FortiGuard IP Reputation Database Mirror ---
+```
+config system external-resource
+	edit "NRA_Fortiguard_Reputation_IPs"
+		set type address
+		set username "networkra"
+		# 👉 Se o seu FortiOS for 7.2.11+, 7.4.8+ ou 7.6.1+, use o password abaixo (PBKDF2):
+		# set password ENC HBRrWW4aNbRlq+2MMMfnWp61ktrDsef9E9PB7cFI+2vRja5ijTdXBe6C/p3O+Osqid0L/tz/mgFfpfuhcdXgShcp3AY4dQOZdM95imh9FHJ70CQdGwx7CffIoCdZmF+GTcl7V7F50ZeCu9tO5joQDaaPfoL67CKd4uOtLp0e/LyRhw8m9jkqPL+aTqtuRCsxbpF57VlmMjY3dkVA
+		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
+		# set password ENC XUXp4Ctaoomn6uQKrtSuPwodh1W1xqE1Ow8GvhKkes0G4BcuQsJuMCR4/+Gn2bJ54gZcvnsRI+fr+KVu5BBeepf+6Ce3FD86DZCpXxS98zb830eDGPT9YmyHP/ivrYN1LHjdNuvzmRTKnl87Rqseu1l1LB+4h/uN2R1ecbwGzUj36GH3JFqZ2toUDOablwFnN8c/sg==
+		set resource "https://raw.githubusercontent.com/networkra/nra-fortiguard-edl/refs/heads/main/fortiguard_reputation_ips.txt"
+		set refresh-rate 60
+	next
+end
+```
 #### --- CRIAÇÃO DA POLÍTICA DE DENY (TOP OF POLICY) ---
 #### Nota: Neste exemplo estruturamos a Policy com o ID 816598, considerando interface Lan e virtual-wan-link.
 ```
@@ -374,7 +433,7 @@ config firewall policy
         set srcintf "Lan"
         set dstintf "virtual-wan-link"
         set srcaddr "all"
-        set dstaddr "OpenDBL_blocklist.de" "OpenDBL_BruteForce" "OpenDBL_TOR" "OpenDBL_Threats" "OpenDBL_IPSum" "blocklist.de" "cinsscore" "Serpro" "NRA_Sentinel_IPs"
+        set dstaddr "OpenDBL_blocklist.de" "OpenDBL_BruteForce" "OpenDBL_TOR" "OpenDBL_Threats" "OpenDBL_IPSum" "blocklist.de" "cinsscore" "Serpro" "NRA_Sentinel_IPs" "NRA_Fortiguard_Reputation_IPs"
         set schedule "always"
         set service "ALL"
         set action deny
@@ -508,6 +567,21 @@ config system external-resource
 	next
 end
 ```
+#### --- CONFIGURAÇÃO DO NRA EDL - FortiGuard IP Reputation Database Mirror ---
+```
+config system external-resource
+	edit "NRA_Fortiguard_Reputation_IPs"
+		set type address
+		set username "networkra"
+		# 👉 Se o seu FortiOS for 7.2.11+, 7.4.8+ ou 7.6.1+, use o password abaixo (PBKDF2):
+		# set password ENC HBRrWW4aNbRlq+2MMMfnWp61ktrDsef9E9PB7cFI+2vRja5ijTdXBe6C/p3O+Osqid0L/tz/mgFfpfuhcdXgShcp3AY4dQOZdM95imh9FHJ70CQdGwx7CffIoCdZmF+GTcl7V7F50ZeCu9tO5joQDaaPfoL67CKd4uOtLp0e/LyRhw8m9jkqPL+aTqtuRCsxbpF57VlmMjY3dkVA
+		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
+		# set password ENC XUXp4Ctaoomn6uQKrtSuPwodh1W1xqE1Ow8GvhKkes0G4BcuQsJuMCR4/+Gn2bJ54gZcvnsRI+fr+KVu5BBeepf+6Ce3FD86DZCpXxS98zb830eDGPT9YmyHP/ivrYN1LHjdNuvzmRTKnl87Rqseu1l1LB+4h/uN2R1ecbwGzUj36GH3JFqZ2toUDOablwFnN8c/sg==
+		set resource "https://raw.githubusercontent.com/networkra/nra-fortiguard-edl/refs/heads/main/fortiguard_reputation_ips.txt"
+		set refresh-rate 60
+	next
+end
+```
 #### --- CRIAÇÃO DA POLÍTICA DE DENY (TOP OF POLICY) ---
 #### Nota: Neste exemplo estruturamos a Policy com o ID 816598, considerando interface Lan e virtual-wan-link.
 ```
@@ -517,7 +591,7 @@ config firewall policy
         set srcintf "Lan"
         set dstintf "virtual-wan-link"
         set srcaddr "all"
-        set dstaddr "OpenDBL_blocklist.de" "OpenDBL_BruteForce" "OpenDBL_TOR" "OpenDBL_Threats" "OpenDBL_IPSum" "blocklist.de" "cinsscore" "Serpro" "NRA_Sentinel_IPs"
+        set dstaddr "OpenDBL_blocklist.de" "OpenDBL_BruteForce" "OpenDBL_TOR" "OpenDBL_Threats" "OpenDBL_IPSum" "blocklist.de" "cinsscore" "Serpro" "NRA_Sentinel_IPs" "NRA_Fortiguard_Reputation_IPs"
         set schedule "always"
         set service "ALL"
         set action deny
