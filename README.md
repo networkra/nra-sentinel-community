@@ -6,10 +6,18 @@
 [![(High-End) Automation Status](https://github.com/networkra/nra-sentinel-core/actions/workflows/update_list_high.yml/badge.svg)](https://github.com/networkra/nra-sentinel-core/actions/workflows/update_list_high.yml)
 [![(NRA EDL - FortiGuard IP Reputation) Automation Status](https://github.com/networkra/nra-sentinel-core/actions/workflows/update_fortiguard_edl.yml/badge.svg)](https://github.com/networkra/nra-sentinel-core/actions/workflows/update_fortiguard_edl.yml)
 
-O **NRA Sentinel** é um projeto desenvolvido com o objetivo de auxiliar profissionais de segurança e redes na proteção de suas infraestruturas contra 0-days, Botnets, Malware e Ransomware. Ele automatiza a coleta e a organização de dados de novas ameaças globais, entregando listas limpas e prontas para uso nos **External Connectors** do FortiGate. Este motor não busca ser uma "solução milagrosa", mas sim uma ferramenta de apoio que soma forças aos recursos que você já utiliza no dia a dia, ideal para quem busca reforçar ainda mais a segurança.
+O **NRA Sentinel** é um projeto desenvolvido com o objetivo de auxiliar profissionais de segurança e redes na proteção de suas infraestruturas contra 0-days, Botnets, Malware e Ransomware. Ele automatiza a coleta e a organização de dados de novas ameaças globais, entregando listas limpas e prontas para uso no **External Resource** do FortiGate. Este motor não busca ser uma "solução milagrosa", mas sim uma ferramenta de apoio que soma forças aos recursos que você já utiliza no dia a dia, ideal para quem busca reforçar ainda mais a segurança.
 
 <img src="image_4cc9b9.png" width="900" alt="NRA Sentinel Workflow Infographic">
 <p align="left"><sub><i>Workflow NRA Sentinel detalhado: Da coleta em fontes globais à entrega sanitizada no perímetro via FortiOS.</i></sub></p>
+
+---
+
+O **NRA EDL - FortiGuard IP Reputation Database Mirror** é um projeto comunitário desenvolvido com o objetivo de democratizar a segurança na borda, auxiliando profissionais, empresas e provedores (MSSPs) que operam appliances FortiGate sem licenciamento ativo devido às atuais restrições orçamentárias do país. Ele automatiza a extração, a sumarização CIDR e o espelhamento contínuo das bases oficiais de reputação de IPs do ISDB (Internet Service Database) de caixas licenciadas, entregando um feed dinâmico limpo, blindado pela nossa Safelist e pronto para consumo nativo via **External Resource** do FortiGate. 
+Esta arquitetura não busca substituir o modelo comercial do fabricante, mas sim atuar como uma engenharia de solidariedade técnica que preenche a lacuna de quem estaria desprotegido, garantindo que a condição financeira não seja uma barreira para a segurança da sua rede.
+
+<img src="image_4cc9b10.png" width="900" alt="NRA Sentinel Workflow Infographic">
+<p align="left"><sub><i>Workflow NRA EDL detalhado: Da coleta em fontes globais à entrega sanitizada no perímetro via FortiOS.</i></sub></p>
 
 ---
 
