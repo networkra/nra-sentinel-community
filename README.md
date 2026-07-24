@@ -18,18 +18,18 @@ O **NRA EDL - FortiGuard IP Reputation Database Mirror** é um projeto comunitá
 Esta arquitetura não busca substituir o modelo comercial do fabricante, mas sim atuar como uma engenharia de solidariedade técnica que preenche a lacuna de quem estaria desprotegido, garantindo que a condição financeira não seja uma barreira para a segurança da sua rede.
 
 <img src="image_4cc9b10.png" width="900" alt="NRA Sentinel Workflow Infographic">
-<p align="left"><sub><i>Workflow NRA EDL detalhado: Da coleta em um FortiGAte licenciado à entrega sanitizada no perímetro via FortiOS.</i></sub></p>
+<p align="left"><sub><i>Workflow NRA EDL detalhado: Da coleta em um FortiGate licenciado à entrega sanitizada no perímetro via FortiOS.</i></sub></p>
 
 ---
 
-<img src="image_4cc9b7.png" width="800" alt="NRA Sentinel FortiGate Integration">
-<p align="left"><sub><i>Exemplo da integração dos conectores NRA Sentinel operando em ambiente FortiOS.</i></sub></p>
+<img src="image_4cc9b11.png" width="900" alt="NRA Sentinel e NRA EDL FortiGate Integration">
+<p align="left"><sub><i>Exemplo da integração dos conectores NRA Sentinel e NRA EDL operando em ambiente FortiOS.</i></sub></p>
 
 ---
 
 ### 🧠 Fontes de Dados
 
-O motor busca informações em fontes respeitadas mundialmente, garantindo que o que chega ao seu firewall tenha passado por um processo de filtragem:
+O motor busca informações em fontes respeitadas mundialmente, garantindo que o que chega ao seu Firewall tenha passado por um processo de filtragem:
 
 | Player | Função |
 | :--- | :--- |
