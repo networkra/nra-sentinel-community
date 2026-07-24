@@ -14,6 +14,7 @@ O **NRA Sentinel** é um projeto desenvolvido com o objetivo de auxiliar profiss
 ---
 
 O **NRA EDL - FortiGuard IP Reputation Database Mirror** é um projeto comunitário desenvolvido com o objetivo de democratizar a segurança na borda, auxiliando profissionais, empresas e provedores (MSSPs) que operam appliances FortiGate sem licenciamento ativo devido às atuais restrições orçamentárias do país. Ele automatiza a extração, a sumarização CIDR e o espelhamento contínuo das bases oficiais de reputação de IPs do ISDB (Internet Service Database) de caixas licenciadas, entregando um feed dinâmico limpo, blindado pela nossa Safelist e pronto para consumo nativo via **External Resource** do FortiGate. 
+
 Esta arquitetura não busca substituir o modelo comercial do fabricante, mas sim atuar como uma engenharia de solidariedade técnica que preenche a lacuna de quem estaria desprotegido, garantindo que a condição financeira não seja uma barreira para a segurança da sua rede.
 
 <img src="image_4cc9b10.png" width="900" alt="NRA Sentinel Workflow Infographic">
