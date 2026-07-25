@@ -264,7 +264,7 @@ config system external-resource
 		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
 		# set password ENC XUXp4Ctaoomn6uQKrtSuPwodh1W1xqE1Ow8GvhKkes0G4BcuQsJuMCR4/+Gn2bJ54gZcvnsRI+fr+KVu5BBeepf+6Ce3FD86DZCpXxS98zb830eDGPT9YmyHP/ivrYN1LHjdNuvzmRTKnl87Rqseu1l1LB+4h/uN2R1ecbwGzUj36GH3JFqZ2toUDOablwFnN8c/sg==
 		set resource "https://raw.githubusercontent.com/networkra/nra-fortiguard-edl/refs/heads/main/fortiguard_reputation_ips.txt"
-		set refresh-rate 1440
+		set refresh-rate 720
 	next
 end
 ```
@@ -421,7 +421,7 @@ config system external-resource
 		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
 		# set password ENC XUXp4Ctaoomn6uQKrtSuPwodh1W1xqE1Ow8GvhKkes0G4BcuQsJuMCR4/+Gn2bJ54gZcvnsRI+fr+KVu5BBeepf+6Ce3FD86DZCpXxS98zb830eDGPT9YmyHP/ivrYN1LHjdNuvzmRTKnl87Rqseu1l1LB+4h/uN2R1ecbwGzUj36GH3JFqZ2toUDOablwFnN8c/sg==
 		set resource "https://raw.githubusercontent.com/networkra/nra-fortiguard-edl/refs/heads/main/fortiguard_reputation_ips.txt"
-		set refresh-rate 1440
+		set refresh-rate 720
 	next
 end
 ```
@@ -579,7 +579,7 @@ config system external-resource
 		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
 		# set password ENC XUXp4Ctaoomn6uQKrtSuPwodh1W1xqE1Ow8GvhKkes0G4BcuQsJuMCR4/+Gn2bJ54gZcvnsRI+fr+KVu5BBeepf+6Ce3FD86DZCpXxS98zb830eDGPT9YmyHP/ivrYN1LHjdNuvzmRTKnl87Rqseu1l1LB+4h/uN2R1ecbwGzUj36GH3JFqZ2toUDOablwFnN8c/sg==
 		set resource "https://raw.githubusercontent.com/networkra/nra-fortiguard-edl/refs/heads/main/fortiguard_reputation_ips.txt"
-		set refresh-rate 1440
+		set refresh-rate 720
 	next
 end
 ```
