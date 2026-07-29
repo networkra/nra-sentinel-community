@@ -643,6 +643,11 @@ end
 
 ### 🚀 Changelog: NRA Sentinel V33.5
 
+**POC Iniciada: NRA EDL - FortiGuard Scanners IPs Mirror (28/07/2026)**
+* 🧪 **Espelhamento de Scanners Globais:** Início da Prova de Conceito (POC) para extração e consolidação dos IPs das principais ferramentas de varredura do mundo (Shodan, Censys, BinaryEdge, Rapid7, etc.) diretamente da base ISDB da FortiGuard.
+* 🛡️ **Suporte a Ambientes Legados (Legacy):** Solução desenhada estrategicamente para atender appliances rodando FortiOS 6.2, 6.4, 7.0 e 7.2, que operam sem licenciamento ativo e que não possuem suporte nativo a objetos ISDB no subsistema de Local In Policies.
+* ⚙️ **Blindagem de Ativos (VIPs):** A lista gerada permite o consumo via External Connectors para aplicação direta em Standard Policies. Isso inibe o reconnaissance automatizado e protege ativos publicados de figurarem nas bases de dados desses players massivos.
+
 **Interceptação de IPs em URLs & Blindagem FQDN (28/07/2026)**
 * **Redirecionamento:** Indicadores reportados como URLs ou domínios que contêm IPs embutidos (ex: `107.172.135.60/payload.hta`) agora são interceptados na raiz. O motor extrai o endereço, valida contra a `nra-safelist.txt` centralizada, entra na esteira e o redireciona automaticamente para o feed de IPs críticos (`nra-ips-critical-1.txt`).
 * **Otimização para Certificate Inspection:** Sanitização estrita de FQDNs (`host_root`) para remover caminhos (`/`), portas (`:`) e caracteres inválidos. Garante compatibilidade total com o FortiGate operando em modo de inspeção simples por SNI, evitando erros de parser no daemon `wad`.
