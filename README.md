@@ -643,7 +643,7 @@ end
 
 ### 🚀 Changelog: NRA Sentinel V33.5
 
-### 🛡️ Interceptação de IPs em URLs & Blindagem FQDN (28/07/2026)**
+**Interceptação de IPs em URLs & Blindagem FQDN (28/07/2026)**
 * **Redirecionamento:** Indicadores reportados como URLs ou domínios que contêm IPs embutidos (ex: `107.172.135.60/payload.hta`) agora são interceptados na raiz. O motor extrai o endereço, valida contra a `nra-safelist.txt` centralizada, entra na esteira e o redireciona automaticamente para o feed de IPs críticos (`nra-ips-critical-1.txt`).
 * **Otimização para Certificate Inspection:** Sanitização estrita de FQDNs (`host_root`) para remover caminhos (`/`), portas (`:`) e caracteres inválidos. Garante compatibilidade total com o FortiGate operando em modo de inspeção simples por SNI, evitando erros de parser no daemon `wad`.
 
