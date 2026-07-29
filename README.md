@@ -643,6 +643,10 @@ end
 
 ### 🚀 Changelog: NRA Sentinel V33.5
 
+### 🛡️ Interceptação de IPs em URLs & Blindagem FQDN (28/07/2026)**
+* **Redirecionamento:** Indicadores reportados como URLs ou domínios que contêm IPs embutidos (ex: `107.172.135.60/payload.hta`) agora são interceptados na raiz. O motor extrai o endereço, valida contra a `nra-safelist.txt` centralizada, entra na esteira e o redireciona automaticamente para o feed de IPs críticos (`nra-ips-critical-1.txt`).
+* **Otimização para Certificate Inspection:** Sanitização estrita de FQDNs (`host_root`) para remover caminhos (`/`), portas (`:`) e caracteres inválidos. Garante compatibilidade total com o FortiGate operando em modo de inspeção simples por SNI, evitando erros de parser no daemon `wad`.
+
 **Expansão do Ecossistema: NRA EDL (24/07/2026)**
 * 🛡️ **O Braço Direito do Sentinel:** Lançamento oficial do projeto **NRA EDL (FortiGuard IP Reputation Database Mirror)**. Trata-se de uma engenharia reversa tática e automatizada que espelha os *Internet Service Databases (ISDB)* oficiais da Fortinet para consumo gratuito pela nossa nova lista dinâmica.
 * 🌐 **Democratização da Borda:** Automação desenvolvida para amparar empresas, provedores (MSSPs) e analistas que rodam firewalls FortiGate sem licenciamento ativo devido a restrições orçamentárias. A ferramenta entrega proteção cirúrgica na Camada 3/4 contra C&C de Botnets, Phishing, Mineração de Criptomoedas, nós TOR e Proxies/VPNs anônimas.
