@@ -304,7 +304,7 @@ config antivirus profile
 end
 ```
 **2. Bloqueio de Domínios Maliciosos**
-O feed nra-dom-critical-1.txt alimenta uma categoria customizada de alta precisão no Fortinet Security Fabric. Nosso motor sanitiza automaticamente URLs e remove portas ou caminhos, entregando apenas FQDNs puros e protegidos pela nossa Safelist (ex: exemplo-malicioso.com). Como o feed atua diretamente na raiz do domínio, não é obrigatório o uso de Deep SSL Inspection. A aplicação via profile de Web Filter operando com Certificate Inspection (Inspeção Simples) é 100% eficaz, pois bloqueia a ameaça instantaneamente pela leitura do cabeçalho SNI no handshake HTTPS — garantindo proteção máxima sem consumir CPU/ASIC excessivo e sem exigir certificados corporativos instalados nos endpoints.
+O feed alimenta uma categoria customizada de alta precisão no Fortinet Security Fabric. Nosso motor sanitiza automaticamente URLs e remove portas ou caminhos, entregando apenas FQDNs puros e protegidos pela nossa Safelist (ex: exemplo-malicioso.com). Como o feed atua diretamente na raiz do domínio, não é obrigatório o uso de Deep SSL Inspection. A aplicação via profile de Web Filter operando com Certificate Inspection (Inspeção Simples) é 100% eficaz, pois bloqueia a ameaça instantaneamente pela leitura do cabeçalho SNI no handshake HTTPS — garantindo proteção máxima sem consumir CPU/ASIC excessivo e sem exigir certificados corporativos instalados nos endpoints.
 
 Opção: Aplicação via Web Filter (Categoria 193)
 ```
@@ -461,7 +461,7 @@ config antivirus profile
 end
 ```
 **2. Bloqueio de Domínios Maliciosos**
-O feed nra-dom-critical-1.txt alimenta uma categoria customizada de alta precisão no Fortinet Security Fabric. Nosso motor sanitiza automaticamente URLs e remove portas ou caminhos, entregando apenas FQDNs puros e protegidos pela nossa Safelist (ex: exemplo-malicioso.com). Como o feed atua diretamente na raiz do domínio, não é obrigatório o uso de Deep SSL Inspection. A aplicação via profile de Web Filter operando com Certificate Inspection (Inspeção Simples) é 100% eficaz, pois bloqueia a ameaça instantaneamente pela leitura do cabeçalho SNI no handshake HTTPS — garantindo proteção máxima sem consumir CPU/ASIC excessivo e sem exigir certificados corporativos instalados nos endpoints.
+O feed alimenta uma categoria customizada de alta precisão no Fortinet Security Fabric. Nosso motor sanitiza automaticamente URLs e remove portas ou caminhos, entregando apenas FQDNs puros e protegidos pela nossa Safelist (ex: exemplo-malicioso.com). Como o feed atua diretamente na raiz do domínio, não é obrigatório o uso de Deep SSL Inspection. A aplicação via profile de Web Filter operando com Certificate Inspection (Inspeção Simples) é 100% eficaz, pois bloqueia a ameaça instantaneamente pela leitura do cabeçalho SNI no handshake HTTPS — garantindo proteção máxima sem consumir CPU/ASIC excessivo e sem exigir certificados corporativos instalados nos endpoints.
 
 Opção: Aplicação via Web Filter (Categoria 193)
 ```
@@ -619,7 +619,7 @@ config antivirus profile
 end
 ```
 **2. Bloqueio de Domínios Maliciosos**
-O feed nra-dom-critical-1.txt alimenta uma categoria customizada de alta precisão no Fortinet Security Fabric. Nosso motor sanitiza automaticamente URLs e remove portas ou caminhos, entregando apenas FQDNs puros e protegidos pela nossa Safelist (ex: exemplo-malicioso.com). Como o feed atua diretamente na raiz do domínio, não é obrigatório o uso de Deep SSL Inspection. A aplicação via profile de Web Filter operando com Certificate Inspection (Inspeção Simples) é 100% eficaz, pois bloqueia a ameaça instantaneamente pela leitura do cabeçalho SNI no handshake HTTPS — garantindo proteção máxima sem consumir CPU/ASIC excessivo e sem exigir certificados corporativos instalados nos endpoints.
+O feed alimenta uma categoria customizada de alta precisão no Fortinet Security Fabric. Nosso motor sanitiza automaticamente URLs e remove portas ou caminhos, entregando apenas FQDNs puros e protegidos pela nossa Safelist (ex: exemplo-malicioso.com). Como o feed atua diretamente na raiz do domínio, não é obrigatório o uso de Deep SSL Inspection. A aplicação via profile de Web Filter operando com Certificate Inspection (Inspeção Simples) é 100% eficaz, pois bloqueia a ameaça instantaneamente pela leitura do cabeçalho SNI no handshake HTTPS — garantindo proteção máxima sem consumir CPU/ASIC excessivo e sem exigir certificados corporativos instalados nos endpoints.
 
 Opção: Aplicação via Web Filter (Categoria 193)
 ```
