@@ -304,7 +304,7 @@ config antivirus profile
 end
 ```
 **2. Bloqueio de Domínios Maliciosos**
-O feed nra-dom-critical-1.txt alimenta uma categoria customizada de alta precisão no Fortinet Security Fabric. Para garantir a inspeção integral de tráfego e evitar falsos negativos, recomendamos a aplicação deste feed através de um profile de Web Filter combinando o Deep SSL Inspection. Como 95% do tráfego web atual é criptografado (HTTPS) e nosso feed mapeia tanto domínios raiz quanto caminhos inteiros com payloads maliciosos ([exemplo.com/malware.pyc](https://exemplo.com/malware.pyc)), a inspeção profunda permite ao FortiGate descriptografar o cabeçalho HTTP e realizar o bloqueio exato na Camada 7.
+O feed nra-dom-critical-1.txt alimenta uma categoria customizada de alta precisão no Fortinet Security Fabric. Para garantir a inspeção integral de tráfego e evitar falsos positivos, recomendamos a aplicação deste feed através de um profile de Web Filter combinando o Deep SSL Inspection. Como 95% do tráfego web atual é criptografado (HTTPS) e nosso feed mapeia tanto domínios raiz quanto caminhos inteiros com payloads maliciosos ([exemplo.com/malware.pyc](https://exemplo.com/malware.pyc)), a inspeção profunda permite ao FortiGate descriptografar o cabeçalho HTTP e realizar o bloqueio exato na Camada 7.
 
 Nota para ambientes Entry-Level: Caso o hardware esteja com consumo elevado de processamento (ASIC/CPU) ou sem gestão centralizada de certificados raiz nos endpoints, o uso de Certificate Inspection continuará protegendo a rede através da leitura do cabeçalho SNI para os domínios raiz.
 
@@ -463,7 +463,7 @@ config antivirus profile
 end
 ```
 **2. Bloqueio de Domínios Maliciosos**
-O feed nra-dom-critical-1.txt alimenta uma categoria customizada de alta precisão no Fortinet Security Fabric. Para garantir a inspeção integral de tráfego e evitar falsos negativos, recomendamos a aplicação deste feed através de um profile de Web Filter combinando o Deep SSL Inspection. Como 95% do tráfego web atual é criptografado (HTTPS) e nosso feed mapeia tanto domínios raiz quanto caminhos inteiros com payloads maliciosos ([exemplo.com/malware.pyc](https://exemplo.com/malware.pyc)), a inspeção profunda permite ao FortiGate descriptografar o cabeçalho HTTP e realizar o bloqueio exato na Camada 7.
+O feed nra-dom-critical-1.txt alimenta uma categoria customizada de alta precisão no Fortinet Security Fabric. Para garantir a inspeção integral de tráfego e evitar falsos positivos, recomendamos a aplicação deste feed através de um profile de Web Filter combinando o Deep SSL Inspection. Como 95% do tráfego web atual é criptografado (HTTPS) e nosso feed mapeia tanto domínios raiz quanto caminhos inteiros com payloads maliciosos ([exemplo.com/malware.pyc](https://exemplo.com/malware.pyc)), a inspeção profunda permite ao FortiGate descriptografar o cabeçalho HTTP e realizar o bloqueio exato na Camada 7.
 
 Opção: Aplicação via Web Filter (Categoria 193)
 ```
@@ -621,7 +621,7 @@ config antivirus profile
 end
 ```
 **2. Bloqueio de Domínios Maliciosos**
-O feed nra-dom-critical-1.txt alimenta uma categoria customizada de alta precisão no Fortinet Security Fabric. Para garantir a inspeção integral de tráfego e evitar falsos negativos, recomendamos a aplicação deste feed através de um profile de Web Filter combinando o Deep SSL Inspection. Como 95% do tráfego web atual é criptografado (HTTPS) e nosso feed mapeia tanto domínios raiz quanto caminhos inteiros com payloads maliciosos ([exemplo.com/malware.pyc](https://exemplo.com/malware.pyc)), a inspeção profunda permite ao FortiGate descriptografar o cabeçalho HTTP e realizar o bloqueio exato na Camada 7.
+O feed nra-dom-critical-1.txt alimenta uma categoria customizada de alta precisão no Fortinet Security Fabric. Para garantir a inspeção integral de tráfego e evitar falsos positivos, recomendamos a aplicação deste feed através de um profile de Web Filter combinando o Deep SSL Inspection. Como 95% do tráfego web atual é criptografado (HTTPS) e nosso feed mapeia tanto domínios raiz quanto caminhos inteiros com payloads maliciosos ([exemplo.com/malware.pyc](https://exemplo.com/malware.pyc)), a inspeção profunda permite ao FortiGate descriptografar o cabeçalho HTTP e realizar o bloqueio exato na Camada 7.
 
 Opção: Aplicação via Web Filter (Categoria 193)
 ```
