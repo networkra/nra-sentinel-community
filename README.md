@@ -262,6 +262,21 @@ config system external-resource
 	next
 end
 ```
+#### --- CONFIGURAÇÃO DO NRA EDL - FortiGuard Scanner IPs Mirror ---
+```
+config system external-resource
+	edit "NRA_Fortiguard_Scanner_IPs"
+		set type address
+		set username "networkra"
+		# 👉 Se o seu FortiOS for 7.2.11+, 7.4.8+ ou 7.6.1+, use o password abaixo (PBKDF2):
+		# set password ENC HBRrWW4aNbRlq+2MMMfnWp61ktrDsef9E9PB7cFI+2vRja5ijTdXBe6C/p3O+Osqid0L/tz/mgFfpfuhcdXgShcp3AY4dQOZdM95imh9FHJ70CQdGwx7CffIoCdZmF+GTcl7V7F50ZeCu9tO5joQDaaPfoL67CKd4uOtLp0e/LyRhw8m9jkqPL+aTqtuRCsxbpF57VlmMjY3dkVA
+		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
+		# set password ENC XUXp4Ctaoomn6uQKrtSuPwodh1W1xqE1Ow8GvhKkes0G4BcuQsJuMCR4/+Gn2bJ54gZcvnsRI+fr+KVu5BBeepf+6Ce3FD86DZCpXxS98zb830eDGPT9YmyHP/ivrYN1LHjdNuvzmRTKnl87Rqseu1l1LB+4h/uN2R1ecbwGzUj36GH3JFqZ2toUDOablwFnN8c/sg==
+		set resource "https://raw.githubusercontent.com/networkra/nra-fortiguard-edl/refs/heads/main/fortiguard_scanner_ips.txt"
+		set refresh-rate 720
+	next
+end
+```
 #### --- CRIAÇÃO DA POLÍTICA DE DENY (TOP OF POLICY) ---
 #### Nota: Neste exemplo estruturamos a Policy com o ID 816598, considerando interface Lan e virtual-wan-link.
 ```
@@ -271,7 +286,7 @@ config firewall policy
         set srcintf "Lan"
         set dstintf "virtual-wan-link"
         set srcaddr "all"
-        set dstaddr "OpenDBL_blocklist.de" "OpenDBL_BruteForce" "OpenDBL_TOR" "OpenDBL_Threats" "OpenDBL_IPSum" "blocklist.de" "cinsscore" "Serpro" "NRA_Sentinel_IPs" "NRA_Fortiguard_Reputation_IPs"
+        set dstaddr "OpenDBL_blocklist.de" "OpenDBL_BruteForce" "OpenDBL_TOR" "OpenDBL_Threats" "OpenDBL_IPSum" "blocklist.de" "cinsscore" "Serpro" "NRA_Sentinel_IPs" "NRA_Fortiguard_Reputation_IPs" "NRA_Fortiguard_Scanner_IPs"
         set schedule "always"
         set service "ALL"
         set action deny
@@ -419,6 +434,21 @@ config system external-resource
 	next
 end
 ```
+#### --- CONFIGURAÇÃO DO NRA EDL - FortiGuard Scanner IPs Mirror ---
+```
+config system external-resource
+	edit "NRA_Fortiguard_Scanner_IPs"
+		set type address
+		set username "networkra"
+		# 👉 Se o seu FortiOS for 7.2.11+, 7.4.8+ ou 7.6.1+, use o password abaixo (PBKDF2):
+		# set password ENC HBRrWW4aNbRlq+2MMMfnWp61ktrDsef9E9PB7cFI+2vRja5ijTdXBe6C/p3O+Osqid0L/tz/mgFfpfuhcdXgShcp3AY4dQOZdM95imh9FHJ70CQdGwx7CffIoCdZmF+GTcl7V7F50ZeCu9tO5joQDaaPfoL67CKd4uOtLp0e/LyRhw8m9jkqPL+aTqtuRCsxbpF57VlmMjY3dkVA
+		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
+		# set password ENC XUXp4Ctaoomn6uQKrtSuPwodh1W1xqE1Ow8GvhKkes0G4BcuQsJuMCR4/+Gn2bJ54gZcvnsRI+fr+KVu5BBeepf+6Ce3FD86DZCpXxS98zb830eDGPT9YmyHP/ivrYN1LHjdNuvzmRTKnl87Rqseu1l1LB+4h/uN2R1ecbwGzUj36GH3JFqZ2toUDOablwFnN8c/sg==
+		set resource "https://raw.githubusercontent.com/networkra/nra-fortiguard-edl/refs/heads/main/fortiguard_scanner_ips.txt"
+		set refresh-rate 720
+	next
+end
+```
 #### --- CRIAÇÃO DA POLÍTICA DE DENY (TOP OF POLICY) ---
 #### Nota: Neste exemplo estruturamos a Policy com o ID 816598, considerando interface Lan e virtual-wan-link.
 ```
@@ -428,7 +458,7 @@ config firewall policy
         set srcintf "Lan"
         set dstintf "virtual-wan-link"
         set srcaddr "all"
-        set dstaddr "OpenDBL_blocklist.de" "OpenDBL_BruteForce" "OpenDBL_TOR" "OpenDBL_Threats" "OpenDBL_IPSum" "blocklist.de" "cinsscore" "Serpro" "NRA_Sentinel_IPs" "NRA_Fortiguard_Reputation_IPs"
+        set dstaddr "OpenDBL_blocklist.de" "OpenDBL_BruteForce" "OpenDBL_TOR" "OpenDBL_Threats" "OpenDBL_IPSum" "blocklist.de" "cinsscore" "Serpro" "NRA_Sentinel_IPs" "NRA_Fortiguard_Reputation_IPs" "NRA_Fortiguard_Scanner_IPs"
         set schedule "always"
         set service "ALL"
         set action deny
@@ -577,6 +607,21 @@ config system external-resource
 	next
 end
 ```
+#### --- CONFIGURAÇÃO DO NRA EDL - FortiGuard Scanner IPs Mirror ---
+```
+config system external-resource
+	edit "NRA_Fortiguard_Scanner_IPs"
+		set type address
+		set username "networkra"
+		# 👉 Se o seu FortiOS for 7.2.11+, 7.4.8+ ou 7.6.1+, use o password abaixo (PBKDF2):
+		# set password ENC HBRrWW4aNbRlq+2MMMfnWp61ktrDsef9E9PB7cFI+2vRja5ijTdXBe6C/p3O+Osqid0L/tz/mgFfpfuhcdXgShcp3AY4dQOZdM95imh9FHJ70CQdGwx7CffIoCdZmF+GTcl7V7F50ZeCu9tO5joQDaaPfoL67CKd4uOtLp0e/LyRhw8m9jkqPL+aTqtuRCsxbpF57VlmMjY3dkVA
+		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
+		# set password ENC XUXp4Ctaoomn6uQKrtSuPwodh1W1xqE1Ow8GvhKkes0G4BcuQsJuMCR4/+Gn2bJ54gZcvnsRI+fr+KVu5BBeepf+6Ce3FD86DZCpXxS98zb830eDGPT9YmyHP/ivrYN1LHjdNuvzmRTKnl87Rqseu1l1LB+4h/uN2R1ecbwGzUj36GH3JFqZ2toUDOablwFnN8c/sg==
+		set resource "https://raw.githubusercontent.com/networkra/nra-fortiguard-edl/refs/heads/main/fortiguard_scanner_ips.txt"
+		set refresh-rate 720
+	next
+end
+```
 #### --- CRIAÇÃO DA POLÍTICA DE DENY (TOP OF POLICY) ---
 #### Nota: Neste exemplo estruturamos a Policy com o ID 816598, considerando interface Lan e virtual-wan-link.
 ```
@@ -586,7 +631,7 @@ config firewall policy
         set srcintf "Lan"
         set dstintf "virtual-wan-link"
         set srcaddr "all"
-        set dstaddr "OpenDBL_blocklist.de" "OpenDBL_BruteForce" "OpenDBL_TOR" "OpenDBL_Threats" "OpenDBL_IPSum" "blocklist.de" "cinsscore" "Serpro" "NRA_Sentinel_IPs" "NRA_Fortiguard_Reputation_IPs"
+        set dstaddr "OpenDBL_blocklist.de" "OpenDBL_BruteForce" "OpenDBL_TOR" "OpenDBL_Threats" "OpenDBL_IPSum" "blocklist.de" "cinsscore" "Serpro" "NRA_Sentinel_IPs" "NRA_Fortiguard_Reputation_IPs" "NRA_Fortiguard_Scanner_IPs"
         set schedule "always"
         set service "ALL"
         set action deny
