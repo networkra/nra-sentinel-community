@@ -682,6 +682,12 @@ end
 
 ### 🚀 Changelog: NRA Sentinel V33.5
 
+**🚀 LANÇAMENTO OFICIAL (GA): NRA Sentinel V33.5 & EDL FortiGuard Scanners IPs Mirror (12/08/2026)**
+* 🟢 **Status:** POC concluída com sucesso. Sistema 100% funcional e em produção.
+* 🛡️ **Espelhamento de Scanners Globais Ativo:** Extração, consolidação e espelhamento contínuo dos IPs das principais ferramentas de varredura do mundo (Shodan, Censys, BinaryEdge, Rapid7, entre outros), derivados diretamente da base ISDB da FortiGuard.
+* ⚙️ **Sobrevida para Ambientes Legados (Legacy):** Engenharia desenhada estrategicamente para atender appliances rodando FortiOS 6.2, 6.4, 7.0 e 7.2 que operam sem licenciamento ativo e não possuem suporte nativo a objetos ISDB no subsistema de Local In Policies.
+* 🎯 **Blindagem de Ativos (VIPs):** Lista otimizada para consumo ágil via External Connectors. Permite a aplicação direta em Standard Policies, inibindo o reconnaissance automatizado e garantindo que ativos publicados não figurem nas bases de dados desses players massivos.
+
 **POC Iniciada: NRA EDL - FortiGuard Scanners IPs Mirror (28/07/2026)**
 * 🧪 **Espelhamento de Scanners Globais:** Início da Prova de Conceito (POC) para extração e consolidação dos IPs das principais ferramentas de varredura do mundo (Shodan, Censys, BinaryEdge, Rapid7, etc.) diretamente da base ISDB da FortiGuard.
 * 🛡️ **Suporte a Ambientes Legados (Legacy):** Solução desenhada estrategicamente para atender appliances rodando FortiOS 6.2, 6.4, 7.0 e 7.2, que operam sem licenciamento ativo e que não possuem suporte nativo a objetos ISDB no subsistema de Local In Policies.
