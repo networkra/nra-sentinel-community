@@ -682,42 +682,37 @@ end
 
 ### 🚀 Changelog: NRA Sentinel V33.5
 
-**🚀 LANÇAMENTO OFICIAL (GA): NRA Sentinel V33.5 & EDL FortiGuard Scanners IPs Mirror (12/08/2026)**
-* 🟢 **Status:** POC concluída com sucesso. Sistema 100% funcional e em produção.
-* 🛡️ **Espelhamento de Scanners Globais Ativo:** Extração, consolidação e espelhamento contínuo dos IPs das principais ferramentas de varredura do mundo (Shodan, Censys, BinaryEdge, Rapid7, entre outros), derivados diretamente da base ISDB da FortiGuard.
-* ⚙️ **Sobrevida para Ambientes Legados (Legacy):** Engenharia desenhada estrategicamente para atender appliances rodando FortiOS 6.2, 6.4, 7.0 e 7.2 que operam sem licenciamento ativo e não possuem suporte nativo a objetos ISDB no subsistema de Local In Policies.
-* 🎯 **Blindagem de Ativos (VIPs):** Lista otimizada para consumo ágil via External Connectors. Permite a aplicação direta em Standard Policies, inibindo o reconnaissance automatizado e garantindo que ativos publicados não figurem nas bases de dados desses players massivos.
+#### 📅 26/08/2026: Triagem Híbrida e Proteção de Negócios Locais *(Latest)*
+* <small>🧠 **URLScan Híbrido (0-Days & NRDs):** *Domínios recém-registrados ou sem histórico reportados pelo AlienVault agora recebem aprovação direta (Trust AlienVault), garantindo bloqueio imediato de campanhas frescas.*</small>
+* <small>🛡️ **Mitigação de Falsos Positivos:** *O motor descarta bloqueios de domínios raiz legítimos (ex: sites de empresas invadidos hospedando payloads isolados) que possuem histórico "limpo" no URLScan, protegendo a disponibilidade de negócios na topologia SD-WAN.*</small>
+* <small>📊 **Debug Avançado (CI/CD):** *O `stdout` do GitHub Actions agora fornece diagnóstico completo e transparente das decisões da engine (ex: `[ADICIONADO: Domínio 100% Novo]` vs `[DESCARTADO: Site Legítimo]`).*</small>
+* <small>🐛 **Bug Fix de Indentação:** *Resolução do erro estrutural `TabError` no script Python, assegurando execuções perfeitas nos runners automatizados do GitHub Actions.*</small>
 
-**POC Iniciada: NRA EDL - FortiGuard Scanners IPs Mirror (28/07/2026)**
-* 🧪 **Espelhamento de Scanners Globais:** Início da Prova de Conceito (POC) para extração e consolidação dos IPs das principais ferramentas de varredura do mundo (Shodan, Censys, BinaryEdge, Rapid7, etc.) diretamente da base ISDB da FortiGuard.
-* 🛡️ **Suporte a Ambientes Legados (Legacy):** Solução desenhada estrategicamente para atender appliances rodando FortiOS 6.2, 6.4, 7.0 e 7.2, que operam sem licenciamento ativo e que não possuem suporte nativo a objetos ISDB no subsistema de Local In Policies.
-* ⚙️ **Blindagem de Ativos (VIPs):** A lista gerada permite o consumo via External Connectors para aplicação direta em Standard Policies. Isso inibe o reconnaissance automatizado e protege ativos publicados de figurarem nas bases de dados desses players massivos.
+---
 
-**Interceptação de IPs em URLs & Blindagem FQDN (28/07/2026)**
-* **Redirecionamento:** Indicadores reportados como URLs ou domínios que contêm IPs embutidos (ex: `107.172.135.60/payload.hta`) agora são interceptados na raiz. O motor extrai o endereço, valida contra a `nra-safelist.txt` centralizada, entra na esteira e o redireciona automaticamente para o feed de IPs críticos (`nra-ips-critical-1.txt`).
-* **Otimização para Certificate Inspection:** Sanitização estrita de FQDNs (`host_root`) para remover caminhos (`/`), portas (`:`) e caracteres inválidos. Garante compatibilidade total com o FortiGate operando em modo de inspeção simples por SNI, evitando erros de parser no daemon `wad`.
+#### 📅 12/08/2026: General Availability (GA) & Scanners IPs Mirror
+* <small>🎯 **Espelhamento de Scanners Globais:** *Consolidação contínua de IPs de varredura (Shodan, Censys, Rapid7, etc.) direto da base ISDB da FortiGuard para inibir reconnaissance em ativos VIP.*</small>
+* <small>⚙️ **Sobrevida para Ambientes Legacy:** *Proteção otimizada para appliances (FortiOS 6.2 a 7.2) sem licença ativa e sem suporte nativo a ISDB no Local In Policies.*</small>
+* <small>🔗 **Interceptação IP & Otimização FQDN:** *O motor agora extrai IPs escondidos em URLs maliciosas, aplicando sanitização rigorosa que remove caminhos/portas, garantindo compatibilidade com o modo Certificate Inspection e prevenindo travamentos no daemon `wad`.*</small>
 
-**Expansão do Ecossistema: NRA EDL (24/07/2026)**
-* 🛡️ **O Braço Direito do Sentinel:** Lançamento oficial do projeto **NRA EDL (FortiGuard IP Reputation Database Mirror)**. Trata-se de uma engenharia reversa tática e automatizada que espelha os *Internet Service Databases (ISDB)* oficiais da Fortinet para consumo gratuito pela nossa nova lista dinâmica.
-* 🌐 **Democratização da Borda:** Automação desenvolvida para amparar empresas, provedores (MSSPs) e analistas que rodam firewalls FortiGate sem licenciamento ativo devido a restrições orçamentárias. A ferramenta entrega proteção cirúrgica na Camada 3/4 contra C&C de Botnets, Phishing, Mineração de Criptomoedas, nós TOR e Proxies/VPNs anônimas.
-* ⚡ **Arquitetura de Segurança Integrada:** O motor do NRA EDL compartilha o mesmo *Control Plane* do Sentinel, utilizando o arquivo `nra-safelist.txt` centralizado como fonte única de verdade (*Single Source of Truth*) para evitar falsos positivos e incorporando um *Circuit Breaker* (trava de 150.000 prefixos) para proteger caixas menores contra *Conserve Mode* de memória WAD.
+---
 
-**Escalabilidade de Hardware (28/06/2026)**
-* 🏗️ **Arquitetura Multi-Tier:** O motor agora compila três níveis de feeds distintos (`Entry`, `Mid-Range`, `High-End`). Isso respeita o uso de memória (RAM) conforme a capacidade do seu FortiGate, evitando *Conserve Mode* em caixas menores enquanto entrega um arsenal de até 300.000 IoCs para ambientes de missão crítica.
+#### 📅 24/07/2026: Expansão do Ecossistema (NRA EDL IP Reputation)
+* <small>🌐 **Democratização da Borda:** *Automação que espelha os bancos ISDB oficiais para fornecer proteção gratuita na Camada 3/4 contra C&C, Phishing, Mineração, nós TOR e VPNs anônimas.*</small>
+* <small>⚡ **Control Plane Unificado:** *Compartilhamento da `nra-safelist.txt` centralizada (Single Source of Truth) e integração de um Circuit Breaker (trava limitadora de 150.000 prefixos) para blindar os appliances menores.*</small>
 
-**Escalabilidade de Hardware (28/06/2026)**
-* 🏗️ **Arquitetura Multi-Tier:** O motor agora compila três níveis de feeds distintos (`Entry`, `Mid-Range`, `High-End`). Isso respeita o uso de memória (RAM) conforme a capacidade do seu FortiGate, evitando *Conserve Mode* em caixas menores enquanto entrega um arsenal de até 300.000 IoCs para ambientes de missão crítica.
-* ⚡ **Segregação de Pipelines:** Implementamos novos fluxos de automação (GitHub Actions) escalonados com offset de tempo, garantindo a atualização contínua e simultânea de todos os Tiers sem colisão de requisições às APIs (evitando *Rate Limit*).
-* 📊 **Telemetria Operacional:** O relatório de sincronização (Telegram) agora entrega mensagens de status para cada Tier, permitindo que o administrador acompanhe os feeds em tempo real.
+---
 
-**Sanitização Avançada de IoCs e Estabilidade (28/06/2026)**
-* 🧹 **Filtro de Query Strings (URL Clean-up):** Aprimoramento da função `clean_indicator` no Python para identificar e remover automaticamente parâmetros de busca web e caracteres especiais (como `?` e `&`) de domínios reportados "sujos" pelas fontes globais. O motor agora extrai estritamente o FQDN (Fully Qualified Domain Name).
-* 🛡️ **Prevenção de Falhas no External Connector:** Esse tratamento resolve erros pontuais de *parsing* (falha de leitura de sintaxe) que faziam o *daemon* do FortiOS rejeitar linhas inválidas. Isso garante que o firewall absorva a lista de ameaças na íntegra, sem abortar a sincronização.
+#### 📅 28/06/2026: Arquitetura Multi-Tier e Sanitização Avançada
+* <small>🏗️ **Escalabilidade de Hardware:** *Compilação segregada em três pipelines (Entry, Mid-Range, High-End - até 300.000 IoCs), equilibrando proteção e consumo de RAM.*</small>
+* <small>🚀 **Automação Otimizada:** *Fluxos do GitHub Actions escalonados com offset de tempo para evitar Rate Limit nas APIs globais, integrados a relatórios de telemetria operacionais via Telegram.*</small>
+* <small>🧽 **URL Clean-up:** *Remoção automática de Query Strings de fontes externas, garantindo que o External Connector do FortiOS não aborte o processo de sincronização por falhas de sintaxe.*</small>
 
-**Falsos Positivos e Auditoria de Memória (24/05/2026)**
-* 🛡️ **Motor de Exceção Híbrida (Safelist):** Introduzido o arquivo `nra-safelist.txt` na raiz do repositório. Atuando como *Single Source of Truth*, o motor cruza IPs táticos identificados contra uma base de provedores DNS globais legítimos antes da aplicação do bloqueio. Isso mitiga riscos de indisponibilidade acidental em redes de produção.
-* ⚙️ **Engenharia de Memória FIFO Absoluta:** O motor de armazenamento local foi reescrito (migração de `sets` para `dicts`) para garantir ordem cronológica perfeita (First-In, First-Out). Novos IoCs (IPs, Domínios e Hashes) entram estritamente no fim da fila, mantendo a integridade temporal da esteira de ameaças.
-* 📊 **Auditoria de Rotação (Churn Visibility):** Visibilidade total sobre o descarte de artefatos antigos. Ao atingir o limite de proteção de RAM dos equipamentos (35.000 indicadores por categoria), o pipeline do GitHub Actions agora registra no console o cálculo exato do excedente e exibe os artefatos antigos que estão sendo removidos para dar lugar aos novos *0-days*.
+---
+
+#### 📅 24/05/2026: Auditoria de Memória FIFO e Engine Safelist
+* <small>🛡️ **Motor de Exceção Híbrida:** *Lançamento da Safelist para proteger provedores de DNS e infraestruturas legítimas de bloqueios acidentais em redes de produção.*</small>
+* <small>⏱️ **Rotação Cronológica (Churn Visibility):** *Reescrita da base de armazenamento (migração para `dicts`) forçando o modelo First-In, First-Out. O limite de proteção de 35.000 IoCs passa a ser auditado e registrado publicamente nos logs do console durante as substituições.*</small>
 
 ---
 
