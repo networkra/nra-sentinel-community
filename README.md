@@ -7,7 +7,7 @@ O **NRA Sentinel** é um projeto desenvolvido com o objetivo de auxiliar profiss
 
 ---
 
-O **NRA EDL - FortiGuard IP Reputation Database Mirror** é um projeto comunitário desenvolvido com o objetivo de democratizar a segurança na borda, auxiliando profissionais, empresas e provedores (MSSPs) que operam appliances FortiGate sem licenciamento ativo devido às atuais restrições orçamentárias do país. Ele automatiza a extração, a sumarização CIDR e o espelhamento contínuo das bases oficiais de reputação de IPs do ISDB (Internet Service Database) de caixas licenciadas, entregando um feed dinâmico limpo, blindado pela nossa Safelist e pronto para consumo nativo via **External Resource** do FortiGate. 
+O **NRA EDL - FortiGuard IP Reputation Database Mirror e Fortiguard Scanners IPs Mirror** é um projeto comunitário desenvolvido com o objetivo de democratizar a segurança na borda, auxiliando profissionais, empresas e provedores (MSSPs) que operam appliances FortiGate sem licenciamento ativo devido às atuais restrições orçamentárias do país. Ele automatiza a extração, a sumarização CIDR e o espelhamento contínuo das bases oficiais de reputação de IPs do ISDB (Internet Service Database) de caixas licenciadas, além dos IPs dos ISDBs de Scanners, entregando um feed limpo, protegido pela nossa Safelist e pronto para consumo nativo por **External Resource** do FortiGate. 
 
 Esta arquitetura não busca substituir o modelo comercial do fabricante, mas sim atuar como uma engenharia de solidariedade técnica que preenche a lacuna de quem estaria desprotegido, garantindo que a condição financeira não seja uma barreira para a segurança da sua rede.
 
@@ -22,6 +22,8 @@ Esta arquitetura não busca substituir o modelo comercial do fabricante, mas sim
 ---
 
 ### 🧠 Fontes de Dados
+
+**Para garantir estabilidade, baixa latência e alta disponibilidade para operações de SOC e MSSP, **o NRA Sentinel agora é entregue via CDN (Cloudflare) utilizando domínio corporativo.**
 
 O motor busca informações em fontes respeitadas mundialmente, garantindo que o que chega ao seu Firewall tenha passado por um processo de filtragem:
 
@@ -84,45 +86,10 @@ memory used + freeable threshold extreme:          1821 MB   95% of total RAM
 memory used threshold red:                         1687 MB   88% of total RAM
 memory used threshold green:                       1572 MB   82% of total RAM
 ```
-> [!IMPORTANT]
-> **Complemento, não Substituição:** O NRA Sentinel **não substitui a base de dados do FortiGuard**. O FortiGuard é a sua defesa global. O Sentinel atua como um **Sniper de elite**: uma camada extra de inteligência cirúrgica focada em indicadores de altíssima fidelidade e ameaças emergentes (*0-day*) que acabaram de ser catalogadas.
-
-*A eficiência de um feed de Threat Intel não é medida pela quantidade de itens, mas pela relevância do que ele bloqueia no seu ambiente hoje.*
 
 ---
 
-### 🤝 De Projeto Fechado para Open Source
-
-O NRA Sentinel nasceu como um projeto exclusivo para os membros do canal NetworkRA. Essa fase restrita foi essencial como um período de homologação, onde validamos a estabilidade do código, a precisão da Safelist e a performance do motor no FortiOS.
-
-Hoje, com o motor maduro e validado (incluindo *0-days* e infraestruturas maliciosas antes mesmo das assinaturas oficiais), decidi **abrir 100% do projeto para a comunidade**. Acredito que a defesa cibernética se faz em conjunto e que proteger infraestruturas críticas não deve ter barreiras. 
-
-O tempo dedicado a este projeto é a minha contribuição para fortalecer o nosso ecossistema.
-
-Você tem à disposição os seguintes conectores para o seu firewall:
-
-* **IP Threat Feed:** Lista de endereços IPs validados para políticas de bloqueio (Firewall Policy).
-* **Domain Threat / FortiGuard Category Feed:** FQDNs e URLs para proteção de DNS (DNS Filter) ou URL (Web Filter).
-* **Malware Hash Feed:** Assinaturas de arquivos para reforço do motor de Antivírus com a nossa lógica de *Rolling Buffer* (AV Profile).
-
----
-
-### 💎 Como Acessar e Acompanhar
-
-Todo o ecossistema **NRA Sentinel & EDL** é **100% gratuito, open-source e livre de restrições**. Nossa missão é fortalecer a segurança da comunidade sem barreiras financeiras. Siga os passos abaixo para blindar o seu ambiente hoje mesmo:
-
-1. **Implementação Direta (Zero Custo):** Vá até o final desta página, abra o **Guia de Configuração Rápida (FortiOS CLI)**, copie os scripts correspondentes ao seu ambiente (Sentinel Tiers + EDL Mirror) e aplique diretamente no terminal do seu firewall.
-2. **Acompanhe a Telemetria ao Vivo (O Pulse do Projeto):** Mantemos um canal aberto e gratuito no Telegram onde nossa esteira de automação reporta, em tempo real, a entrada de novos *0-days*, hashes de malware e os relatórios diários de sincronização das bases ISDB do FortiGuard.
-   * 🔗 **Entre no grupo e acompanhe as execuções:** [Telegram - NRA Sentinel & EDL Alerts](https://t.me/+jHlbAlp-7Xg0MTJh)
-3. **Apoie a Evolução do Projeto (Opcional):** A pesquisa, as horas de engenharia e a infraestrutura de laboratório para manter esses motores rodando geram custos operacionais diários. Se este projeto economiza tempo da sua equipe ou agrega valor à segurança dos clientes da sua empresa/MSSP, considere apoiar a nossa iniciativa tornando-se um membro do [Canal NetworkRA no YouTube](https://www.youtube.com/channel/UCs8isxhuF4phuQXimE52tOg/join). Além de financiar a continuidade destas ferramentas gratuitas para toda a comunidade, você desbloqueia benefícios exclusivos no canal:
-   * 🧪 **Laboratórios Práticos (Hands-on):** Acesso a imagens, arquivos VMware e topologias `.unl` prontas para importar no EVE-NG, simulando as arquiteturas SD-WAN e VPN mais exigidas pelo mercado de MSSPs.
-   * 🐍 **Automação & Gestão:** Scripts exclusivos em Python para automação de tarefas de rede, rotinas de backup e *Study Guides* completos para exames de certificação.
-   * 📊 **Inteligência para FortiAnalyzer:** Templates de relatórios corporativos, *Handlers* e *Correlation Handlers* avançados prontos para implementação imediata em SOC.
-   * 🤖 **Agentes de IA (GEMS Pro):** Acesso direto aos nossos assistentes de IA personalizados (baseados no Gemini Pro), altamente treinados com documentações de elite e especializados em arquitetura e *troubleshooting* do ecossistema Fortinet.
-
----
-
-### 🌐 NRA EDL - FortiGuard IP Reputation Database Mirror (Community Edition)
+### 🌐 NRA EDL - FortiGuard (Community Edition)
 
 Desenvolvemos o que muitos consideravam improvável: um motor de engenharia reversa tática capaz de democratizar o acesso à inteligência de ameaças de elite, provando que a proteção da borda não deve ser um privilégio, mas um direito de toda infraestrutura.
 
@@ -132,15 +99,15 @@ Estamos entregando uma solução audaciosa que preenche a lacuna entre a 'segura
 > **DEMOCRATIZANDO A SEGURANÇA NA BORDA (100% FREE)**
 > Sabemos que a realidade econômica atual impõe desafios severos aos orçamentos de TI. Muitas empresas, provedores (MSSPs) e analistas que mantêm laboratórios de estudos acabam operando appliances FortiGate sem o licenciamento ativo do FortiGuard devido aos altos custos de renovação. **A segurança da sua rede não pode ficar desamparada por restrições financeiras.**
 
-Com o objetivo de contribuir diretamente com a nossa comunidade e fortalecer o ecossistema nacional de cibersegurança, desenvolvemos o **NRA EDL - FortiGuard IP Reputation Database Mirror**. 
+Com o objetivo de contribuir diretamente com a nossa comunidade e fortalecer o ecossistema nacional de cibersegurança, desenvolvemos duas novas lsitas dinâmicas: **NRA EDL - FortiGuard IP Reputation Database Mirror** e o **NRA EDL - FortiGuard Scanners IPs Mirror**. 
 
 Trata-se de uma engenharia de **Replicação e Espelhamento (Mirror)**: nosso motor automatizado extrai, sanitiza e consolida continuamente a base oficial de reputação de IPs do *Internet Service Database (ISDB)* de appliances licenciados e disponibiliza toda essa inteligência de forma gratuita através de nossa lista no GitHub.
 
 ### 🛡️ O que estamos replicando para a sua caixa?
-Se o seu FortiGate está sem licença, ele perde a capacidade de consultar os servidores da Fortinet em tempo real. Com o **NRA EDL**, você contorna essa limitação aplicando nossa URL externa nativamente no seu firewall. 
 
 O feed atualiza automaticamente **Todas as categorias críticas de reputação** do FortiGuard:
 
+###  1. Ameaças Ativas & Reputação
 * 🚨 **Botnet-C&C.Server:** Servidores de Comando e Controle de Botnets globais.
 * 🛑 **Malicious-Malicious.Server:** Hosts catalogados em ataques ativos e drop de malwares.
 * 🎣 **Phishing-Phishing.Server:** Infraestruturas conhecidas por hospedagem de páginas de Phishing.
@@ -148,539 +115,91 @@ O feed atualiza automaticamente **Todas as categorias críticas de reputação**
 * 🧅 **Tor Nodes (Exit, Relay, Tor):** Nós da rede TOR frequentemente utilizados para anonimizar invasões.
 * 🕵️ **Proxy & Anonymous VPN:** Serviços de mascaramento de IP usados para burlar perímetros.
 
+###  2. Motores de Reconhecimento (Anti-Scanning)
+Para evitar que sua infraestrutura seja mapeada por atacantes buscando CVEs ou interfaces expostas, replicamos a base completa de Scanners. O feed bloqueia proativamente milhares de prefixos de varredura massiva na internet, englobando:
+
+* 👁️ **Global Scanners:** Shodan, Censys, Rapid7, Shadowserver, BinaryEdge, LeakIX.
+* 🔍 **Corporate & Gov Scanners:** Palo Alto Cortex Xpanse, Internet Census Group, UK NCSC, NetScout.
+* 🕷️ **Mass Crawlers & Recon:** Stretchoid, CriminalIP, Hadrian, ONYPHE, entre dezenas de outros bots de enumeração.
+
 ### ⚙️ Como consumir em appliances sem licença?
 Consulte o passo a passo logo abaixo, no Guia de Configuração Rápida (FortiOS CLI).
-
-*Seguimos trabalhando para que o conhecimento e a proteção permaneçam acessíveis a todos.*
 
 ---
 ### <mark>&nbsp;🚀 Guia de Configuração Rápida (FortiOS CLI)&nbsp;</mark>
 > [!WARNING]
-> **ATENÇÃO: MUDANÇA DE CRIPTOGRAFIA NO FORTIOS (PBKDF2)**
-> A partir das versões **7.2.11, 7.4.8 e 7.6.1**, a Fortinet abandonou o hash SHA256 simples e adotou o **PBKDF2 com Randomized Salts**. Isso significa que scripts contendo senhas criptografadas no formato antigo (`set password ENC ...`) apresentarão erro ao serem colados no CLI de caixas atualizadas.
-> 
-> Nos scripts abaixo, você encontrará **duas opções de senha**. Remova o `#` (descomente) apenas da linha que corresponde à versão do seu FortiOS.
----
-
-<details>
-<summary><b>👉 Entry-Level - Clique aqui para expandir o Script de Configuração</b></summary>
-
-<br>
-
-#### --- CONFIGURAÇÃO DOS RECURSOS EXTERNOS (LISTAS GLOBAIS) ---
-```
-config system external-resource
-    edit "OpenDBL_blocklist.de"
-        set type address
-        set resource "https://opendbl.net/lists/blocklistde-all.list"
-        set refresh-rate 1440
-    next
-    edit "OpenDBL_BruteForce"
-        set type address
-        set resource "https://opendbl.net/lists/bruteforce.list"
-        set refresh-rate 1450
-    next
-    edit "OpenDBL_TOR"
-        set type address
-        set resource "https://opendbl.net/lists/tor-exit.list"
-        set refresh-rate 1460
-    next
-    edit "OpenDBL_Threats"
-        set type address
-        set resource "https://opendbl.net/lists/etknown.list"
-        set refresh-rate 1470
-    next
-    edit "OpenDBL_IPSum"
-        set type address
-        set resource "https://opendbl.net/lists/ipsum.list"
-        set refresh-rate 1490
-    next
-    edit "blocklist.de"
-        set type address
-        set resource "https://blocklist.de/lists/all.txt"
-        set refresh-rate 1440
-    next
-    edit "cinsscore"
-        set type address
-        set resource "http://cinsscore.com/list/ci-badguys.txt"
-        set refresh-rate 1480
-    next
-    edit "Serpro"
-        set type address
-        set resource "https://s3.i02.estaleiro.serpro.gov.br/blocklist/blocklist.txt"
-        set refresh-rate 1490
-    next
-end
-```
-#### --- CONFIGURAÇÃO DO NRA SENTINEL ---
-```
-config system external-resource
-	edit "NRA_Sentinel_IPs"
-		set type address
-		set username "networkra"
-		# 👉 Se o seu FortiOS for 7.2.11+, 7.4.8+ ou 7.6.1+, use o password abaixo (PBKDF2):
-		# set password ENC weGSO5BLSuVszyE4uZR3Ch/6rVXkC9IRunTQm9QlA5xLErpSM6Ihs4HObBNz5OatXT/Yi/9Ja7xH32mvy0hh2MUxW3T7PaxkMZNdDWCwayrUJwBd4F53SewLaHfQljZoYaYtUHXTsYev9uvDFxX+ofz/CMs/55Na24wLxCW/PUIsS5j9mAphzUVXBwRgfHNVy2RlZ1lmMjY3dkVA
-		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
-		# set password ENC Yeqps04c8j0pMaSrHMQxxezGdtEo6QtvGsYPZ5Wb4TCEtYYRbPgDg2IhoqiaBVUNEEigZ/5w6ubxENB9/w5Lc2feJ3XO7EakEAHGHV/X7omS8hr4QlbiLZAIMM1Yh48bW1XK++pHQPYYkM03ZmybnROdmMaCgS/nDdtwBlkATNvyRUQfCRmEd1jZ2OeWTxht5wgQhg==
-		set resource https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-ips-critical-1.txt
-		set refresh-rate 240
-	next
-	edit "NRA_Sentinel_Domain-WF"
-		set category 193
-		set username "networkra"
-		# 👉 Se o seu FortiOS for 7.2.11+, 7.4.8+ ou 7.6.1+, use o password abaixo (PBKDF2):
-		# set password ENC weGSO5BLSuVszyE4uZR3Ch/6rVXkC9IRunTQm9QlA5xLErpSM6Ihs4HObBNz5OatXT/Yi/9Ja7xH32mvy0hh2MUxW3T7PaxkMZNdDWCwayrUJwBd4F53SewLaHfQljZoYaYtUHXTsYev9uvDFxX+ofz/CMs/55Na24wLxCW/PUIsS5j9mAphzUVXBwRgfHNVy2RlZ1lmMjY3dkVA
-		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
-		# set password ENC Yeqps04c8j0pMaSrHMQxxezGdtEo6QtvGsYPZ5Wb4TCEtYYRbPgDg2IhoqiaBVUNEEigZ/5w6ubxENB9/w5Lc2feJ3XO7EakEAHGHV/X7omS8hr4QlbiLZAIMM1Yh48bW1XK++pHQPYYkM03ZmybnROdmMaCgS/nDdtwBlkATNvyRUQfCRmEd1jZ2OeWTxht5wgQhg==
-		set resource https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-dom-critical-1.txt
-		set refresh-rate 240
-	next
-	edit "NRA_Sentinel_Malware-Hash"
-		set type malware
-		set username "networkra"
-		# 👉 Se o seu FortiOS for 7.2.11+, 7.4.8+ ou 7.6.1+, use o password abaixo (PBKDF2):
-		# set password ENC weGSO5BLSuVszyE4uZR3Ch/6rVXkC9IRunTQm9QlA5xLErpSM6Ihs4HObBNz5OatXT/Yi/9Ja7xH32mvy0hh2MUxW3T7PaxkMZNdDWCwayrUJwBd4F53SewLaHfQljZoYaYtUHXTsYev9uvDFxX+ofz/CMs/55Na24wLxCW/PUIsS5j9mAphzUVXBwRgfHNVy2RlZ1lmMjY3dkVA
-		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
-		# set password ENC Yeqps04c8j0pMaSrHMQxxezGdtEo6QtvGsYPZ5Wb4TCEtYYRbPgDg2IhoqiaBVUNEEigZ/5w6ubxENB9/w5Lc2feJ3XO7EakEAHGHV/X7omS8hr4QlbiLZAIMM1Yh48bW1XK++pHQPYYkM03ZmybnROdmMaCgS/nDdtwBlkATNvyRUQfCRmEd1jZ2OeWTxht5wgQhg==
-		set resource https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-hash-critical-1.txt
-		set refresh-rate 240
-	next
-end
-```
-#### --- CONFIGURAÇÃO DO NRA EDL - FortiGuard IP Reputation Database Mirror ---
-```
-config system external-resource
-	edit "NRA_Fortiguard_Reputation_IPs"
-		set type address
-		set username "networkra"
-		# 👉 Se o seu FortiOS for 7.2.11+, 7.4.8+ ou 7.6.1+, use o password abaixo (PBKDF2):
-		# set password ENC HBRrWW4aNbRlq+2MMMfnWp61ktrDsef9E9PB7cFI+2vRja5ijTdXBe6C/p3O+Osqid0L/tz/mgFfpfuhcdXgShcp3AY4dQOZdM95imh9FHJ70CQdGwx7CffIoCdZmF+GTcl7V7F50ZeCu9tO5joQDaaPfoL67CKd4uOtLp0e/LyRhw8m9jkqPL+aTqtuRCsxbpF57VlmMjY3dkVA
-		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
-		# set password ENC XUXp4Ctaoomn6uQKrtSuPwodh1W1xqE1Ow8GvhKkes0G4BcuQsJuMCR4/+Gn2bJ54gZcvnsRI+fr+KVu5BBeepf+6Ce3FD86DZCpXxS98zb830eDGPT9YmyHP/ivrYN1LHjdNuvzmRTKnl87Rqseu1l1LB+4h/uN2R1ecbwGzUj36GH3JFqZ2toUDOablwFnN8c/sg==
-		set resource "https://raw.githubusercontent.com/networkra/nra-fortiguard-edl/refs/heads/main/fortiguard_reputation_ips.txt"
-		set refresh-rate 60
-	next
-end
-```
-#### --- CONFIGURAÇÃO DO NRA EDL - FortiGuard Scanner IPs Mirror ---
-```
-config system external-resource
-	edit "NRA_Fortiguard_Scanner_IPs"
-		set type address
-		set username "networkra"
-		# 👉 Se o seu FortiOS for 7.2.11+, 7.4.8+ ou 7.6.1+, use o password abaixo (PBKDF2):
-		# set password ENC HBRrWW4aNbRlq+2MMMfnWp61ktrDsef9E9PB7cFI+2vRja5ijTdXBe6C/p3O+Osqid0L/tz/mgFfpfuhcdXgShcp3AY4dQOZdM95imh9FHJ70CQdGwx7CffIoCdZmF+GTcl7V7F50ZeCu9tO5joQDaaPfoL67CKd4uOtLp0e/LyRhw8m9jkqPL+aTqtuRCsxbpF57VlmMjY3dkVA
-		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
-		# set password ENC XUXp4Ctaoomn6uQKrtSuPwodh1W1xqE1Ow8GvhKkes0G4BcuQsJuMCR4/+Gn2bJ54gZcvnsRI+fr+KVu5BBeepf+6Ce3FD86DZCpXxS98zb830eDGPT9YmyHP/ivrYN1LHjdNuvzmRTKnl87Rqseu1l1LB+4h/uN2R1ecbwGzUj36GH3JFqZ2toUDOablwFnN8c/sg==
-		set resource "https://raw.githubusercontent.com/networkra/nra-fortiguard-edl/refs/heads/main/fortiguard_scanner_ips.txt"
-		set refresh-rate 60
-	next
-end
-```
-#### --- CRIAÇÃO DA POLÍTICA DE DENY (TOP OF POLICY) ---
-#### Nota: Neste exemplo estruturamos a Policy com o ID 816598, considerando interface Lan e virtual-wan-link.
-```
-config firewall policy
-    edit 816598
-        set name "Deny_Threat-Intel"
-        set srcintf "Lan"
-        set dstintf "virtual-wan-link"
-        set srcaddr "all"
-        set dstaddr "OpenDBL_blocklist.de" "OpenDBL_BruteForce" "OpenDBL_TOR" "OpenDBL_Threats" "OpenDBL_IPSum" "blocklist.de" "cinsscore" "Serpro" "NRA_Sentinel_IPs" "NRA_Fortiguard_Reputation_IPs" "NRA_Fortiguard_Scanner_IPs"
-        set schedule "always"
-        set service "ALL"
-        set action deny
-        set logtraffic all
-    next
-end
-```
-#### Mover a regra para o topo (substitua 'ID_DA_PRIMEIRA_REGRA' pelo ID real)
-```
-config firewall policy
-    move 816598 before ID_DA_PRIMEIRA_REGRA
-end
-```
-#### --- APLICAÇÃO NOS PROFILES DE SEGURANÇA ---
-Além dos IPs, a inteligência do NRA Sentinel atua nas camadas de inspeção. Aplique os conectores criados aos profiles de segurança que você já utiliza nas suas regras de acesso (Accept).
-
-**1. Proteção contra Malware**
-Aplica a lista de hashes bloqueados globalmente pelo Sentinel.
-```
-config antivirus profile
-    edit "SEU_PROFILE_AV"
-        set external-blocklist "NRA_Sentinel_Malware-Hash"
-    next
-end
-```
-**2. Bloqueio de Domínios Maliciosos**
-O feed alimenta uma categoria customizada de alta precisão no Fortinet Security Fabric. Nosso motor sanitiza automaticamente URLs e remove portas ou caminhos, entregando apenas FQDNs puros e protegidos pela nossa Safelist (ex: exemplo-malicioso.com). Como o feed atua diretamente na raiz do domínio, não é obrigatório o uso de Deep SSL Inspection. A aplicação via profile de Web Filter operando com Certificate Inspection (Inspeção Simples) é 100% eficaz, pois bloqueia a ameaça instantaneamente pela leitura do cabeçalho SNI no handshake HTTPS — garantindo proteção máxima sem consumir CPU/ASIC excessivo e sem exigir certificados corporativos instalados nos endpoints.
-
-Opção: Aplicação via Web Filter (Categoria 193)
-```
-config webfilter profile
-    edit "SEU_PROFILE_WF"
-        config ftgd-wf
-            unset options
-            config filters
-                edit 0
-                    set category 193
-                    set action block
-                next
-            end
-        end
-    next
-end
-```
-</details>
-
----
-<details>
-<summary><b>👉 Midrange - Clique aqui para expandir o Script de Configuração</b></summary>
-
-<br>
-
-#### --- CONFIGURAÇÃO DOS RECURSOS EXTERNOS (LISTAS GLOBAIS) ---
-```
-config system external-resource
-    edit "OpenDBL_blocklist.de"
-        set type address
-        set resource "https://opendbl.net/lists/blocklistde-all.list"
-        set refresh-rate 1440
-    next
-    edit "OpenDBL_BruteForce"
-        set type address
-        set resource "https://opendbl.net/lists/bruteforce.list"
-        set refresh-rate 1450
-    next
-    edit "OpenDBL_TOR"
-        set type address
-        set resource "https://opendbl.net/lists/tor-exit.list"
-        set refresh-rate 1460
-    next
-    edit "OpenDBL_Threats"
-        set type address
-        set resource "https://opendbl.net/lists/etknown.list"
-        set refresh-rate 1470
-    next
-    edit "OpenDBL_IPSum"
-        set type address
-        set resource "https://opendbl.net/lists/ipsum.list"
-        set refresh-rate 1490
-    next
-    edit "blocklist.de"
-        set type address
-        set resource "https://blocklist.de/lists/all.txt"
-        set refresh-rate 1440
-    next
-    edit "cinsscore"
-        set type address
-        set resource "http://cinsscore.com/list/ci-badguys.txt"
-        set refresh-rate 1480
-    next
-    edit "Serpro"
-        set type address
-        set resource "https://s3.i02.estaleiro.serpro.gov.br/blocklist/blocklist.txt"
-        set refresh-rate 1490
-    next
-end
-```
-#### --- CONFIGURAÇÃO DO NRA SENTINEL ---
-```
-config system external-resource
-	edit "NRA_Sentinel_IPs"
-		set type address
-		set username "networkra"
-		# 👉 Se o seu FortiOS for 7.2.11+, 7.4.8+ ou 7.6.1+, use o password abaixo (PBKDF2):
-		# set password ENC weGSO5BLSuVszyE4uZR3Ch/6rVXkC9IRunTQm9QlA5xLErpSM6Ihs4HObBNz5OatXT/Yi/9Ja7xH32mvy0hh2MUxW3T7PaxkMZNdDWCwayrUJwBd4F53SewLaHfQljZoYaYtUHXTsYev9uvDFxX+ofz/CMs/55Na24wLxCW/PUIsS5j9mAphzUVXBwRgfHNVy2RlZ1lmMjY3dkVA
-		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
-		# set password ENC Yeqps04c8j0pMaSrHMQxxezGdtEo6QtvGsYPZ5Wb4TCEtYYRbPgDg2IhoqiaBVUNEEigZ/5w6ubxENB9/w5Lc2feJ3XO7EakEAHGHV/X7omS8hr4QlbiLZAIMM1Yh48bW1XK++pHQPYYkM03ZmybnROdmMaCgS/nDdtwBlkATNvyRUQfCRmEd1jZ2OeWTxht5wgQhg==
-		set resource https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-ips-mid-critical-1.txt
-		set refresh-rate 240
-	next
-	edit "NRA_Sentinel_Domain-WF"
-		set category 193
-		set username "networkra"
-		# 👉 Se o seu FortiOS for 7.2.11+, 7.4.8+ ou 7.6.1+, use o password abaixo (PBKDF2):
-		# set password ENC weGSO5BLSuVszyE4uZR3Ch/6rVXkC9IRunTQm9QlA5xLErpSM6Ihs4HObBNz5OatXT/Yi/9Ja7xH32mvy0hh2MUxW3T7PaxkMZNdDWCwayrUJwBd4F53SewLaHfQljZoYaYtUHXTsYev9uvDFxX+ofz/CMs/55Na24wLxCW/PUIsS5j9mAphzUVXBwRgfHNVy2RlZ1lmMjY3dkVA
-		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
-		# set password ENC Yeqps04c8j0pMaSrHMQxxezGdtEo6QtvGsYPZ5Wb4TCEtYYRbPgDg2IhoqiaBVUNEEigZ/5w6ubxENB9/w5Lc2feJ3XO7EakEAHGHV/X7omS8hr4QlbiLZAIMM1Yh48bW1XK++pHQPYYkM03ZmybnROdmMaCgS/nDdtwBlkATNvyRUQfCRmEd1jZ2OeWTxht5wgQhg==
-		set resource https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-dom-mid-critical-1.txt
-		set refresh-rate 240
-	next
-	edit "NRA_Sentinel_Malware-Hash"
-		set type malware
-		set username "networkra"
-		# 👉 Se o seu FortiOS for 7.2.11+, 7.4.8+ ou 7.6.1+, use o password abaixo (PBKDF2):
-		# set password ENC weGSO5BLSuVszyE4uZR3Ch/6rVXkC9IRunTQm9QlA5xLErpSM6Ihs4HObBNz5OatXT/Yi/9Ja7xH32mvy0hh2MUxW3T7PaxkMZNdDWCwayrUJwBd4F53SewLaHfQljZoYaYtUHXTsYev9uvDFxX+ofz/CMs/55Na24wLxCW/PUIsS5j9mAphzUVXBwRgfHNVy2RlZ1lmMjY3dkVA
-		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
-		# set password ENC Yeqps04c8j0pMaSrHMQxxezGdtEo6QtvGsYPZ5Wb4TCEtYYRbPgDg2IhoqiaBVUNEEigZ/5w6ubxENB9/w5Lc2feJ3XO7EakEAHGHV/X7omS8hr4QlbiLZAIMM1Yh48bW1XK++pHQPYYkM03ZmybnROdmMaCgS/nDdtwBlkATNvyRUQfCRmEd1jZ2OeWTxht5wgQhg==
-		set resource https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-hash-mid-critical-1.txt
-		set refresh-rate 240
-	next
-end
-```
-#### --- CONFIGURAÇÃO DO NRA EDL - FortiGuard IP Reputation Database Mirror ---
-```
-config system external-resource
-	edit "NRA_Fortiguard_Reputation_IPs"
-		set type address
-		set username "networkra"
-		# 👉 Se o seu FortiOS for 7.2.11+, 7.4.8+ ou 7.6.1+, use o password abaixo (PBKDF2):
-		# set password ENC HBRrWW4aNbRlq+2MMMfnWp61ktrDsef9E9PB7cFI+2vRja5ijTdXBe6C/p3O+Osqid0L/tz/mgFfpfuhcdXgShcp3AY4dQOZdM95imh9FHJ70CQdGwx7CffIoCdZmF+GTcl7V7F50ZeCu9tO5joQDaaPfoL67CKd4uOtLp0e/LyRhw8m9jkqPL+aTqtuRCsxbpF57VlmMjY3dkVA
-		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
-		# set password ENC XUXp4Ctaoomn6uQKrtSuPwodh1W1xqE1Ow8GvhKkes0G4BcuQsJuMCR4/+Gn2bJ54gZcvnsRI+fr+KVu5BBeepf+6Ce3FD86DZCpXxS98zb830eDGPT9YmyHP/ivrYN1LHjdNuvzmRTKnl87Rqseu1l1LB+4h/uN2R1ecbwGzUj36GH3JFqZ2toUDOablwFnN8c/sg==
-		set resource "https://raw.githubusercontent.com/networkra/nra-fortiguard-edl/refs/heads/main/fortiguard_reputation_ips.txt"
-		set refresh-rate 60
-	next
-end
-```
-#### --- CONFIGURAÇÃO DO NRA EDL - FortiGuard Scanner IPs Mirror ---
-```
-config system external-resource
-	edit "NRA_Fortiguard_Scanner_IPs"
-		set type address
-		set username "networkra"
-		# 👉 Se o seu FortiOS for 7.2.11+, 7.4.8+ ou 7.6.1+, use o password abaixo (PBKDF2):
-		# set password ENC HBRrWW4aNbRlq+2MMMfnWp61ktrDsef9E9PB7cFI+2vRja5ijTdXBe6C/p3O+Osqid0L/tz/mgFfpfuhcdXgShcp3AY4dQOZdM95imh9FHJ70CQdGwx7CffIoCdZmF+GTcl7V7F50ZeCu9tO5joQDaaPfoL67CKd4uOtLp0e/LyRhw8m9jkqPL+aTqtuRCsxbpF57VlmMjY3dkVA
-		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
-		# set password ENC XUXp4Ctaoomn6uQKrtSuPwodh1W1xqE1Ow8GvhKkes0G4BcuQsJuMCR4/+Gn2bJ54gZcvnsRI+fr+KVu5BBeepf+6Ce3FD86DZCpXxS98zb830eDGPT9YmyHP/ivrYN1LHjdNuvzmRTKnl87Rqseu1l1LB+4h/uN2R1ecbwGzUj36GH3JFqZ2toUDOablwFnN8c/sg==
-		set resource "https://raw.githubusercontent.com/networkra/nra-fortiguard-edl/refs/heads/main/fortiguard_scanner_ips.txt"
-		set refresh-rate 60
-	next
-end
-```
-#### --- CRIAÇÃO DA POLÍTICA DE DENY (TOP OF POLICY) ---
-#### Nota: Neste exemplo estruturamos a Policy com o ID 816598, considerando interface Lan e virtual-wan-link.
-```
-config firewall policy
-    edit 816598
-        set name "Deny_Threat-Intel"
-        set srcintf "Lan"
-        set dstintf "virtual-wan-link"
-        set srcaddr "all"
-        set dstaddr "OpenDBL_blocklist.de" "OpenDBL_BruteForce" "OpenDBL_TOR" "OpenDBL_Threats" "OpenDBL_IPSum" "blocklist.de" "cinsscore" "Serpro" "NRA_Sentinel_IPs" "NRA_Fortiguard_Reputation_IPs" "NRA_Fortiguard_Scanner_IPs"
-        set schedule "always"
-        set service "ALL"
-        set action deny
-        set logtraffic all
-    next
-end
-```
-#### Mover a regra para o topo (substitua 'ID_DA_PRIMEIRA_REGRA' pelo ID real)
-```
-config firewall policy
-    move 816598 before ID_DA_PRIMEIRA_REGRA
-end
-```
-#### --- APLICAÇÃO NOS PROFILES DE SEGURANÇA ---
-Além dos IPs, a inteligência do NRA Sentinel atua nas camadas de inspeção. Aplique os conectores criados aos profiles de segurança que você já utiliza nas suas regras de acesso (Accept).
-
-**1. Proteção contra Malware**
-Aplica a lista de hashes bloqueados globalmente pelo Sentinel.
-```
-config antivirus profile
-    edit "SEU_PROFILE_AV"
-        set external-blocklist "NRA_Sentinel_Malware-Hash"
-    next
-end
-```
-**2. Bloqueio de Domínios Maliciosos**
-O feed alimenta uma categoria customizada de alta precisão no Fortinet Security Fabric. Nosso motor sanitiza automaticamente URLs e remove portas ou caminhos, entregando apenas FQDNs puros e protegidos pela nossa Safelist (ex: exemplo-malicioso.com). Como o feed atua diretamente na raiz do domínio, não é obrigatório o uso de Deep SSL Inspection. A aplicação via profile de Web Filter operando com Certificate Inspection (Inspeção Simples) é 100% eficaz, pois bloqueia a ameaça instantaneamente pela leitura do cabeçalho SNI no handshake HTTPS — garantindo proteção máxima sem consumir CPU/ASIC excessivo e sem exigir certificados corporativos instalados nos endpoints.
-
-Opção: Aplicação via Web Filter (Categoria 193)
-```
-config webfilter profile
-    edit "SEU_PROFILE_WF"
-        config ftgd-wf
-            unset options
-            config filters
-                edit 0
-                    set category 193
-                    set action block
-                next
-            end
-        end
-    next
-end
-```
-</details>
+> 🚨 **Deprecation Notice:** As URLs antigas baseadas em `raw.githubusercontent.com` **se tornaram legadas**. Pedimos gentilmente que todos os usuários atualizem as configurações de seus conectores externos (External Connectors) no FortiGate para as novas URLs oficiais listadas abaixo.
 
 ---
 
-<details>
-<summary><b>👉 High-End - Clique aqui para expandir o Script de Configuração</b></summary>
+### 🔗 URLs Oficiais (Novos Endereços)
 
-<br>
+Nossa inteligência é dividida em três camadas para se adequar à capacidade de hardware do seu equipamento (Entry-level, Midrange e High-end). 
 
-#### --- CONFIGURAÇÃO DOS RECURSOS EXTERNOS (LISTAS GLOBAIS) ---
-```
-config system external-resource
-    edit "OpenDBL_blocklist.de"
-        set type address
-        set resource "https://opendbl.net/lists/blocklistde-all.list"
-        set refresh-rate 1440
-    next
-    edit "OpenDBL_BruteForce"
-        set type address
-        set resource "https://opendbl.net/lists/bruteforce.list"
-        set refresh-rate 1450
-    next
-    edit "OpenDBL_TOR"
-        set type address
-        set resource "https://opendbl.net/lists/tor-exit.list"
-        set refresh-rate 1460
-    next
-    edit "OpenDBL_Threats"
-        set type address
-        set resource "https://opendbl.net/lists/etknown.list"
-        set refresh-rate 1470
-    next
-    edit "OpenDBL_IPSum"
-        set type address
-        set resource "https://opendbl.net/lists/ipsum.list"
-        set refresh-rate 1490
-    next
-    edit "blocklist.de"
-        set type address
-        set resource "https://blocklist.de/lists/all.txt"
-        set refresh-rate 1440
-    next
-    edit "cinsscore"
-        set type address
-        set resource "http://cinsscore.com/list/ci-badguys.txt"
-        set refresh-rate 1480
-    next
-    edit "Serpro"
-        set type address
-        set resource "https://s3.i02.estaleiro.serpro.gov.br/blocklist/blocklist.txt"
-        set refresh-rate 1490
-    next
-end
-```
-#### --- CONFIGURAÇÃO DO NRA SENTINEL ---
-```
-config system external-resource
-	edit "NRA_Sentinel_IPs"
-		set type address
-		set username "networkra"
-		# 👉 Se o seu FortiOS for 7.2.11+, 7.4.8+ ou 7.6.1+, use o password abaixo (PBKDF2):
-		# set password ENC weGSO5BLSuVszyE4uZR3Ch/6rVXkC9IRunTQm9QlA5xLErpSM6Ihs4HObBNz5OatXT/Yi/9Ja7xH32mvy0hh2MUxW3T7PaxkMZNdDWCwayrUJwBd4F53SewLaHfQljZoYaYtUHXTsYev9uvDFxX+ofz/CMs/55Na24wLxCW/PUIsS5j9mAphzUVXBwRgfHNVy2RlZ1lmMjY3dkVA
-		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
-		# set password ENC Yeqps04c8j0pMaSrHMQxxezGdtEo6QtvGsYPZ5Wb4TCEtYYRbPgDg2IhoqiaBVUNEEigZ/5w6ubxENB9/w5Lc2feJ3XO7EakEAHGHV/X7omS8hr4QlbiLZAIMM1Yh48bW1XK++pHQPYYkM03ZmybnROdmMaCgS/nDdtwBlkATNvyRUQfCRmEd1jZ2OeWTxht5wgQhg==
-		set resource https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-ips-high-critical-1.txt
-		set refresh-rate 240
-	next
-	edit "NRA_Sentinel_Domain-WF"
-		set category 193
-		set username "networkra"
-		# 👉 Se o seu FortiOS for 7.2.11+, 7.4.8+ ou 7.6.1+, use o password abaixo (PBKDF2):
-		# set password ENC weGSO5BLSuVszyE4uZR3Ch/6rVXkC9IRunTQm9QlA5xLErpSM6Ihs4HObBNz5OatXT/Yi/9Ja7xH32mvy0hh2MUxW3T7PaxkMZNdDWCwayrUJwBd4F53SewLaHfQljZoYaYtUHXTsYev9uvDFxX+ofz/CMs/55Na24wLxCW/PUIsS5j9mAphzUVXBwRgfHNVy2RlZ1lmMjY3dkVA
-		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
-		# set password ENC Yeqps04c8j0pMaSrHMQxxezGdtEo6QtvGsYPZ5Wb4TCEtYYRbPgDg2IhoqiaBVUNEEigZ/5w6ubxENB9/w5Lc2feJ3XO7EakEAHGHV/X7omS8hr4QlbiLZAIMM1Yh48bW1XK++pHQPYYkM03ZmybnROdmMaCgS/nDdtwBlkATNvyRUQfCRmEd1jZ2OeWTxht5wgQhg==
-		set resource https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-dom-high-critical-1.txt
-		set refresh-rate 240
-	next
-	edit "NRA_Sentinel_Malware-Hash"
-		set type malware
-		set username "networkra"
-		# 👉 Se o seu FortiOS for 7.2.11+, 7.4.8+ ou 7.6.1+, use o password abaixo (PBKDF2):
-		# set password ENC weGSO5BLSuVszyE4uZR3Ch/6rVXkC9IRunTQm9QlA5xLErpSM6Ihs4HObBNz5OatXT/Yi/9Ja7xH32mvy0hh2MUxW3T7PaxkMZNdDWCwayrUJwBd4F53SewLaHfQljZoYaYtUHXTsYev9uvDFxX+ofz/CMs/55Na24wLxCW/PUIsS5j9mAphzUVXBwRgfHNVy2RlZ1lmMjY3dkVA
-		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
-		# set password ENC Yeqps04c8j0pMaSrHMQxxezGdtEo6QtvGsYPZ5Wb4TCEtYYRbPgDg2IhoqiaBVUNEEigZ/5w6ubxENB9/w5Lc2feJ3XO7EakEAHGHV/X7omS8hr4QlbiLZAIMM1Yh48bW1XK++pHQPYYkM03ZmybnROdmMaCgS/nDdtwBlkATNvyRUQfCRmEd1jZ2OeWTxht5wgQhg==
-		set resource https://raw.githubusercontent.com/networkra/nra-sentinel-feeds/refs/heads/main/nra-hash-high-critical-1.txt
-		set refresh-rate 240
-	next
-end
-```
-#### --- CONFIGURAÇÃO DO NRA EDL - FortiGuard IP Reputation Database Mirror ---
-```
-config system external-resource
-	edit "NRA_Fortiguard_Reputation_IPs"
-		set type address
-		set username "networkra"
-		# 👉 Se o seu FortiOS for 7.2.11+, 7.4.8+ ou 7.6.1+, use o password abaixo (PBKDF2):
-		# set password ENC HBRrWW4aNbRlq+2MMMfnWp61ktrDsef9E9PB7cFI+2vRja5ijTdXBe6C/p3O+Osqid0L/tz/mgFfpfuhcdXgShcp3AY4dQOZdM95imh9FHJ70CQdGwx7CffIoCdZmF+GTcl7V7F50ZeCu9tO5joQDaaPfoL67CKd4uOtLp0e/LyRhw8m9jkqPL+aTqtuRCsxbpF57VlmMjY3dkVA
-		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
-		# set password ENC XUXp4Ctaoomn6uQKrtSuPwodh1W1xqE1Ow8GvhKkes0G4BcuQsJuMCR4/+Gn2bJ54gZcvnsRI+fr+KVu5BBeepf+6Ce3FD86DZCpXxS98zb830eDGPT9YmyHP/ivrYN1LHjdNuvzmRTKnl87Rqseu1l1LB+4h/uN2R1ecbwGzUj36GH3JFqZ2toUDOablwFnN8c/sg==
-		set resource "https://raw.githubusercontent.com/networkra/nra-fortiguard-edl/refs/heads/main/fortiguard_reputation_ips.txt"
-		set refresh-rate 60
-	next
-end
-```
-#### --- CONFIGURAÇÃO DO NRA EDL - FortiGuard Scanner IPs Mirror ---
-```
-config system external-resource
-	edit "NRA_Fortiguard_Scanner_IPs"
-		set type address
-		set username "networkra"
-		# 👉 Se o seu FortiOS for 7.2.11+, 7.4.8+ ou 7.6.1+, use o password abaixo (PBKDF2):
-		# set password ENC HBRrWW4aNbRlq+2MMMfnWp61ktrDsef9E9PB7cFI+2vRja5ijTdXBe6C/p3O+Osqid0L/tz/mgFfpfuhcdXgShcp3AY4dQOZdM95imh9FHJ70CQdGwx7CffIoCdZmF+GTcl7V7F50ZeCu9tO5joQDaaPfoL67CKd4uOtLp0e/LyRhw8m9jkqPL+aTqtuRCsxbpF57VlmMjY3dkVA
-		# 👉 Se o seu FortiOS for antigo (ex: 7.2.10, 7.0.x, 6.4.x, 6.2.x), use o password abaixo (Legacy/SHA256):
-		# set password ENC XUXp4Ctaoomn6uQKrtSuPwodh1W1xqE1Ow8GvhKkes0G4BcuQsJuMCR4/+Gn2bJ54gZcvnsRI+fr+KVu5BBeepf+6Ce3FD86DZCpXxS98zb830eDGPT9YmyHP/ivrYN1LHjdNuvzmRTKnl87Rqseu1l1LB+4h/uN2R1ecbwGzUj36GH3JFqZ2toUDOablwFnN8c/sg==
-		set resource "https://raw.githubusercontent.com/networkra/nra-fortiguard-edl/refs/heads/main/fortiguard_scanner_ips.txt"
-		set refresh-rate 60
-	next
-end
-```
-#### --- CRIAÇÃO DA POLÍTICA DE DENY (TOP OF POLICY) ---
-#### Nota: Neste exemplo estruturamos a Policy com o ID 816598, considerando interface Lan e virtual-wan-link.
-```
-config firewall policy
-    edit 816598
-        set name "Deny_Threat-Intel"
-        set srcintf "Lan"
-        set dstintf "virtual-wan-link"
-        set srcaddr "all"
-        set dstaddr "OpenDBL_blocklist.de" "OpenDBL_BruteForce" "OpenDBL_TOR" "OpenDBL_Threats" "OpenDBL_IPSum" "blocklist.de" "cinsscore" "Serpro" "NRA_Sentinel_IPs" "NRA_Fortiguard_Reputation_IPs" "NRA_Fortiguard_Scanner_IPs"
-        set schedule "always"
-        set service "ALL"
-        set action deny
-        set logtraffic all
-    next
-end
-```
-#### Mover a regra para o topo (substitua 'ID_DA_PRIMEIRA_REGRA' pelo ID real)
-```
-config firewall policy
-    move 816598 before ID_DA_PRIMEIRA_REGRA
-end
-```
-#### --- APLICAÇÃO NOS PROFILES DE SEGURANÇA ---
-Além dos IPs, a inteligência do NRA Sentinel atua nas camadas de inspeção. Aplique os conectores criados aos profiles de segurança que você já utiliza nas suas regras de acesso (Accept).
+### 🟢 1. NRA Sentinel - Entry-Level
+Feeds focados em ameaças ativas, Botnets, C&C e malwares de alta criticidade.
+* **IPs:** `https://nra-sentinel-feeds.networkra.seg.br/nra-ips-critical-1.txt`
+* **Domains:** `https://nra-sentinel-feeds.networkra.seg.br/nra-dom-critical-1.txt`
+* **Hashes (Malware):** `https://nra-sentinel-feeds.networkra.seg.br/nra-hash-critical-1.txt`
 
-**1. Proteção contra Malware**
-Aplica a lista de hashes bloqueados globalmente pelo Sentinel.
-```
-config antivirus profile
-    edit "SEU_PROFILE_AV"
-        set external-blocklist "NRA_Sentinel_Malware-Hash"
-    next
-end
-```
-**2. Bloqueio de Domínios Maliciosos**
-O feed alimenta uma categoria customizada de alta precisão no Fortinet Security Fabric. Nosso motor sanitiza automaticamente URLs e remove portas ou caminhos, entregando apenas FQDNs puros e protegidos pela nossa Safelist (ex: exemplo-malicioso.com). Como o feed atua diretamente na raiz do domínio, não é obrigatório o uso de Deep SSL Inspection. A aplicação via profile de Web Filter operando com Certificate Inspection (Inspeção Simples) é 100% eficaz, pois bloqueia a ameaça instantaneamente pela leitura do cabeçalho SNI no handshake HTTPS — garantindo proteção máxima sem consumir CPU/ASIC excessivo e sem exigir certificados corporativos instalados nos endpoints.
+### 🟡 2. NRA Sentinel - Midrange
+Base estendida contendo o nível Critical + IoCs adicionais com tempo de vida (TTL) maior.
+* **IPs:** `https://nra-sentinel-feeds.networkra.seg.br/nra-ips-mid-critical-1.txt`
+* **Domains:** `https://nra-sentinel-feeds.networkra.seg.br/nra-dom-mid-critical-1.txt`
+* **Hashes (Malware):** `https://nra-sentinel-feeds.networkra.seg.br/nra-hash-mid-critical-1.txt`
 
-Opção: Aplicação via Web Filter (Categoria 193)
-```
-config webfilter profile
-    edit "SEU_PROFILE_WF"
-        config ftgd-wf
-            unset options
-            config filters
-                edit 0
-                    set category 193
-                    set action block
-                next
-            end
-        end
-    next
-end
-```
-</details>
+### 🔴 3. NRA Sentinel - High-End
+Base completa de Threat Intelligence com amplo histórico de IoCs e varreduras abrangentes.
+* **IPs:** `https://nra-sentinel-feeds.networkra.seg.br/nra-ips-high-critical-1.txt`
+* **Domains:** `https://nra-sentinel-feeds.networkra.seg.br/nra-dom-high-critical-1.txt`
+* **Hashes (Malware):** `https://nra-sentinel-feeds.networkra.seg.br/nra-hash-high-critical-1.txt`
+
+---
+
+### 🛡️ 4. FortiGuard EDLs (Módulos Específicos)
+Listas complementares focadas em reputação e mitigação de scanners da internet.
+* **IP Reputation:** `https://nra-fortiguard-edl.networkra.seg.br/fortiguard_reputation_ips.txt`
+* **Scanners / Scrapers:** `https://nra-fortiguard-edl.networkra.seg.br/fortiguard_scanner_ips.txt`
+
+---
+
+## ⚙️ Como configurar no FortiGate
+
+1. Acesse o seu FortiGate via interface web (GUI).
+2. Navegue até **Security Fabric** -> **External Connectors**.
+3. Clique em **Create New** e selecione o tipo de lista (IP Address, Domain Name, ou Malware Hash).
+4. Insira um nome descritivo (ex: `NRA-Sentinel-IP-Critical`).
+5. Cole a **URL Oficial** correspondente fornecida acima.
+6. Defina o **Refresh Rate** (Taxa de atualização) para **60 minutos** (recomendado).
+7. Certifique-se de que o Status está ativado e clique em OK.
+8. Utilize essas listas em suas **Firewall Policies**, **AntiVírus** e **Web-Filters** aplicando a ação adequada.
+
+---
+
+### 💎 Como Acessar e Acompanhar
+
+Todo o ecossistema **NRA Sentinel & EDL** é **100% gratuito, open-source e livre de restrições**. Nossa missão é fortalecer a segurança da comunidade sem barreiras financeiras. Siga os passos abaixo para blindar o seu ambiente hoje mesmo:
+
+1. **Implementação Direta (Zero Custo):** Vá até o final desta página, abra o **Guia de Configuração Rápida (FortiOS CLI)**, copie os scripts correspondentes ao seu ambiente (Sentinel Tiers + EDL Mirror) e aplique diretamente no terminal do seu firewall.
+2. **Acompanhe a Telemetria ao Vivo (O Pulse do Projeto):** Mantemos um canal aberto e gratuito no Telegram onde nossa esteira de automação reporta, em tempo real, a entrada de novos *0-days*, hashes de malware e os relatórios diários de sincronização das bases ISDB do FortiGuard.
+* 🔗 **Entre no grupo e acompanhe as execuções:** [Telegram - NRA Sentinel & EDL Alerts](https://t.me/+jHlbAlp-7Xg0MTJh)
+3. **Apoie a Evolução do Projeto (Opcional):** A pesquisa, as horas de engenharia e a infraestrutura de laboratório para manter esses motores rodando geram custos operacionais diários. Se este projeto economiza tempo da sua equipe ou agrega valor à segurança dos clientes da sua empresa/MSSP, considere apoiar a nossa iniciativa tornando-se um membro do [Canal NetworkRA no YouTube](https://www.youtube.com/channel/UCs8isxhuF4phuQXimE52tOg/join). Além de financiar a continuidade destas ferramentas gratuitas para toda a comunidade, você desbloqueia benefícios exclusivos no canal:
+* 🧪 **Laboratórios Práticos (Hands-on):** Acesso a imagens, arquivos VMware e topologias `.unl` prontas para importar no EVE-NG, simulando as arquiteturas SD-WAN e VPN mais exigidas pelo mercado de MSSPs.
+* 🐍 **Automação & Gestão:** Scripts exclusivos em Python para automação de tarefas de rede, rotinas de backup e *Study Guides* completos para exames de certificação.
+* 📊 **Inteligência para FortiAnalyzer:** Templates de relatórios corporativos, *Handlers* e *Correlation Handlers* avançados prontos para implementação imediata em SOC.
+* 🤖 **Agentes de IA (GEMS Pro):** Acesso direto aos nossos assistentes de IA personalizados (baseados no Gemini Pro), altamente treinados com documentações de elite e especializados em arquitetura e *troubleshooting* do ecossistema Fortinet.
 
 ---
 
 ### 🚀 Changelog: NRA Sentinel V33.5
+
+#### 📅 17/09/2026: Infraestrutura Enterprise (Global CDN) e Domínios Corporativos *(Latest)*
+* <small>🌍 **Migração para CDN Global (Cloudflare):** *A entrega dos feeds deixou de utilizar o `raw.githubusercontent.com` e agora é servida nativamente pela infraestrutura de edge da Cloudflare (Pages), entregando alta disponibilidade, resiliência e latência zero.*</small>
+* <small>🔗 **Domínios Oficiais (.seg.br):** *Ativação dos novos endereços corporativos (`nra-sentinel-feeds.networkra.seg.br` e `nra-fortiguard-edl.networkra.seg.br`), elevando o padrão de confiabilidade para adoção em operações de SOCs e MSSPs.*</small>
+* <small>⚡ **Edge Caching em Tempo Real:** *Implementação de Page Rules com TTL otimizado (2 minuto) na borda da CDN, forçando o firewall a baixar imediatamente os IoCs mais recentes gerados pelo motor, eliminando gargalos de cache.*</small>
+* <small>🛡️ **Bypass Inteligente de WAF & Anti-Bot:** *Criação de exceções de segurança para o tráfego em arquivos `.txt`, garantindo que os conectores do FortiGate não recebam desafios CAPTCHA e importem as listas sem interrupções.*</small>
+
+---
 
 #### 📅 26/08/2026: Triagem Híbrida e Proteção de Negócios Locais *(Latest)*
 * <small>🧠 **URLScan Híbrido (0-Days & NRDs):** *Domínios recém-registrados ou sem histórico reportados pelo AlienVault agora recebem aprovação direta (Trust AlienVault), garantindo bloqueio imediato de campanhas frescas.*</small>
@@ -716,16 +235,6 @@ end
 
 ---
 
-### 🤝 Créditos e Comunidade
-
-O **NRA Sentinel & EDL** crescem graças ao feedback e às contribuições de profissionais que testam o motor em ambientes reais de produção:
-
-*   **[@faustocaldeira](https://github.com/faustocaldeira/):** Pela curadoria essencial da base de provedores DNS utilizada na nossa Safelist (AdGuard), ajudando a prevenir falsos positivos e erros humanos.
-*   **@RodrigoAssinger:** Pela visão de arquiteto que guiou a implementação da nossa esteira segmentada (Multi-Tier), permitindo o suporte escalável para hardwares Mid-Range e High-End.
-*   **@MsAbreu000:** Pelo reporte do erro de autenticação nos conectores externos, que nos levou a mapear a mudança crítica do padrão de criptografia de senhas (PBKDF2) nas novas *releases* do FortiOS, resultando na documentação do script *Legacy* vs *Current*.
-
----
-
 ### 🏆 Hall da Fama: Apoiadores Oficiais
 
 Hoje, o motor **NRA Sentinel & EDL** é **100% gratuito e de código aberto**. No entanto, a pesquisa, o desenvolvimento contínuo (horas de engenharia) e os custos exigem recursos. Esta seção é dedicada a agradecer publicamente aos arquitetos, analistas e provedores de serviços gerenciados (MSSPs) que reconhecem o valor corporativo desta ferramenta e optaram por patrocinar diretamente o projeto através do nível **NetworkRA MSSP**.
@@ -742,6 +251,16 @@ Graças a vocês, o Sentinel continua evoluindo.
 > Se este projeto economiza tempo da sua equipe ou traz segurança para os seus clientes, considere apoiar a manutenção do código. Torne-se um membro **NetworkRA MSSP** no nosso canal do YouTube e faça parte da elite que mantém essa inteligência rodando!
 > 
 > 👉 **[Apoie o Projeto Aqui](https://www.youtube.com/@NetworkRA/join)**
+
+---
+
+### 🤝 Créditos e Comunidade
+
+O **NRA Sentinel & EDL** crescem graças ao feedback e às contribuições de profissionais que testam o motor em ambientes reais de produção:
+
+*   **[@faustocaldeira](https://github.com/faustocaldeira/):** Pela curadoria essencial da base de provedores DNS utilizada na nossa Safelist (AdGuard), ajudando a prevenir falsos positivos e erros humanos.
+*   **@RodrigoAssinger:** Pela visão de arquiteto que guiou a implementação da nossa esteira segmentada (Multi-Tier), permitindo o suporte escalável para hardwares Mid-Range e High-End.
+*   **@MsAbreu000:** Pelo reporte do erro de autenticação nos conectores externos, que nos levou a mapear a mudança crítica do padrão de criptografia de senhas (PBKDF2) nas novas *releases* do FortiOS, resultando na documentação do script *Legacy* vs *Current*.
 
 ---
 
@@ -773,9 +292,9 @@ Acredito que o compartilhamento técnico deve caminhar junto com a valorização
 
 | Certificação | Tecnologia | Status |
 | :--- | :--- | :--- |
-| **FCSS** | Enterprise Firewall 7.6 Administrator | Pass (2026) |
-| **FCSS** | Enterprise Firewall 7.4 Administrator | Pass (2025) |
-| **FCSS** | Network Security 7.4 Support Engineer | Pass (2025) |
+| **NSE 7** | Enterprise Firewall 7.6 Administrator | Pass (2026) |
+| **NSE 7** | Enterprise Firewall 7.4 Administrator | Pass (2025) |
+| **NSE 7** | Network Security 7.4 Support Engineer | Pass (2025) |
 | **NSE 7** | SD-WAN 7.2 | Pass (2024) |
 | **NSE 7** | Enterprise Firewall 7.0 | Pass (2023) |
 | **NSE 5** | FortiAnalyzer 6.4 | Pass (2022) |
