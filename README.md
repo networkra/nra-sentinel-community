@@ -21,8 +21,9 @@ Esta arquitetura não busca substituir o modelo comercial do fabricante, mas sim
 
 ---
 
-**O NRA Sentinel & EDL agora é entregue via CDN (Cloudflare). Domínio networkra.seg.br
-A ideia é garantir estabilidade, baixa latência e alta disponibilidade para operações de SOC e MSSP**
+**O Projeto agora é entregue via CDN (Cloudflare). Domínio networkra.seg.br**
+
+<i>Maior estabilidade, baixa latência e alta disponibilidade para operações de SOC e MSSP</i>
 
 ---
 
@@ -105,7 +106,7 @@ Com o objetivo de contribuir diretamente com a nossa comunidade e fortalecer o e
 
 Trata-se de uma engenharia de **Replicação e Espelhamento (Mirror)**: nosso motor automatizado extrai, sanitiza e consolida continuamente a base oficial de reputação de IPs do *Internet Service Database (ISDB)* de appliances licenciados e disponibiliza toda essa inteligência de forma gratuita através de nossa lista no GitHub.
 
-### 🛡️ O que estamos replicando para a sua caixa?
+### 🛡️ O que estamos replicando para o seu Firewall?
 
 O feed atualiza automaticamente **Todas as categorias críticas de reputação** do FortiGuard:
 
@@ -124,13 +125,13 @@ Para evitar que sua infraestrutura seja mapeada por atacantes buscando CVEs ou i
 * 🔍 **Corporate & Gov Scanners:** Palo Alto Cortex Xpanse, Internet Census Group, UK NCSC, NetScout.
 * 🕷️ **Mass Crawlers & Recon:** Stretchoid, CriminalIP, Hadrian, ONYPHE, entre dezenas de outros bots de enumeração.
 
-### ⚙️ Como consumir em appliances sem licença?
+### ⚙️ Como configurar em Firewalls sem licença?
 Consulte o passo a passo logo abaixo, no Guia de Configuração Rápida (FortiOS CLI).
 
 ---
 ### <mark>&nbsp;🚀 Guia de Configuração Rápida (FortiOS CLI)&nbsp;</mark>
 > [!WARNING]
-> 🚨 **Deprecation Notice:** As URLs antigas baseadas em `raw.githubusercontent.com` **se tornaram legadas**. Pedimos gentilmente que todos os usuários atualizem as configurações de seus conectores externos (External Connectors) no FortiGate para as novas URLs oficiais listadas abaixo.
+> 🚨 As URLs antigas baseadas em `raw.githubusercontent.com` **se tornaram legadas**. Pedimos gentilmente que todos os usuários atualizem seus conectores externos (External Connectors) no FortiGate para as novas URLs Oficiais hospedadas na Cloudflare, listadas abaixo.
 
 ---
 
@@ -178,74 +179,25 @@ Listas complementares focadas em reputação e mitigação de scanners da intern
 
 ---
 
-### 💎 Como Acessar e Acompanhar
+### 💎 Como posso apoiar o Projeto?
 
 Todo o ecossistema **NRA Sentinel & EDL** é **100% gratuito, open-source e livre de restrições**. Nossa missão é fortalecer a segurança da comunidade sem barreiras financeiras. Siga os passos abaixo para blindar o seu ambiente hoje mesmo:
 
-1. **Implementação Direta (Zero Custo):** Vá até o final desta página, abra o **Guia de Configuração Rápida (FortiOS CLI)**, copie os scripts correspondentes ao seu ambiente (Sentinel Tiers + EDL Mirror) e aplique diretamente no terminal do seu firewall.
-2. **Acompanhe a Telemetria ao Vivo (O Pulse do Projeto):** Mantemos um canal aberto e gratuito no Telegram onde nossa esteira de automação reporta, em tempo real, a entrada de novos *0-days*, hashes de malware e os relatórios diários de sincronização das bases ISDB do FortiGuard.
-* 🔗 **Entre no grupo e acompanhe as execuções:** [Telegram - NRA Sentinel & EDL Alerts](https://t.me/+jHlbAlp-7Xg0MTJh)
-3. **Apoie a Evolução do Projeto (Opcional):** A pesquisa, as horas de engenharia e a infraestrutura de laboratório para manter esses motores rodando geram custos operacionais diários. Se este projeto economiza tempo da sua equipe ou agrega valor à segurança dos clientes da sua empresa/MSSP, considere apoiar a nossa iniciativa tornando-se um membro do [Canal NetworkRA no YouTube](https://www.youtube.com/channel/UCs8isxhuF4phuQXimE52tOg/join). Além de financiar a continuidade destas ferramentas gratuitas para toda a comunidade, você desbloqueia benefícios exclusivos no canal:
-* 🧪 **Laboratórios Práticos (Hands-on):** Acesso a imagens, arquivos VMware e topologias `.unl` prontas para importar no EVE-NG, simulando as arquiteturas SD-WAN e VPN mais exigidas pelo mercado de MSSPs.
-* 🐍 **Automação & Gestão:** Scripts exclusivos em Python para automação de tarefas de rede, rotinas de backup e *Study Guides* completos para exames de certificação.
-* 📊 **Inteligência para FortiAnalyzer:** Templates de relatórios corporativos, *Handlers* e *Correlation Handlers* avançados prontos para implementação imediata em SOC.
-* 🤖 **Agentes de IA (GEMS Pro):** Acesso direto aos nossos assistentes de IA personalizados (baseados no Gemini Pro), altamente treinados com documentações de elite e especializados em arquitetura e *troubleshooting* do ecossistema Fortinet.
+🔗 **Entre no grupo do Telegram:** [NRA Sentinel & EDL Alerts](https://t.me/+jHlbAlp-7Xg0MTJh)
 
----
-
-### 🚀 Changelog: NRA Sentinel V33.5
-
-#### 📅 17/09/2026: Infraestrutura Enterprise (Global CDN) e Domínios Corporativos *(Latest)*
-* <small>🌍 **Migração para CDN Global (Cloudflare):** *A entrega dos feeds deixou de utilizar o `raw.githubusercontent.com` e agora é servida nativamente pela infraestrutura de edge da Cloudflare (Pages), entregando alta disponibilidade, resiliência e latência zero.*</small>
-* <small>🔗 **Domínios Oficiais (.seg.br):** *Ativação dos novos endereços corporativos (`nra-sentinel-feeds.networkra.seg.br` e `nra-fortiguard-edl.networkra.seg.br`), elevando o padrão de confiabilidade para adoção em operações de SOCs e MSSPs.*</small>
-* <small>⚡ **Edge Caching em Tempo Real:** *Implementação de Page Rules com TTL otimizado (2 minuto) na borda da CDN, forçando o firewall a baixar imediatamente os IoCs mais recentes gerados pelo motor, eliminando gargalos de cache.*</small>
-* <small>🛡️ **Bypass Inteligente de WAF & Anti-Bot:** *Criação de exceções de segurança para o tráfego em arquivos `.txt`, garantindo que os conectores do FortiGate não recebam desafios CAPTCHA e importem as listas sem interrupções.*</small>
-
----
-
-#### 📅 26/08/2026: Triagem Híbrida e Proteção de Negócios Locais *(Latest)*
-* <small>🧠 **URLScan Híbrido (0-Days & NRDs):** *Domínios recém-registrados ou sem histórico reportados pelo AlienVault agora recebem aprovação direta (Trust AlienVault), garantindo bloqueio imediato de campanhas frescas.*</small>
-* <small>🛡️ **Mitigação de Falsos Positivos:** *O motor descarta bloqueios de domínios raiz legítimos (ex: sites de empresas invadidos hospedando payloads isolados) que possuem histórico "limpo" no URLScan, protegendo a disponibilidade de negócios na topologia SD-WAN.*</small>
-* <small>📊 **Debug Avançado (CI/CD):** *O `stdout` do GitHub Actions agora fornece diagnóstico completo e transparente das decisões da engine (ex: `[ADICIONADO: Domínio 100% Novo]` vs `[DESCARTADO: Site Legítimo]`).*</small>
-* <small>🐛 **Bug Fix de Indentação:** *Resolução do erro estrutural `TabError` no script Python, assegurando execuções perfeitas nos runners automatizados do GitHub Actions.*</small>
-
----
-
-#### 📅 12/08/2026: General Availability (GA) & Scanners IPs Mirror
-* <small>🎯 **Espelhamento de Scanners Globais:** *Consolidação contínua de IPs de varredura (Shodan, Censys, Rapid7, etc.) direto da base ISDB da FortiGuard para inibir reconnaissance em ativos VIP.*</small>
-* <small>⚙️ **Sobrevida para Ambientes Legacy:** *Proteção otimizada para appliances (FortiOS 6.2 a 7.2) sem licença ativa e sem suporte nativo a ISDB no Local In Policies.*</small>
-* <small>🔗 **Interceptação IP & Otimização FQDN:** *O motor agora extrai IPs escondidos em URLs maliciosas, aplicando sanitização rigorosa que remove caminhos/portas, garantindo compatibilidade com o modo Certificate Inspection e prevenindo travamentos no daemon `wad`.*</small>
-
----
-
-#### 📅 24/07/2026: Expansão do Ecossistema (NRA EDL IP Reputation)
-* <small>🌐 **Democratização da Borda:** *Automação que espelha os bancos ISDB oficiais para fornecer proteção gratuita na Camada 3/4 contra C&C, Phishing, Mineração, nós TOR e VPNs anônimas.*</small>
-* <small>⚡ **Control Plane Unificado:** *Compartilhamento da `nra-safelist.txt` centralizada (Single Source of Truth) e integração de um Circuit Breaker (trava limitadora de 150.000 prefixos) para blindar os appliances menores.*</small>
-
----
-
-#### 📅 28/06/2026: Arquitetura Multi-Tier e Sanitização Avançada
-* <small>🏗️ **Escalabilidade de Hardware:** *Compilação segregada em três pipelines (Entry, Mid-Range, High-End - até 300.000 IoCs), equilibrando proteção e consumo de RAM.*</small>
-* <small>🚀 **Automação Otimizada:** *Fluxos do GitHub Actions escalonados com offset de tempo para evitar Rate Limit nas APIs globais, integrados a relatórios de telemetria operacionais via Telegram.*</small>
-* <small>🧽 **URL Clean-up:** *Remoção automática de Query Strings de fontes externas, garantindo que o External Connector do FortiOS não aborte o processo de sincronização por falhas de sintaxe.*</small>
-
----
-
-#### 📅 24/05/2026: Auditoria de Memória FIFO e Engine Safelist
-* <small>🛡️ **Motor de Exceção Híbrida:** *Lançamento da Safelist para proteger provedores de DNS e infraestruturas legítimas de bloqueios acidentais em redes de produção.*</small>
-* <small>⏱️ **Rotação Cronológica (Churn Visibility):** *Reescrita da base de armazenamento (migração para `dicts`) forçando o modelo First-In, First-Out. O limite de proteção de 35.000 IoCs passa a ser auditado e registrado publicamente nos logs do console durante as substituições.*</small>
+🤖 **Apoie o Projeto:** Se este projeto economiza tempo da sua equipe ou agrega valor à segurança dos clientes da sua empresa/MSSP, considere apoiar a nossa iniciativa tornando-se um membro no nível **Sentinel** ou **MSSP** do [Canal NetworkRA no YouTube](https://www.youtube.com/channel/UCs8isxhuF4phuQXimE52tOg/join)
 
 ---
 
 ### 🏆 Hall da Fama: Apoiadores Oficiais
 
-Hoje, o motor **NRA Sentinel & EDL** é **100% gratuito e de código aberto**. No entanto, a pesquisa, o desenvolvimento contínuo (horas de engenharia) e os custos exigem recursos. Esta seção é dedicada a agradecer publicamente aos arquitetos, analistas e provedores de serviços gerenciados (MSSPs) que reconhecem o valor corporativo desta ferramenta e optaram por patrocinar diretamente o projeto através do nível **NetworkRA MSSP**.
+Esta seção é dedicada a agradecer publicamente aos arquitetos, analistas e provedores de serviços gerenciados (MSSPs) que reconheceram e apoiaram o projeto através do nível **NetworkRA MSSP**.
 
-Graças a vocês, o Sentinel continua evoluindo.
+Graças a vocês, o Projeto continua evoluindo.
 
 | 🛡️ Nome / Empresa | 🔗 Perfil Profissional | 📅 Apoiador Desde |
 | :--- | :--- | :--- |
-| *Seu Nome ou Empresa Aqui* | *LinkedIn / Site* | *Junho/2026* |
+| *@RodrigoAssinger* | *LinkedIn / Site* | *Agosto/2026* |
 | *Vaga disponível* | - | - |
 | *Vaga disponível* | - | - |
 
@@ -258,29 +210,11 @@ Graças a vocês, o Sentinel continua evoluindo.
 
 ### 🤝 Créditos e Comunidade
 
-O **NRA Sentinel & EDL** crescem graças ao feedback e às contribuições de profissionais que testam o motor em ambientes reais de produção:
+O **NRA Sentinel & EDL** cresce graças ao feedback destes Especialistas que visitaram o Projeto e deixaram sua contribuição:
 
-*   **[@faustocaldeira](https://github.com/faustocaldeira/):** Pela curadoria essencial da base de provedores DNS utilizada na nossa Safelist (AdGuard), ajudando a prevenir falsos positivos e erros humanos.
-*   **@RodrigoAssinger:** Pela visão de arquiteto que guiou a implementação da nossa esteira segmentada (Multi-Tier), permitindo o suporte escalável para hardwares Mid-Range e High-End.
-*   **@MsAbreu000:** Pelo reporte do erro de autenticação nos conectores externos, que nos levou a mapear a mudança crítica do padrão de criptografia de senhas (PBKDF2) nas novas *releases* do FortiOS, resultando na documentação do script *Legacy* vs *Current*.
-
----
-
-### 🚀 O Foco do Canal
-
-O canal **NetworkRA** é especializado em **Arquitetura MSSP e Segurança de Redes**, focado em desmistificar cenários reais de infraestrutura através de laboratórios práticos (**Hands-on**). Nosso objetivo é transformar teoria complexa em implementações funcionais e resilientes.
-
-* **SD-WAN Expert:** Especialização em estruturas de *Self-Healing* utilizando BGP e *SLA-based steering* (Lowest Cost, Preferência de Network), além de técnicas de **Hardening** para proteger o plano de controle.
-* **VPN & ADVPN Profissional:** Domínio completo de topologias *Hub-and-Spoke*, ADVPN (Single/Multiple Hub), integrações com OSPF (HUBs) Regionais e Hardening proposto com IKEv2 e local-in-policy.
-* **Remote Access & Autenticação:** Implementações robustas de VPN Client com **IKEv2 + EAP**, integração com **RADIUS** (Multi-group membership) e autenticação by DC.
-* **Automação & Gestão:** Desenvolvimento de ferramentas de automação (Python Scripts) como o *SD-WAN Builder* e gestão centralizada via FortiManager/FortiAnalyzer.
-* **Metodologia Hands-on:** Todo o conteúdo é validado em cenários reais utilizando o **EVE-NG**, com arquivos de laboratório exclusivos para membros no Google Drive.
-* **Acessibilidade Global:** Vídeos produzidos em Português com legendas profissionais revisadas em **Inglês** e **Espanhol**.
-
-Embora o idioma principal do canal seja o **Português**, acreditamos na democratização do conhecimento técnico:
-
-* **Legendas Profissionais:** Todos os vídeos possuem legendas revisadas manualmente em **Inglês** e **Espanhol**.
-* **Comunidade Global:** Profissionais à nível global já utilizam as nossas arquiteturas como referência.
+*   **[@faustocaldeira](https://github.com/faustocaldeira/):** Pela sugestão da Safelist (AdGuard), ajudando a prevenir falsos positivos e erros humanos.
+*   **@RodrigoAssinger:** Pela sugestão da implementação (Multi-Tier), permitindo o suporte escalável para hardwares Mid-Range e High-End.
+*   **@MsAbreu000:** Pelo reporte do erro de autenticação envolvendo a criptografia (PBKDF2), resultando na documentação do script *Legacy* vs *Current*.
 
 ---
 
