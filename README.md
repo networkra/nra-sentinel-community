@@ -166,7 +166,7 @@ Listas complementares focadas em reputação e mitigação de scanners da intern
 
 ---
 
-## ⚙️ Como configurar no FortiGate
+### ⚙️ Como configurar no FortiGate
 
 1. Acesse o seu FortiGate via interface web (GUI).
 2. Navegue até **Security Fabric** -> **External Connectors**.
