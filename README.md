@@ -21,10 +21,12 @@ Esta arquitetura não busca substituir o modelo comercial do fabricante, mas sim
 
 ---
 
+**O NRA Sentinel & EDL agora é entregue via CDN (Cloudflare). Domínio networkra.seg.br
+A ideia é garantir estabilidade, baixa latência e alta disponibilidade para operações de SOC e MSSP**
+
+---
+
 ### 🧠 Fontes de Dados
-
-**Para garantir estabilidade, baixa latência e alta disponibilidade para operações de SOC e MSSP, **o NRA Sentinel agora é entregue via CDN (Cloudflare) utilizando domínio corporativo.**
-
 O motor busca informações em fontes respeitadas mundialmente, garantindo que o que chega ao seu Firewall tenha passado por um processo de filtragem:
 
 | Player / Fonte | Projeto | Função |
