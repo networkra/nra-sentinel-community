@@ -16,7 +16,7 @@ Esta arquitetura não busca substituir o modelo comercial do fabricante, mas sim
 
 ---
 
-<img src="image_4cc9b11.png" width="900" alt="NRA Sentinel e NRA EDL FortiGate Integration">
+<img src="image_4cc9b13.png" width="900" alt="NRA Sentinel e NRA EDL FortiGate Integration">
 <p align="left"><sub><i>Exemplo da integração dos conectores NRA Sentinel e NRA EDL operando em ambiente FortiOS.</i></sub></p>
 
 ---
