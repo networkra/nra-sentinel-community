@@ -37,7 +37,7 @@ O motor busca informações em fontes respeitadas, garantindo que o que chega ao
 | **URLHaus (abuse.ch)** | ![Sentinel](https://img.shields.io/badge/NRA-Sentinel-0055ff?style=flat-square&logo=shield&logoColor=white) | Monitora links que estão distribuindo malware no exato momento. |
 | **AbuseIPDB** | ![Sentinel](https://img.shields.io/badge/NRA-Sentinel-0055ff?style=flat-square&logo=shield&logoColor=white) | Ajuda a validar a reputação dos IPs, evitando falsos positivos. |
 | **urlscan.io** | ![Sentinel](https://img.shields.io/badge/NRA-Sentinel-0055ff?style=flat-square&logo=shield&logoColor=white) | Verifica o histórico de segurança dos domínios e URLs processadas. |
-| **FortiGuard (ISDB)** | ![EDL](https://img.shields.io/badge/NRA-EDL-ff8800?style=flat-square&logo=fortinet&logoColor=white) | Espelha a reputação oficial de IPs de appliances licenciados (10 categorias críticas), democratizando o bloqueio na borda para caixas sem licença. |
+| **FortiGuard (ISDB)** | ![EDL](https://img.shields.io/badge/NRA-EDL-ff8800?style=flat-square&logo=fortinet&logoColor=white) | Espelha a Reputação Oficial de IPs Maliciosos e Scanner's, democratizando o bloqueio na borda para caixas sem licença. |
 ---
 
 ### 🛡️ Prevenção de Falsos Positivos
