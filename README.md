@@ -28,7 +28,7 @@ Esta arquitetura não busca substituir o modelo comercial do fabricante, mas sim
 ---
 
 ### 🧠 Fontes de Dados
-O motor busca informações em fontes respeitadas mundialmente, garantindo que o que chega ao seu Firewall tenha passado por um processo de filtragem:
+O motor busca informações em fontes respeitadas, garantindo que o que chega ao seu Firewall tenha passado por um processo de filtragem:
 
 | Player / Fonte | Projeto | Função |
 | :--- | :---: | :--- |
@@ -214,15 +214,13 @@ O **NRA Sentinel & EDL** cresce graças ao feedback destes Especialistas que vis
 
 *   **[@faustocaldeira](https://github.com/faustocaldeira/):** Pela sugestão da Safelist (AdGuard), ajudando a prevenir falsos positivos e erros humanos.
 *   **@RodrigoAssinger:** Pela sugestão da implementação (Multi-Tier), permitindo o suporte escalável para hardwares Mid-Range e High-End.
-*   **@MsAbreu000:** Pelo reporte do erro de autenticação envolvendo a criptografia (PBKDF2), resultando na documentação do script *Legacy* vs *Current*.
+*   **@MsAbreu000:** Pelo reporte do erro de autenticação envolvendo a criptografia (PBKDF2).
 
 ---
 
 ### 👨‍💻 Sobre o Autor
 
 **Robert Alexandrino (NetworkRA)** - *Especialista em Arquiteturas MSSP (SD-WAN) & Network Security Engineer*
-
-Acredito que o compartilhamento técnico deve caminhar junto com a valorização do tempo e do esforço. O tempo é o nosso recurso mais escasso; valorizá-lo é respeitar a sua própria jornada.
 
 #### 🎓 Certificações Fortinet
 
