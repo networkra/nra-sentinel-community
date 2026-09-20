@@ -220,20 +220,7 @@ O **NRA Sentinel & EDL** cresce graças ao feedback destes Especialistas que vis
 
 ### 👨‍💻 Sobre o Autor
 
-**Robert Alexandrino (NetworkRA)** - *Especialista em Arquiteturas MSSP (SD-WAN) & Network Security Engineer*
-
-#### 🎓 Certificações Fortinet
-
-| Certificação | Tecnologia | Status |
-| :--- | :--- | :--- |
-| **NSE 7** | Enterprise Firewall 7.6 Administrator | Pass (2026) |
-| **NSE 7** | Enterprise Firewall 7.4 Administrator | Pass (2025) |
-| **NSE 7** | Network Security 7.4 Support Engineer | Pass (2025) |
-| **NSE 7** | SD-WAN 7.2 | Pass (2024) |
-| **NSE 7** | Enterprise Firewall 7.0 | Pass (2023) |
-| **NSE 5** | FortiAnalyzer 6.4 | Pass (2022) |
-| **NSE 5** | FortiManager 6.4 | Pass (2022) |
-| **NSE 4** | FortiOS 6.4 | Pass (2021) |
+**Robert Alexandrino (NetworkRA)** - *Especialista em Segurança de Redes e Arquiteto MSSP*
 
 ---
 
