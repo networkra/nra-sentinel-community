@@ -21,7 +21,7 @@ Esta arquitetura não busca substituir o modelo comercial do fabricante, mas sim
 
 ---
 
-**O Projeto agora é entregue via CDN (Cloudflare). Domínio networkra.seg.br**
+**O Projeto agora está oficialmente publicado na Cloudflare. Domínio networkra.seg.br**
 
 <i>Maior estabilidade, baixa latência e alta disponibilidade para operações de SOC e MSSP</i>
 
@@ -126,18 +126,18 @@ Para evitar que sua infraestrutura seja mapeada por atacantes buscando CVEs ou i
 * 🕷️ **Mass Crawlers & Recon:** Stretchoid, CriminalIP, Hadrian, ONYPHE, entre dezenas de outros bots de enumeração.
 
 ### ⚙️ Como configurar em Firewalls sem licença?
-Consulte o passo a passo logo abaixo, no Guia de Configuração Rápida (FortiOS CLI).
+Consulte o passo a passo logo abaixo.
 
 ---
 ### <mark>&nbsp;🚀 Guia de Configuração Rápida (FortiOS CLI)&nbsp;</mark>
 > [!WARNING]
-> 🚨 As URLs antigas baseadas em `raw.githubusercontent.com` **se tornaram legadas**. Pedimos gentilmente que todos os usuários atualizem seus conectores externos (External Connectors) no FortiGate para as novas URLs Oficiais hospedadas na Cloudflare, listadas abaixo.
+> 🚨 As URLs antigas baseadas em `raw.githubusercontent.com` **se tornaram legadas**. Pedimos gentilmente que todos os usuários atualizem seus conectores externos (External Connectors) no FortiGate para as novas URLs Oficiais hospedadas na Cloudflare.
 
 ---
 
 ### 🔗 URLs Oficiais (Novos Endereços)
 
-Nossa inteligência é dividida em três camadas para se adequar à capacidade de hardware do seu equipamento (Entry-level, Midrange e High-end). 
+Nossa inteligência é dividida em três camadas para se adequar à capacidade de hardware do seu equipamento.
 
 ### 🟢 1. NRA Sentinel - Entry-Level
 Feeds focados em ameaças ativas, Botnets, C&C e malwares de alta criticidade.
@@ -176,6 +176,9 @@ Listas complementares focadas em reputação e mitigação de scanners da intern
 6. Defina o **Refresh Rate** (Taxa de atualização) para **60 minutos** (recomendado).
 7. Certifique-se de que o Status está ativado e clique em OK.
 8. Utilize essas listas em suas **Firewall Policies**, **AntiVírus** e **Web-Filters** aplicando a ação adequada.
+
+> **Nota de Responsabilidade**:
+> A inteligência do Sentinel é baseada em fontes de terceiros. Embora o esforço para minimizar erros seja constante, a decisão final de bloqueio e o monitoramento do tráfego são de responsabilidade do administrador da rede. Trabalhe com cautela e monitoramento.
 
 ---
 
@@ -221,15 +224,6 @@ O **NRA Sentinel & EDL** cresce graças ao feedback destes Especialistas que vis
 ### 👨‍💻 Sobre o Autor
 
 **Robert Alexandrino (NetworkRA)** - *Especialista em Segurança de Redes e Arquiteto MSSP*
-
----
-
-* [![LinkedIn](https://img.shields.io/badge/LinkedIn-NetworkRA-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/networkra/)
-* [![YouTube](https://img.shields.io/badge/YouTube-NetworkRA-red?style=flat&logo=youtube)](https://www.youtube.com/@NetworkRA)
----
-
-> **Nota de Responsabilidade**:
-> A inteligência do Sentinel é baseada em fontes de terceiros. Embora o esforço para minimizar erros seja constante, a decisão final de bloqueio e o monitoramento do tráfego são de responsabilidade do administrador da rede. Vamos sempre trabalhar com cautela e monitoramento.
 
 ---
 
