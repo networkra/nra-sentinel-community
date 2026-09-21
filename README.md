@@ -12,7 +12,7 @@ O **NRA Osint edl - IP Reputation e Scanners IPs** é um projeto comunitário de
 Esta arquitetura não busca substituir o modelo comercial do fabricante, mas sim atuar como uma engenharia de solidariedade técnica que preenche a lacuna de quem estaria desprotegido, garantindo que a condição financeira não seja uma barreira para a segurança da sua rede.
 
 <img src="image_4cc9b10.png" width="900" alt="NRA Sentinel Workflow Infographic">
-<p align="left"><sub><i>Workflow NRA EDL detalhado: Da coleta em fontes OSINT globais à entrega sanitizada no perímetro via External Connectors</i></sub></p>
+<p align="left"><sub><i>Workflow NRA Osint edl detalhado: Da coleta em fontes OSINT globais à entrega sanitizada no perímetro via External Connectors</i></sub></p>
 
 ---
 
@@ -54,7 +54,7 @@ Para garantir que infraestruturas legítimas não sejam bloqueadas acidentalment
 ### ⚙️ Detalhes do Funcionamento
 
 * **Atualização (NRA Sentinel):** Os feeds de *0-days* e IoCs são processados e atualizados automaticamente a cada **8 horas**.
-* **Atualização (NRA EDL):** O Osint é executado **1 vez ao dia**. Essa cadência diária garante uma lista sempre fresca sem gerar overhead de requisições ou consumo excessivo de API nas fontes primárias (provedores OSINT).
+* **Atualização (NRA Osint edl):** O Osint é executado **1 vez ao dia**. Essa cadência diária garante uma lista sempre fresca sem gerar overhead de requisições ou consumo excessivo de API nas fontes primárias (provedores OSINT).
 * **Persistência:** O motor mantém o histórico acumulado com regra cronológica estrita (regra FIFO para rotatividade e substituição de artefatos antigos).
 * **Limpeza:** Dados sanitizados (remoção automática de protocolos, portas, *query strings* e validação via Safelist), entregando listas limpas para leitura nativa via CLI.
 * **Segmentação e Espelhamento:** Entregamos inteligência dimensionada conforme a memória RAM do seu hardware (Tiers no Sentinel) e replicação nativa para caixas sem licença (EDL).
@@ -70,10 +70,10 @@ Para manter a filosofia **Sniper** (precisão sobre volume), nosso ecossistema e
 | 🛡️ **Sentinel (Entry-Level)** | 40F, 60F, 80F (2GB-3GB RAM) | 35.000 IoCs por categoria |
 | 🛡️ **Sentinel (Mid-Range)** | 100F a 600F (4GB-8GB RAM) | 150.000 IoCs por categoria |
 | 🛡️ **Sentinel (High-End)** | Data Centers / Clusters | 300.000 IoCs por categoria |
-| 🌐 **NRA EDL (Osint)** | Universal *(Caixas sem licença / SOC)* | 150.000 IoCs *(Circuit Breaker)* |
+| 🌐 **Osint edl** | Universal *(Caixas sem licença / SOC)* | 150.000 IoCs *(Circuit Breaker)* |
 
 > [!NOTE]
-> **Por que o NRA EDL tem uma trava de 150.000 IoCs?**
+> **Por que o NRA Osint edl tem uma trava de 150.000 IoCs?**
 > A base diária do Osint consolidada (sumarizada via CIDR) costuma girar entre 60.000 e 100.000 blocos únicos. Fixamos uma trava de segurança (*Circuit Breaker*) em exatamente **150.000 linhas** no código Python. Se por qualquer anomalia global de BGP ou na fonte original esse número for ultrapassado, o sistema aborta a sincronização e preserva a lista anterior intacta. Isso impede que appliances menores da comunidade (como 40F ou 60F) entrem em esgotamento de memória (*Conserve Mode/WAD*) ao tentar processar feeds anomalamente gigantescos.
 
 > [!NOTE]
@@ -92,7 +92,7 @@ memory used threshold green:                       1572 MB   82% of total RAM
 
 ---
 
-### 🌐 NRA EDL - Osint (Community Edition)
+### 🌐 NRA Osint edl (Community Edition)
 
 Desenvolvemos o que muitos consideravam improvável: um motor de engenharia tática capaz de democratizar o acesso à inteligência de ameaças de elite, provando que a proteção da borda não deve ser um privilégio, mas um direito de toda infraestrutura.
 
@@ -102,7 +102,7 @@ Estamos entregando uma solução audaciosa que preenche a lacuna entre a 'segura
 > **DEMOCRATIZANDO A SEGURANÇA NA BORDA (100% FREE)**
 > Sabemos que a realidade econômica atual impõe desafios severos aos orçamentos de TI. Muitas empresas, provedores (MSSPs) e analistas que mantêm laboratórios de estudos acabam operando appliances sem o licenciamento ativo devido aos altos custos de renovação. **A segurança da sua rede não pode ficar desamparada por restrições financeiras.**
 
-Com o objetivo de contribuir diretamente com a nossa comunidade e fortalecer o ecossistema nacional de cibersegurança, desenvolvemos essa lista dinâmica: **NRA EDL - Osint IP Reputation** e o **NRA EDL - Osint Scanners IPs**. 
+Com o objetivo de contribuir diretamente com a nossa comunidade e fortalecer o ecossistema nacional de cibersegurança, desenvolvemos essa lista dinâmica: **NRA Osint edl - IP Reputation** e o **NRA Osint edl - Scanners IPs**. 
 
 Trata-se de uma engenharia de **Coleta e Sumarização**, onde nosso motor automatizado extrai, sanitiza e consolida continuamente as bases open-source de reputação de IPs, domínios e hash´s e disponibiliza toda essa inteligência de forma gratuita através de nossa lista no GitHub.
 
@@ -111,9 +111,9 @@ Trata-se de uma engenharia de **Coleta e Sumarização**, onde nosso motor autom
 Nosso feed oferece:
 
 ###  1. Ameaças Ativas & Reputação
-* 🚨 **Botnet-C&C.Server:** Servidores de Comando e Controle de Botnets globais.
-* 🛑 **Malicious.Server:** Hosts catalogados em ataques ativos e drop de malwares.
-* 🎣 **Phishing.Server:** Infraestruturas conhecidas por hospedagem de páginas de Phishing.
+* 🚨 **Botnet-C&C:** Servidores de Comando e Controle de Botnets globais.
+* 🛑 **Malicious:** Hosts catalogados em ataques ativos e drop de malwares.
+* 🎣 **Phishing:** Infraestruturas conhecidas por hospedagem de páginas de Phishing.
 * ⛏️ **Blockchain-Crypto.Mining:** Pools de mineração não autorizada (Cryptojacking).
 * 🧅 **Tor Nodes (Exit, Relay, Tor):** Nós da rede TOR frequentemente utilizados para anonimizar invasões.
 * 🕵️ **Proxy & Anonymous VPN:** Serviços de mascaramento de IP usados para burlar perímetros.
@@ -159,7 +159,7 @@ Base completa de Threat Intelligence com amplo histórico de IoCs e varreduras a
 
 ---
 
-### 🛡️ 4. Osint EDLs (Módulos Específicos)
+### 🛡️ 4. NRA Osint edl (Módulos Específicos)
 Listas complementares focadas em reputação e mitigação de scanners da internet.
 * **IP Reputation:** `https://nra-osint-edl.networkra.seg.br/osint_reputation_ips.txt`
 * **Scanners / Scrapers:** `https://nra-osint-edl.networkra.seg.br/osint_scanner_ips.txt`
@@ -184,9 +184,9 @@ Listas complementares focadas em reputação e mitigação de scanners da intern
 
 ### 💎 Como posso apoiar o Projeto?
 
-Todo o ecossistema **NRA Sentinel & EDL** é **100% gratuito, open-source e livre de restrições**. Nossa missão é fortalecer a segurança da comunidade sem barreiras financeiras. Siga os passos abaixo para blindar o seu ambiente hoje mesmo:
+Todo o ecossistema **NRA Sentinel & Osint edl** é **100% gratuito, open-source e livre de restrições**. Nossa missão é fortalecer a segurança da comunidade sem barreiras financeiras. Siga os passos abaixo para blindar o seu ambiente hoje mesmo:
 
-🔗 **Entre no grupo do Telegram:** [NRA Sentinel & EDL Alerts](https://t.me/+jHlbAlp-7Xg0MTJh)
+🔗 **Entre no grupo do Telegram:** [NRA Sentinel & Osint edl Alerts](https://t.me/+jHlbAlp-7Xg0MTJh)
 
 🤖 **Apoie o Projeto:** Se este projeto economiza tempo da sua equipe ou agrega valor à segurança dos clientes da sua empresa/MSSP, considere apoiar a nossa iniciativa tornando-se um membro no nível **Sentinel** ou **MSSP** do [Canal NetworkRA no YouTube](https://www.youtube.com/channel/UCs8isxhuF4phuQXimE52tOg/join)
 
@@ -213,7 +213,7 @@ Graças a vocês, o Projeto continua evoluindo.
 
 ### 🤝 Créditos e Comunidade
 
-O **NRA Sentinel & EDL** cresce graças ao feedback destes Especialistas que visitaram o Projeto e deixaram sua contribuição:
+O **NRA Sentinel & Osint edl** cresce graças ao feedback destes Especialistas que visitaram o Projeto e deixaram sua contribuição:
 
 *   **[@faustocaldeira](https://github.com/faustocaldeira/):** Pela sugestão da Safelist (AdGuard), ajudando a prevenir falsos positivos e erros humanos.
 *   **@RodrigoAssinger:** Pela sugestão da implementação (Multi-Tier), permitindo o suporte escalável para hardwares Mid-Range e High-End.
