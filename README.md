@@ -70,7 +70,7 @@ Para manter a filosofia **Sniper** (precisão sobre volume), nosso ecossistema e
 | 🛡️ **Sentinel (Entry-Level)** | 40F, 60F, 80F (2GB-3GB RAM) | 35.000 IoCs por categoria |
 | 🛡️ **Sentinel (Mid-Range)** | 100F a 600F (4GB-8GB RAM) | 150.000 IoCs por categoria |
 | 🛡️ **Sentinel (High-End)** | Data Centers / Clusters | 300.000 IoCs por categoria |
-| 🌐 **Osint edl** | Universal *(Caixas sem licença / SOC)* | 150.000 IoCs *(Circuit Breaker)* |
+| 🌐 **Osint edl (All Levels)** | Universal *(Caixas sem licença / SOC)* | 150.000 IoCs *(Circuit Breaker)* |
 
 > [!NOTE]
 > **Por que o NRA Osint edl tem uma trava de 150.000 IoCs?**
