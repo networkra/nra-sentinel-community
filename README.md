@@ -7,7 +7,7 @@ O **NRA Sentinel** é um projeto desenvolvido com o objetivo de auxiliar profiss
 
 ---
 
-O **NRA EDL - FortiGuard IP Reputation Database Mirror e Fortiguard Scanners IPs Mirror** é um projeto comunitário desenvolvido com o objetivo de democratizar a segurança na borda, auxiliando profissionais, empresas e provedores (MSSPs) que operam appliances FortiGate sem licenciamento ativo devido às atuais restrições orçamentárias do país. Ele automatiza a extração, a sumarização CIDR e o espelhamento contínuo das bases oficiais de reputação de IPs do ISDB (Internet Service Database) de caixas licenciadas, além dos IPs dos ISDBs de Scanners, entregando um feed limpo, protegido pela nossa Safelist e pronto para consumo nativo por **External Resource** do FortiGate. 
+O **NRA EDL - Osint IP Reputation e Osint Scanners IPs** é um projeto comunitário desenvolvido com o objetivo de democratizar a segurança na borda, auxiliando profissionais, empresas e provedores (MSSPs) que operam appliances sem licenciamento ativo devido às atuais restrições orçamentárias do país. Ele automatiza a extração, a sumarização CIDR, entregando listas oficiais do Spamhaus DROP, Emerging Threats, Firehol, CISA, entre outros players open source. Todos protegidos pela nossa Safelist e pronto para consumo nativo por **External Resource** do seu Firewall. 
 
 Esta arquitetura não busca substituir o modelo comercial do fabricante, mas sim atuar como uma engenharia de solidariedade técnica que preenche a lacuna de quem estaria desprotegido, garantindo que a condição financeira não seja uma barreira para a segurança da sua rede.
 
@@ -37,7 +37,7 @@ O motor busca informações em fontes respeitadas, garantindo que o que chega ao
 | **URLHaus (abuse.ch)** | ![Sentinel](https://img.shields.io/badge/NRA-Sentinel-0055ff?style=flat-square&logo=shield&logoColor=white) | Monitora links que estão distribuindo malware no exato momento. |
 | **AbuseIPDB** | ![Sentinel](https://img.shields.io/badge/NRA-Sentinel-0055ff?style=flat-square&logo=shield&logoColor=white) | Ajuda a validar a reputação dos IPs, evitando falsos positivos. |
 | **urlscan.io** | ![Sentinel](https://img.shields.io/badge/NRA-Sentinel-0055ff?style=flat-square&logo=shield&logoColor=white) | Verifica o histórico de segurança dos domínios e URLs processadas. |
-| **FortiGuard (ISDB)** | ![EDL](https://img.shields.io/badge/NRA-EDL-ff8800?style=flat-square&logo=fortinet&logoColor=white) | Espelha a Reputação Oficial de IPs Maliciosos e Scanner's, democratizando o bloqueio na borda para caixas sem licença. |
+| **Osint** | ![EDL](https://img.shields.io/badge/NRA-EDL-ff8800?style=flat-square&logo=fortinet&logoColor=white) | Osint de IPs Maliciosos e Scanner's, democratizando o bloqueio na borda para caixas sem licença. |
 ---
 
 ### 🛡️ Prevenção de Falsos Positivos
@@ -54,7 +54,7 @@ Para garantir que infraestruturas legítimas não sejam bloqueadas acidentalment
 ### ⚙️ Detalhes do Funcionamento
 
 * **Atualização (NRA Sentinel):** Os feeds de *0-days* e IoCs são processados e atualizados automaticamente a cada **8 horas**.
-* **Atualização (NRA EDL):** O espelhamento da base oficial do FortiGuard é executado **1 vez ao dia**. Essa cadência diária garante uma lista sempre fresca sem gerar overhead de requisições ou consumo excessivo de API no firewall de origem.
+* **Atualização (NRA EDL):** O Osint é executado **1 vez ao dia**. Essa cadência diária garante uma lista sempre fresca sem gerar overhead de requisições ou consumo excessivo de API no firewall de origem.
 * **Persistência:** O motor mantém o histórico acumulado com regra cronológica estrita (regra FIFO para rotatividade e substituição de artefatos antigos).
 * **Limpeza:** Dados sanitizados (remoção automática de protocolos, portas, *query strings* e validação via Safelist), entregando listas limpas para leitura nativa via CLI.
 * **Segmentação e Espelhamento:** Entregamos inteligência dimensionada conforme a memória RAM do seu hardware (Tiers no Sentinel) e replicação nativa para caixas sem licença (EDL).
@@ -70,11 +70,11 @@ Para manter a filosofia **Sniper** (precisão sobre volume), nosso ecossistema e
 | 🛡️ **Sentinel (Entry-Level)** | 40F, 60F, 80F (2GB-3GB RAM) | 35.000 IoCs por categoria |
 | 🛡️ **Sentinel (Mid-Range)** | 100F a 600F (4GB-8GB RAM) | 150.000 IoCs por categoria |
 | 🛡️ **Sentinel (High-End)** | Data Centers / Clusters | 300.000 IoCs por categoria |
-| 🌐 **NRA EDL (FortiGuard Mirror)** | Universal *(Caixas sem licença / SOC)* | 150.000 IoCs *(Circuit Breaker)* |
+| 🌐 **NRA EDL (Osint)** | Universal *(Caixas sem licença / SOC)* | 150.000 IoCs *(Circuit Breaker)* |
 
 > [!NOTE]
 > **Por que o NRA EDL tem uma trava de 150.000 IoCs?**
-> A base diária do FortiGuard consolidada (sumarizada via CIDR) costuma girar entre 60.000 e 100.000 blocos únicos. Fixamos uma trava de segurança (*Circuit Breaker*) em exatamente **150.000 linhas** no código Python. Se por qualquer anomalia global de BGP ou na fonte original esse número for ultrapassado, o sistema aborta a sincronização e preserva a lista anterior intacta. Isso impede que appliances menores da comunidade (como 40F ou 60F) entrem em esgotamento de memória (*Conserve Mode/WAD*) ao tentar processar feeds anomalamente gigantescos.
+> A base diária do Osint consolidada (sumarizada via CIDR) costuma girar entre 60.000 e 100.000 blocos únicos. Fixamos uma trava de segurança (*Circuit Breaker*) em exatamente **150.000 linhas** no código Python. Se por qualquer anomalia global de BGP ou na fonte original esse número for ultrapassado, o sistema aborta a sincronização e preserva a lista anterior intacta. Isso impede que appliances menores da comunidade (como 40F ou 60F) entrem em esgotamento de memória (*Conserve Mode/WAD*) ao tentar processar feeds anomalamente gigantescos.
 
 > [!NOTE]
 > **Como escolher o seu feed?**
@@ -92,29 +92,29 @@ memory used threshold green:                       1572 MB   82% of total RAM
 
 ---
 
-### 🌐 NRA EDL - FortiGuard (Community Edition)
+### 🌐 NRA EDL - Osint (Community Edition)
 
-Desenvolvemos o que muitos consideravam improvável: um motor de engenharia reversa tática capaz de democratizar o acesso à inteligência de ameaças de elite, provando que a proteção da borda não deve ser um privilégio, mas um direito de toda infraestrutura.
+Desenvolvemos o que muitos consideravam improvável: um motor de engenharia tática capaz de democratizar o acesso à inteligência de ameaças de elite, provando que a proteção da borda não deve ser um privilégio, mas um direito de toda infraestrutura.
 
 Estamos entregando uma solução audaciosa que preenche a lacuna entre a 'segurança zero' e a 'proteção total'. É uma engenharia de guerrilha para tempos difíceis.
 
 > [!IMPORTANT]
 > **DEMOCRATIZANDO A SEGURANÇA NA BORDA (100% FREE)**
-> Sabemos que a realidade econômica atual impõe desafios severos aos orçamentos de TI. Muitas empresas, provedores (MSSPs) e analistas que mantêm laboratórios de estudos acabam operando appliances FortiGate sem o licenciamento ativo do FortiGuard devido aos altos custos de renovação. **A segurança da sua rede não pode ficar desamparada por restrições financeiras.**
+> Sabemos que a realidade econômica atual impõe desafios severos aos orçamentos de TI. Muitas empresas, provedores (MSSPs) e analistas que mantêm laboratórios de estudos acabam operando appliances sem o licenciamento ativo devido aos altos custos de renovação. **A segurança da sua rede não pode ficar desamparada por restrições financeiras.**
 
-Com o objetivo de contribuir diretamente com a nossa comunidade e fortalecer o ecossistema nacional de cibersegurança, desenvolvemos duas novas lsitas dinâmicas: **NRA EDL - FortiGuard IP Reputation Database Mirror** e o **NRA EDL - FortiGuard Scanners IPs Mirror**. 
+Com o objetivo de contribuir diretamente com a nossa comunidade e fortalecer o ecossistema nacional de cibersegurança, desenvolvemos essa lista dinâmica: **NRA EDL - Osint IP Reputation** e o **NRA EDL - Osint Scanners IPs**. 
 
-Trata-se de uma engenharia de **Replicação e Espelhamento (Mirror)**: nosso motor automatizado extrai, sanitiza e consolida continuamente a base oficial de reputação de IPs do *Internet Service Database (ISDB)* de appliances licenciados e disponibiliza toda essa inteligência de forma gratuita através de nossa lista no GitHub.
+Trata-se de uma engenharia de **Coleta e Sumarização**, onde nosso motor automatizado extrai, sanitiza e consolida continuamente a bases open-source de reputação de IPs, domínios e hash´s e disponibiliza toda essa inteligência de forma gratuita através de nossa lista no GitHub.
 
 ### 🛡️ O que estamos replicando para o seu Firewall?
 
-O feed atualiza automaticamente **Todas as categorias críticas de reputação** do FortiGuard:
+Nosso feed oferece:
 
 ###  1. Ameaças Ativas & Reputação
 * 🚨 **Botnet-C&C.Server:** Servidores de Comando e Controle de Botnets globais.
-* 🛑 **Malicious-Malicious.Server:** Hosts catalogados em ataques ativos e drop de malwares.
-* 🎣 **Phishing-Phishing.Server:** Infraestruturas conhecidas por hospedagem de páginas de Phishing.
-* ⛏️ **Blockchain-Crypto.Mining.Pool:** Pools de mineração não autorizada (Cryptojacking).
+* 🛑 **Malicious.Server:** Hosts catalogados em ataques ativos e drop de malwares.
+* 🎣 **Phishing.Server:** Infraestruturas conhecidas por hospedagem de páginas de Phishing.
+* ⛏️ **Blockchain-Crypto.Mining:** Pools de mineração não autorizada (Cryptojacking).
 * 🧅 **Tor Nodes (Exit, Relay, Tor):** Nós da rede TOR frequentemente utilizados para anonimizar invasões.
 * 🕵️ **Proxy & Anonymous VPN:** Serviços de mascaramento de IP usados para burlar perímetros.
 
@@ -159,10 +159,10 @@ Base completa de Threat Intelligence com amplo histórico de IoCs e varreduras a
 
 ---
 
-### 🛡️ 4. FortiGuard EDLs (Módulos Específicos)
+### 🛡️ 4. Osint EDLs (Módulos Específicos)
 Listas complementares focadas em reputação e mitigação de scanners da internet.
-* **IP Reputation:** `https://nra-fortiguard-edl.networkra.seg.br/fortiguard_reputation_ips.txt`
-* **Scanners / Scrapers:** `https://nra-fortiguard-edl.networkra.seg.br/fortiguard_scanner_ips.txt`
+* **IP Reputation:** `https://nra-osint-edl.networkra.seg.br/osint_reputation_ips.txt`
+* **Scanners / Scrapers:** `https://nra-osint-edl.networkra.seg.br/osint_scanner_ips.txt`
 
 ---
 
