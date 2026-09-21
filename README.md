@@ -3,7 +3,7 @@
 O **NRA Sentinel** é um projeto desenvolvido com o objetivo de auxiliar profissionais de segurança e redes na proteção de suas infraestruturas contra 0-days, Botnets, Malware e Ransomware. Ele automatiza a coleta e a organização de dados de novas ameaças globais, entregando listas limpas e prontas para uso no **External Resource** do FortiGate. Este motor não busca ser uma "solução milagrosa", mas sim uma ferramenta de apoio que soma forças aos recursos que você já utiliza no dia a dia, ideal para quem busca reforçar ainda mais a segurança.
 
 <img src="image_4cc9b12.png" width="900" alt="NRA Sentinel Workflow Infographic">
-<p align="left"><sub><i>Workflow NRA Sentinel detalhado: Da coleta em fontes globais à entrega sanitizada no perímetro via FortiOS.</i></sub></p>
+<p align="left"><sub><i>Workflow detalhado: Da coleta em fontes globais à entrega sanitizada ao seu Firewall.</i></sub></p>
 
 ---
 
@@ -12,12 +12,12 @@ O **NRA Osint edl - IP Reputation e Scanners IPs** é um projeto comunitário de
 Esta arquitetura não busca substituir o modelo comercial do fabricante, mas sim atuar como uma engenharia de solidariedade técnica que preenche a lacuna de quem estaria desprotegido, garantindo que a condição financeira não seja uma barreira para a segurança da sua rede.
 
 <img src="image_4cc9b10.png" width="900" alt="NRA Sentinel Workflow Infographic">
-<p align="left"><sub><i>Workflow NRA Osint edl detalhado: Da coleta em fontes OSINT globais à entrega sanitizada no perímetro via External Connectors</i></sub></p>
+<p align="left"><sub><i>Workflow detalhado: Da compilação de fontes OSINT globais à entrega ao seu Firewall.</i></sub></p>
 
 ---
 
-<img src="image_4cc9b14.png" width="900" alt="NRA Sentinel e NRA EDL FortiGate Integration">
-<p align="left"><sub><i>Exemplo da integração dos conectores NRA Sentinel e NRA EDL operando em ambiente FortiOS.</i></sub></p>
+<img src="image_4cc9b14.png" width="900" alt="NRA Sentinel e NRA Osint edl FortiGate Integration">
+<p align="left"><sub><i>Exemplo de operação dos conectores NRA Sentinel e NRA Osint edl no ambiente Fortinet.</i></sub></p>
 
 ---
 
