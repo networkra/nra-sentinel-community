@@ -61,7 +61,7 @@ Para garantir que infraestruturas legítimas não sejam bloqueadas acidentalment
 
 ---
 
-### 🛡️ Rotação e Performance (Multi-Tier & EDL Mirror)
+### 🛡️ Rotação e Performance (Multi-Tier)
 
 Para manter a filosofia **Sniper** (precisão sobre volume), nosso ecossistema entrega a inteligência na medida certa para o seu hardware, garantindo estabilidade no **WAD/IPS Engine** e trabalhando para manter seu FortiOS fora de *Conserve Mode*:
 
@@ -106,9 +106,9 @@ Com o objetivo de contribuir diretamente com a nossa comunidade e fortalecer o e
 
 Trata-se de uma engenharia de **Coleta e Sumarização**, onde nosso motor automatizado extrai, sanitiza e consolida continuamente as bases open-source de reputação de IPs, domínios e hash´s e disponibiliza toda essa inteligência de forma gratuita através de nossa lista no GitHub.
 
-### 🛡️ O que estamos replicando para o seu Firewall?
+### 🛡️ O que estamos entregando para o seu Firewall?
 
-Nosso feed oferece:
+Nossa arquitetura compila e sanitiza indicadores OSINT Globais, transformando dados brutos em inteligência acionável. Ao conectar este feed, seu perímetro passa a bloquear proativamente duas frentes críticas de ataque:
 
 ###  1. Ameaças Ativas & Reputação
 * 🚨 **Botnet-C&C:** Servidores de Comando e Controle de Botnets globais.
@@ -120,7 +120,7 @@ Nosso feed oferece:
 * 🕵️ **Proxy & Anonymous VPN:** Serviços de mascaramento de IP usados para burlar perímetros.
 
 ###  2. Motores de Reconhecimento (Anti-Scanning)
-Para evitar que sua infraestrutura seja mapeada por atacantes buscando CVEs ou interfaces expostas, replicamos a base completa de Scanners. O feed bloqueia proativamente milhares de prefixos de varredura massiva na internet, englobando:
+Para evitar que sua infraestrutura seja mapeada por atacantes buscando CVEs ou interfaces expostas, compilamos a base completa de Scanners. O feed bloqueia proativamente milhares de prefixos de varredura massiva na internet, englobando:
 
 * 👁️ **Global Scanners:** Shodan, Censys, Rapid7, Shadowserver, BinaryEdge, LeakIX.
 * 🔍 **Corporate & Gov Scanners:** Palo Alto Cortex Xpanse, Internet Census Group, UK NCSC, NetScout.
