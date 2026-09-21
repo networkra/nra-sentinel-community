@@ -7,12 +7,12 @@ O **NRA Sentinel** é um projeto desenvolvido com o objetivo de auxiliar profiss
 
 ---
 
-O **NRA EDL - Osint IP Reputation e Osint Scanners IPs** é um projeto comunitário desenvolvido com o objetivo de democratizar a segurança na borda, auxiliando profissionais, empresas e provedores (MSSPs) que operam appliances sem licenciamento ativo devido às atuais restrições orçamentárias do país. Ele automatiza a extração, a sumarização CIDR, entregando listas oficiais do Spamhaus DROP, Emerging Threats, Firehol, CISA, entre outros players open source. Todos protegidos pela nossa Safelist e pronto para consumo nativo por **External Resource** do seu Firewall. 
+O **NRA OSINT EDL - IP Reputation e Scanners IPs** é um projeto comunitário desenvolvido com o objetivo de democratizar a segurança na borda, auxiliando profissionais, empresas e provedores (MSSPs) que operam appliances sem licenciamento ativo devido às atuais restrições orçamentárias do país. Ele automatiza a extração, a sumarização CIDR, entregando listas oficiais do Spamhaus DROP, Emerging Threats, Firehol, CISA, entre outros players open source. Todos protegidos pela nossa Safelist e pronto para consumo nativo por **External Resource** do seu Firewall. 
 
 Esta arquitetura não busca substituir o modelo comercial do fabricante, mas sim atuar como uma engenharia de solidariedade técnica que preenche a lacuna de quem estaria desprotegido, garantindo que a condição financeira não seja uma barreira para a segurança da sua rede.
 
 <img src="image_4cc9b10.png" width="900" alt="NRA Sentinel Workflow Infographic">
-<p align="left"><sub><i>Workflow NRA EDL detalhado: Da coleta em um FortiGate licenciado à entrega sanitizada no perímetro via FortiOS.</i></sub></p>
+<p align="left"><sub><i>Workflow NRA EDL detalhado: Da coleta em fontes OSINT globais à entrega sanitizada no perímetro via External Connectors</i></sub></p>
 
 ---
 
@@ -37,7 +37,7 @@ O motor busca informações em fontes respeitadas, garantindo que o que chega ao
 | **URLHaus (abuse.ch)** | ![Sentinel](https://img.shields.io/badge/NRA-Sentinel-0055ff?style=flat-square&logo=shield&logoColor=white) | Monitora links que estão distribuindo malware no exato momento. |
 | **AbuseIPDB** | ![Sentinel](https://img.shields.io/badge/NRA-Sentinel-0055ff?style=flat-square&logo=shield&logoColor=white) | Ajuda a validar a reputação dos IPs, evitando falsos positivos. |
 | **urlscan.io** | ![Sentinel](https://img.shields.io/badge/NRA-Sentinel-0055ff?style=flat-square&logo=shield&logoColor=white) | Verifica o histórico de segurança dos domínios e URLs processadas. |
-| **Osint** | ![EDL](https://img.shields.io/badge/NRA-EDL-ff8800?style=flat-square&logo=fortinet&logoColor=white) | Osint de IPs Maliciosos e Scanner's, democratizando o bloqueio na borda para caixas sem licença. |
+| **Bases OSINT** | ![EDL](https://img.shields.io/badge/NRA-OSINT_EDL-ff8800?style=flat-square&logo=shield&logoColor=white) | Inteligência de IPs Maliciosos e Scanners globais, democratizando o bloqueio na borda para caixas desassistidas. |
 ---
 
 ### 🛡️ Prevenção de Falsos Positivos
@@ -54,7 +54,7 @@ Para garantir que infraestruturas legítimas não sejam bloqueadas acidentalment
 ### ⚙️ Detalhes do Funcionamento
 
 * **Atualização (NRA Sentinel):** Os feeds de *0-days* e IoCs são processados e atualizados automaticamente a cada **8 horas**.
-* **Atualização (NRA EDL):** O Osint é executado **1 vez ao dia**. Essa cadência diária garante uma lista sempre fresca sem gerar overhead de requisições ou consumo excessivo de API no firewall de origem.
+* **Atualização (NRA EDL):** O Osint é executado **1 vez ao dia**. Essa cadência diária garante uma lista sempre fresca sem gerar overhead de requisições ou consumo excessivo de API nas fontes primárias (provedores OSINT).
 * **Persistência:** O motor mantém o histórico acumulado com regra cronológica estrita (regra FIFO para rotatividade e substituição de artefatos antigos).
 * **Limpeza:** Dados sanitizados (remoção automática de protocolos, portas, *query strings* e validação via Safelist), entregando listas limpas para leitura nativa via CLI.
 * **Segmentação e Espelhamento:** Entregamos inteligência dimensionada conforme a memória RAM do seu hardware (Tiers no Sentinel) e replicação nativa para caixas sem licença (EDL).
@@ -104,7 +104,7 @@ Estamos entregando uma solução audaciosa que preenche a lacuna entre a 'segura
 
 Com o objetivo de contribuir diretamente com a nossa comunidade e fortalecer o ecossistema nacional de cibersegurança, desenvolvemos essa lista dinâmica: **NRA EDL - Osint IP Reputation** e o **NRA EDL - Osint Scanners IPs**. 
 
-Trata-se de uma engenharia de **Coleta e Sumarização**, onde nosso motor automatizado extrai, sanitiza e consolida continuamente a bases open-source de reputação de IPs, domínios e hash´s e disponibiliza toda essa inteligência de forma gratuita através de nossa lista no GitHub.
+Trata-se de uma engenharia de **Coleta e Sumarização**, onde nosso motor automatizado extrai, sanitiza e consolida continuamente as bases open-source de reputação de IPs, domínios e hash´s e disponibiliza toda essa inteligência de forma gratuita através de nossa lista no GitHub.
 
 ### 🛡️ O que estamos replicando para o seu Firewall?
 
