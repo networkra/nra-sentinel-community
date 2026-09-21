@@ -116,6 +116,7 @@ Nosso feed oferece:
 * 🎣 **Phishing:** Infraestruturas conhecidas por hospedagem de páginas de Phishing.
 * ⛏️ **Blockchain-Crypto.Mining:** Pools de mineração não autorizada (Cryptojacking).
 * 🧅 **Tor Nodes (Exit, Relay, Tor):** Nós da rede TOR frequentemente utilizados para anonimizar invasões.
+* 📧 **Spam:** IPs e servidores identificados em campanhas massivas de e-mails indesejados e maliciosos.
 * 🕵️ **Proxy & Anonymous VPN:** Serviços de mascaramento de IP usados para burlar perímetros.
 
 ###  2. Motores de Reconhecimento (Anti-Scanning)
