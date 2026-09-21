@@ -1,114 +1,97 @@
-## 🛡️ NRA Sentinel & Osint edl - Inteligência de Ameaças (V33.5)
+## 🛡️ NRA Sentinel & OSINT EDL - Threat Intelligence Ecosystem (V33.5)
 
-O **NRA Sentinel** é um projeto desenvolvido com o objetivo de auxiliar profissionais de segurança e redes na proteção de suas infraestruturas contra 0-days, Botnets, Malware e Ransomware. Ele automatiza a coleta e a organização de dados de novas ameaças globais, entregando listas limpas e prontas para uso no **External Resource** do FortiGate. Este motor não busca ser uma "solução milagrosa", mas sim uma ferramenta de apoio que soma forças aos recursos que você já utiliza no dia a dia, ideal para quem busca reforçar ainda mais a segurança.
+O **NRA Sentinel** é um motor tático de Threat Intelligence desenvolvido para auxiliar arquitetos e analistas de SOC na proteção de perímetros contra **0-days, Botnets, Malware e Ransomware**. O ecossistema automatiza a coleta de telemetria global, sanitiza os dados brutos e entrega indicadores de comprometimento (IoCs) prontos para consumo nativo nos **External Connectors**. Não é uma "bala de prata", mas sim uma camada de defesa ativa projetada para operar em conjunto com a sua arquitetura de segurança atual.
 
-<img src="image_4cc9b12.png" width="900" alt="NRA Sentinel Workflow Infographic">
-<p align="left"><sub><i>Workflow detalhado: Da coleta em fontes globais à entrega sanitizada ao seu Firewall.</i></sub></p>
-
----
-
-O **NRA Osint edl - IP Reputation e Scanners IPs** é um projeto comunitário desenvolvido com o objetivo de democratizar a segurança na borda, auxiliando profissionais, empresas e provedores (MSSPs) que operam appliances sem licenciamento ativo devido às atuais restrições orçamentárias do país. Ele automatiza a extração, a sumarização CIDR, entregando listas oficiais do Spamhaus DROP, Emerging Threats, Firehol, CISA, entre outros players open source. Todos protegidos pela nossa Safelist e pronto para consumo nativo por **External Resource** do seu Firewall. 
-
-Esta arquitetura não busca substituir o modelo comercial do fabricante, mas sim atuar como uma engenharia de solidariedade técnica que preenche a lacuna de quem estaria desprotegido, garantindo que a condição financeira não seja uma barreira para a segurança da sua rede.
-
-<img src="image_4cc9b10.png" width="900" alt="NRA Sentinel Workflow Infographic">
-<p align="left"><sub><i>Workflow detalhado: Da compilação de fontes OSINT globais à entrega ao seu Firewall.</i></sub></p>
+<img src="https://raw.githubusercontent.com/networkra/nra-sentinel-community/main/image_4cc9b12.png" width="900" alt="NRA Sentinel Workflow Infographic">
+<p align="left"><sub><i><strong>[ NRA Sentinel ]</strong> Workflow tático: Da coleta de inteligência primária à sanitização no perímetro via External Connectors.</i></sub></p>
 
 ---
 
-<img src="image_4cc9b14.png" width="900" alt="NRA Sentinel e NRA Osint edl FortiGate Integration">
-<p align="left"><sub><i>Exemplo de operação dos conectores NRA Sentinel e NRA Osint edl no ambiente Fortinet.</i></sub></p>
+O módulo **NRA OSINT EDL (Community Edition)** é uma arquitetura de defesa ativa desenvolvida com o objetivo de democratizar a segurança de borda para profissionais, empresas e provedores (MSSPs) que operam appliances desassistidos ou sem licenciamento ativo. Nossa engenharia extrai, sumariza (via CIDR) e compila bases OSINT globais consolidadas (como Spamhaus DROP, Firehol, CISA, entre outros). Toda a inteligência é filtrada por nossa Safelist e entregue pronta para bloqueio incondicional (drop).
+
+Esta infraestrutura atua como um braço de apoio técnico à comunidade, garantindo que restrições orçamentárias não se tornem pontos cegos na segurança das redes brasileiras.
+
+<img src="https://raw.githubusercontent.com/networkra/nra-sentinel-community/main/image_4cc9b10.png" width="900" alt="NRA OSINT EDL Workflow Infographic">
+<p align="left"><sub><i><strong>[ NRA OSINT EDL ]</strong> Workflow tático: Da compilação de bases OSINT Globais à entrega via External Connectors.</i></sub></p>
 
 ---
 
-**O Projeto agora está oficialmente publicado na Cloudflare. Domínio networkra.seg.br**
-
-<i>Maior estabilidade, baixa latência e alta disponibilidade para operações de SOC e MSSP</i>
+<img src="https://raw.githubusercontent.com/networkra/nra-sentinel-community/main/image_4cc9b14.png" width="900" alt="FortiGate Integration Deploy">
+<p align="left"><sub><i><strong>[ Deploy Integrado ]</strong> Exemplo de Operação dos Conectores NRA Sentinel e OSINT no Ambiente FortiOS.</i></sub></p>
 
 ---
 
-### 🧠 Fontes de Dados
-O motor busca informações em fontes respeitadas, garantindo que o que chega ao seu Firewall tenha passado por um processo de filtragem:
+> **[ STATUS: OPERACIONAL ]** O motor está provisionado através de CDN Global (Cloudflare Edge). 
+> **Domínio Oficial:** `networkra.seg.br`
+> *Alta disponibilidade, latência otimizada e tolerância a falhas para operações de SOC.*
 
-| Player / Fonte | Projeto | Função |
+---
+
+### 🧠 Fontes de Telemetria (Data Sources)
+O ecossistema consolida informações de players renomados, submetendo os dados a um rigoroso processo de sanitização antes da entrega:
+
+| Player / Fonte | Módulo | Função Tática |
 | :--- | :---: | :--- |
 | **AlienVault (LevelBlue)** | ![Sentinel](https://img.shields.io/badge/NRA-Sentinel-0055ff?style=flat-square&logo=shield&logoColor=white) | Fornece inteligência estratégica sobre campanhas de Ransomware e 0-days. |
-| **MalwareBazaar (abuse.ch)** | ![Sentinel](https://img.shields.io/badge/NRA-Sentinel-0055ff?style=flat-square&logo=shield&logoColor=white) | Entrega assinaturas de arquivos (Hashes) validadas pela comunidade. |
-| **URLHaus (abuse.ch)** | ![Sentinel](https://img.shields.io/badge/NRA-Sentinel-0055ff?style=flat-square&logo=shield&logoColor=white) | Monitora links que estão distribuindo malware no exato momento. |
-| **AbuseIPDB** | ![Sentinel](https://img.shields.io/badge/NRA-Sentinel-0055ff?style=flat-square&logo=shield&logoColor=white) | Ajuda a validar a reputação dos IPs, evitando falsos positivos. |
-| **urlscan.io** | ![Sentinel](https://img.shields.io/badge/NRA-Sentinel-0055ff?style=flat-square&logo=shield&logoColor=white) | Verifica o histórico de segurança dos domínios e URLs processadas. |
-| **Bases OSINT** | ![EDL](https://img.shields.io/badge/NRA-Osint_edl-ff8800?style=flat-square&logo=shield&logoColor=white) | Inteligência de IPs Maliciosos e Scanners globais, democratizando o bloqueio na borda para caixas desassistidas. |
----
-
-### 🛡️ Prevenção de Falsos Positivos
-Para garantir que infraestruturas legítimas não sejam bloqueadas acidentalmente, o NRA Sentinel conta com uma esteira de dupla validação antes de aprovar qualquer bloqueio:
-
-1. **Safelist (Exceção Absoluta):** Todo IP extraído dos feeds é cruzado com o arquivo local `nra-safelist.txt`. Se o IP constar nesta lista, ele é imediatamente descartado, protegendo a sua infraestrutura.
-2. **Validação de Reputação (AbuseIPDB):** Caso o IP não esteja na Safelist, ele passa por uma checagem em tempo real. O artefato só é incluído no conector final do FortiGate se atingir um *Abuse Confidence Score* igual ou superior a **20%**. 
-*(Nota: Indicadores classificados como ameaças críticas de **0-day** recebem prioridade máxima de bloqueio, mas ainda assim são obrigados a respeitar a Safelist).*
-
-**Origem dos Dados (Safelist):** A nossa lista base de provedores DNS globais foi extraída e curada a partir da documentação oficial do **[AdGuard DNS Providers](https://adguard-dns.io/kb/pt-BR/general/dns-providers/)**. 
+| **MalwareBazaar (abuse.ch)** | ![Sentinel](https://img.shields.io/badge/NRA-Sentinel-0055ff?style=flat-square&logo=shield&logoColor=white) | Entrega assinaturas de arquivos (Hashes) validadas pela comunidade cibernética. |
+| **URLHaus (abuse.ch)** | ![Sentinel](https://img.shields.io/badge/NRA-Sentinel-0055ff?style=flat-square&logo=shield&logoColor=white) | Monitora infraestruturas ativas distribuindo payload/malware em tempo real. |
+| **AbuseIPDB** | ![Sentinel](https://img.shields.io/badge/NRA-Sentinel-0055ff?style=flat-square&logo=shield&logoColor=white) | Validação cruzada de reputação de IPs, atuando na contenção de falsos positivos. |
+| **urlscan.io** | ![Sentinel](https://img.shields.io/badge/NRA-Sentinel-0055ff?style=flat-square&logo=shield&logoColor=white) | Análise histórica e estrutural de domínios e URLs processadas pelo motor. |
+| **Bases OSINT** | ![EDL](https://img.shields.io/badge/NRA-OSINT_EDL-ff8800?style=flat-square&logo=shield&logoColor=white) | Compilação de Scanners massivos e IPs maliciosos para proteção de appliances sem licença. |
 
 ---
 
-### ⚙️ Detalhes do Funcionamento
+### 🛡️ Motor de Prevenção de Falsos Positivos
+Para garantir que tráfego legítimo não sofra *drop* acidental, o NRA Sentinel emprega uma esteira de dupla validação (Blindagem de Falsos Positivos):
 
-* **Atualização (NRA Sentinel):** Os feeds de *0-days* e IoCs são processados e atualizados automaticamente a cada **8 horas**.
-* **Atualização (NRA Osint edl):** O Osint é executado **1 vez ao dia**. Essa cadência diária garante uma lista sempre fresca sem gerar overhead de requisições ou consumo excessivo de API nas fontes primárias (provedores OSINT).
-* **Persistência:** O motor mantém o histórico acumulado com regra cronológica estrita (regra FIFO para rotatividade e substituição de artefatos antigos).
-* **Limpeza:** Dados sanitizados (remoção automática de protocolos, portas, *query strings* e validação via Safelist), entregando listas limpas para leitura nativa via CLI.
-* **Segmentação e Espelhamento:** Entregamos inteligência dimensionada conforme a memória RAM do seu hardware (Tiers no Sentinel) e replicação nativa para caixas sem licença (EDL).
+1. **Safelist (Exceção Absoluta):** Todo IP processado sofre um *match* contra a `nra-safelist.txt`. Caso pertença a infraestruturas conhecidas, o IoC é imediatamente descartado.
+2. **Validação Heurística (AbuseIPDB):** Se não estiver na Safelist, o IP passa por verificação em tempo real. Só avança para a blocklist final se possuir um *Abuse Confidence Score* $\ge$ **20%**. 
+*(Exceção: Ameaças críticas classificadas como **0-day** têm by-pass no score, mas continuam submissas à Safelist de DNS).*
+
+**Origem da Safelist:** Curada e atualizada com base na documentação oficial de resolvedores globais do **[AdGuard DNS Providers](https://adguard-dns.io/kb/pt-BR/general/dns-providers/)**.
+
+---
+
+### ⚙️ Overview Operacional
+
+* **Atualização (Sentinel):** Extração, validação e compilação de novos IoCs ocorrem automaticamente a cada **8 horas**.
+* **Atualização (OSINT EDL):** A esteira OSINT é executada **1 vez ao dia**, cadência ideal para sumarização de CIDRs sem gerar *overhead* nas fontes primárias.
+* **Persistência & Rotação:** A memória do motor obedece a uma regra estrita de FIFO (First-In, First-Out), garantindo rotatividade de ameaças obsoletas.
+* **Sanitização (Clean-up):** O código limpa protocolos (http/https), remove portas e query strings, entregando o artefato no formato exato exigido pelo daemon do FortiOS.
 
 ---
 
 ### 🛡️ Rotação e Performance (Multi-Tier)
 
-Para manter a filosofia **Sniper** (precisão sobre volume), nosso ecossistema entrega a inteligência na medida certa para o seu hardware, garantindo estabilidade no **WAD/IPS Engine** e trabalhando para manter seu FortiOS fora de *Conserve Mode*:
+Sob a premissa de ser um motor **Sniper** (precisão cirúrgica no lugar de volume irracional), o ecossistema é segmentado para proteger a integridade do **WAD/IPS Engine** do seu Firewall, prevenindo cenários de *Conserve Mode*:
 
-| Projeto & Tier | Modelo de Referência | Capacidade / Trava Máxima |
+| Arquitetura | Target Hardware | Capacidade Máxima |
 | :--- | :--- | :--- |
 | 🛡️ **Sentinel (Entry-Level)** | 40F, 60F, 80F (2GB-3GB RAM) | 35.000 IoCs por categoria |
 | 🛡️ **Sentinel (Mid-Range)** | 100F a 600F (4GB-8GB RAM) | 150.000 IoCs por categoria |
 | 🛡️ **Sentinel (High-End)** | Data Centers / Clusters | 300.000 IoCs por categoria |
-| 🌐 **Osint edl (All Tiers)** | Universal *(Caixas sem licença / SOC)* | 150.000 IoCs *(Circuit Breaker)* |
+| 🌐 **OSINT EDL (Universal)** | Qualquer Appliance (C/ ou S/ Licença) | 150.000 IoCs *(Circuit Breaker)* |
 
 > [!NOTE]
-> **Por que o NRA Osint edl tem uma trava de 150.000 IoCs?**
-> A base diária do Osint consolidada (sumarizada via CIDR) costuma girar entre 60.000 e 100.000 blocos únicos. Fixamos uma trava de segurança (*Circuit Breaker*) em exatamente **150.000 linhas** no código Python. Se por qualquer anomalia global de BGP ou na fonte original esse número for ultrapassado, o sistema aborta a sincronização e preserva a lista anterior intacta. Isso impede que appliances menores da comunidade (como 40F ou 60F) entrem em esgotamento de memória (*Conserve Mode/WAD*) ao tentar processar feeds anomalamente gigantescos.
+> **A Engenharia do Circuit Breaker (150k Limit)**
+> A sumarização diária de CIDRs OSINT flutua entre 60.000 e 100.000 blocos. O motor Python possui uma trava dura (*Circuit Breaker*) em **150.000 linhas**. Em caso de anomalia global de roteamento (BGP Hijack) ou corrupção na fonte original, o script aborta a atualização e mantém a lista íntegra do dia anterior. Isso blinda Firewalls de entrada (como o 40F) contra esgotamento súbito de RAM.
 
-> [!NOTE]
-> **Como escolher o seu feed?**
-> A escolha do Tier deve ser feita com base na memória RAM do seu appliance. Se o dispositivo possui 2GB de RAM, utilize obrigatoriamente a versão `critical` (Entry). Se você gerencia ambientes com caixas de maior porte (Mid ou High), pode escalar o nível de proteção utilizando os arquivos `mid-critical` ou `high-critical` para uma maior abrangência de ameaças. Exemplo de como validar sua memória:
-```
-NetworkRA # diagnose hardware sysinfo conserve 
-memory conserve mode:                        off
-total RAM:                                         1917 MB
-memory used:                                        796 MB   41% of total RAM
-memory freeable:                                    270 MB   14% of total RAM
-memory used + freeable threshold extreme:          1821 MB   95% of total RAM
-memory used threshold red:                         1687 MB   88% of total RAM
-memory used threshold green:                       1572 MB   82% of total RAM
-```
+> [!TIP]
+> **Dimensionamento Correto:** Sempre alinhe o Tier à RAM do equipamento. Caixas com 2GB (Entry) devem rodar as listas `critical`. Caixas a partir de 4GB podem escalar para `mid-critical` ou `high-critical`. Para verificar o uso atual de RAM no FortiOS via CLI: `diagnose hardware sysinfo conserve`.
 
 ---
 
-### 🌐 NRA Osint edl (Community Edition)
+### 🌐 NRA OSINT EDL (Community Edition)
 
-Desenvolvemos o que muitos consideravam improvável: um motor de engenharia tática capaz de democratizar o acesso à inteligência de ameaças de elite, provando que a proteção da borda não deve ser um privilégio, mas um direito de toda infraestrutura.
-
-Estamos entregando uma solução audaciosa que preenche a lacuna entre a 'segurança zero' e a 'proteção total'. É uma engenharia de guerrilha para tempos difíceis.
+O desenvolvimento deste módulo prova que a defesa de perímetro não precisa ser um privilégio comercial. É uma solução tática audaciosa que preenche a lacuna entre a "cegueira operacional" e a proteção corporativa.
 
 > [!IMPORTANT]
-> **DEMOCRATIZANDO A SEGURANÇA NA BORDA (100% FREE)**
-> Sabemos que a realidade econômica atual impõe desafios severos aos orçamentos de TI. Muitas empresas, provedores (MSSPs) e analistas que mantêm laboratórios de estudos acabam operando appliances sem o licenciamento ativo devido aos altos custos de renovação. **A segurança da sua rede não pode ficar desamparada por restrições financeiras.**
-
-Com o objetivo de contribuir diretamente com a nossa comunidade e fortalecer o ecossistema nacional de cibersegurança, desenvolvemos essa lista dinâmica: **NRA Osint edl - IP Reputation** e o **NRA Osint edl - Scanners IPs**. 
-
-Trata-se de uma engenharia de **Coleta e Sumarização**, onde nosso motor automatizado extrai, sanitiza e consolida continuamente as bases open-source de reputação de IPs, domínios e hash´s e disponibiliza toda essa inteligência de forma gratuita através de nossa lista no GitHub.
+> **DEMOCRATIZAÇÃO DA SEGURANÇA (100% FREE)**
+> A segurança da sua rede não pode ficar desamparada por restrições de *budget*. Este módulo consolida intel OSINT de IPs maliciosos e scanners, entregando proteção gratuita, validada e sumarizada para infraestruturas sem licenciamento ativo.
 
 ### 🛡️ O que estamos entregando para o seu Firewall?
 
-Nossa arquitetura compila e sanitiza indicadores OSINT Globais, transformando dados brutos em inteligência acionável. Ao conectar este feed, seu perímetro passa a bloquear proativamente duas frentes críticas de ataque:
+Nossa arquitetura compila e sanitiza indicadores globais, transformando dados brutos em **inteligência acionável**. Ao plugar este feed, seu perímetro passa a bloquear proativamente duas grandes frentes de ataque:
 
 ###  1. Ameaças Ativas & Reputação
 * 🚨 **Botnet-C&C:** Servidores de Comando e Controle de Botnets globais.
@@ -120,119 +103,110 @@ Nossa arquitetura compila e sanitiza indicadores OSINT Globais, transformando da
 * 🕵️ **Proxy & Anonymous VPN:** Serviços de mascaramento de IP usados para burlar perímetros.
 
 ###  2. Motores de Reconhecimento (Anti-Scanning)
-Para evitar que sua infraestrutura seja mapeada por atacantes buscando CVEs ou interfaces expostas, compilamos a base completa de Scanners. O feed bloqueia proativamente milhares de prefixos de varredura massiva na internet, englobando:
+Para impedir que atacantes mapeiem a topologia ou vulnerabilidades (CVEs) da sua rede, compilamos a base completa de *Scanners*. O feed mitiga milhares de prefixos voltados a varredura massiva:
 
 * 👁️ **Global Scanners:** Shodan, Censys, Rapid7, Shadowserver, BinaryEdge, LeakIX.
 * 🔍 **Corporate & Gov Scanners:** Palo Alto Cortex Xpanse, Internet Census Group, UK NCSC, NetScout.
-* 🕷️ **Mass Crawlers & Recon:** Stretchoid, CriminalIP, Hadrian, ONYPHE, entre dezenas de outros bots de enumeração.
-
-### ⚙️ Como configurar em Firewalls sem licença?
-Consulte o passo a passo logo abaixo.
+* 🕷️ **Mass Crawlers & Recon:** Stretchoid, CriminalIP, Hadrian, ONYPHE, entre dezenas de outros *bots* de enumeração autônoma.
 
 ---
-### <mark>&nbsp;🚀 Guia de Configuração Rápida (FortiOS CLI)&nbsp;</mark>
+
+### <mark>&nbsp;🚀 Guia de Integração (External Connectors)&nbsp;</mark>
 > [!WARNING]
-> 🚨 As URLs antigas baseadas em `raw.githubusercontent.com` **se tornaram legadas**. Pedimos gentilmente que todos os usuários atualizem seus conectores externos (External Connectors) no FortiGate para as novas URLs Oficiais hospedadas na Cloudflare.
+> 🚨 URLs antigas apontando para `raw.githubusercontent.com` ou baseadas na nomenclatura antiga **foram descontinuadas**. Atualize seus conectores imediatamente para a nova CDN da Cloudflare abaixo.
 
----
+### 🔗 Endpoints Oficiais (Produção)
 
-### 🔗 URLs Oficiais (Novos Endereços)
-
-Nossa inteligência é dividida em três camadas para se adequar à capacidade de hardware do seu equipamento.
+Selecione a camada compatível com o hardware do seu SOC. *Refresh Rate* recomendado: **60 Minutos**.
 
 ### 🟢 1. NRA Sentinel - Entry-Level
-Feeds focados em ameaças ativas, Botnets, C&C e malwares de alta criticidade.
+Focado no core de ameaças ativas (Botnets, C2, Malwares críticos).
 * **IPs:** `https://nra-sentinel-feeds.networkra.seg.br/nra-ips-critical-1.txt`
 * **Domains:** `https://nra-sentinel-feeds.networkra.seg.br/nra-dom-critical-1.txt`
 * **Hashes (Malware):** `https://nra-sentinel-feeds.networkra.seg.br/nra-hash-critical-1.txt`
 
 ### 🟡 2. NRA Sentinel - Midrange
-Base estendida contendo o nível Critical + IoCs adicionais com tempo de vida (TTL) maior.
+Base *Critical* + IoCs adicionais com tempo de vida (TTL) expandido.
 * **IPs:** `https://nra-sentinel-feeds.networkra.seg.br/nra-ips-mid-critical-1.txt`
 * **Domains:** `https://nra-sentinel-feeds.networkra.seg.br/nra-dom-mid-critical-1.txt`
 * **Hashes (Malware):** `https://nra-sentinel-feeds.networkra.seg.br/nra-hash-mid-critical-1.txt`
 
 ### 🔴 3. NRA Sentinel - High-End
-Base completa de Threat Intelligence com amplo histórico de IoCs e varreduras abrangentes.
+Telemetria total com amplo histórico e profundidade em detecção.
 * **IPs:** `https://nra-sentinel-feeds.networkra.seg.br/nra-ips-high-critical-1.txt`
 * **Domains:** `https://nra-sentinel-feeds.networkra.seg.br/nra-dom-high-critical-1.txt`
 * **Hashes (Malware):** `https://nra-sentinel-feeds.networkra.seg.br/nra-hash-high-critical-1.txt`
 
 ---
 
-### 🛡️ 4. NRA Osint edl (Módulos Específicos)
-Listas complementares focadas em reputação e mitigação de scanners da internet.
+### 🔵 4. NRA OSINT EDL (Community)
+Proteção autônoma contra Scanners Globais e IPs de baixa reputação.
 * **IP Reputation:** `https://nra-osint-edl.networkra.seg.br/osint_reputation_ips.txt`
 * **Scanners / Scrapers:** `https://nra-osint-edl.networkra.seg.br/osint_scanner_ips.txt`
 
 ---
 
-### ⚙️ Como configurar no FortiGate
+### ⚙️ Como configurar no FortiGate (GUI)
 
-1. Acesse o seu FortiGate via interface web (GUI).
+1. Acesse o seu FortiGate via interface web.
 2. Navegue até **Security Fabric** -> **External Connectors**.
-3. Clique em **Create New** e selecione o tipo de lista (IP Address, Domain Name, ou Malware Hash).
-4. Insira um nome descritivo (ex: `NRA-Sentinel-IP-Critical`).
-5. Cole a **URL Oficial** correspondente fornecida acima.
-6. Defina o **Refresh Rate** (Taxa de atualização) para **60 minutos** (recomendado).
-7. Certifique-se de que o Status está ativado e clique em OK.
-8. Utilize essas listas em suas **Firewall Policies**, **AntiVírus** e **Web-Filters** aplicando a ação adequada.
+3. Clique em **Create New** e selecione a categoria (IP Address, Domain Name, ou Malware Hash).
+4. Insira um nome descritivo (ex: `NRA_Sentinel_Critical_IP`).
+5. Cole o **Endpoint Oficial** desejado no campo URL.
+6. Defina o **Refresh Rate** para **60 minutos**.
+7. Valide se o *Status* está "Enable" e aplique.
+8. Referencie esses objetos dinâmicos em suas **Firewall Policies**, **AntiVirus Profiles** ou **Web-Filters** (Ação: Block/Drop).
 
-> **Nota de Responsabilidade**:
-> A inteligência do Sentinel é baseada em fontes de terceiros. Embora o esforço para minimizar erros seja constante, a decisão final de bloqueio e o monitoramento do tráfego são de responsabilidade do administrador da rede. Trabalhe com cautela e monitoramento.
-
----
-
-### 💎 Como posso apoiar o Projeto?
-
-Todo o ecossistema **NRA Sentinel & Osint edl** é **100% gratuito, open-source e livre de restrições**. Nossa missão é fortalecer a segurança da comunidade sem barreiras financeiras. Siga os passos abaixo para blindar o seu ambiente hoje mesmo:
-
-🔗 **Entre no grupo do Telegram:** [NRA Sentinel & Osint edl Alerts](https://t.me/+jHlbAlp-7Xg0MTJh)
-
-🤖 **Apoie o Projeto:** Se este projeto economiza tempo da sua equipe ou agrega valor à segurança dos clientes da sua empresa/MSSP, considere apoiar a nossa iniciativa tornando-se um membro no nível **Sentinel** ou **MSSP** do [Canal NetworkRA no YouTube](https://www.youtube.com/channel/UCs8isxhuF4phuQXimE52tOg/join)
+> **WARNING - Nota de Responsabilidade**:
+> Toda inteligência cibernética opera sob contexto e probabilidade. A ação final de bloqueio e a curadoria dos logs gerados são de responsabilidade do analista/arquiteto encarregado pelo ambiente. Proceda com monitoramento contínuo.
 
 ---
 
-### 🏆 Hall da Fama: Apoiadores Oficiais
+### 💎 Apoie a Manutenção do Código
 
-Esta seção é dedicada a agradecer publicamente aos arquitetos, analistas e provedores de serviços gerenciados (MSSPs) que reconheceram e apoiaram o projeto através do nível **NetworkRA MSSP**.
+O ecossistema **NRA Sentinel & OSINT EDL** é mantido **100% gratuito e open-source**. Nosso propósito é elevar o nível de segurança da comunidade brasileira.
 
-Graças a vocês, o Projeto continua evoluindo.
+🔗 **Alertas Táticos (Telegram):** [NRA Sentinel & OSINT Alerts](https://t.me/+jHlbAlp-7Xg0MTJh)
 
-| 🛡️ Nome / Empresa | 🔗 Perfil Profissional | 📅 Apoiador Desde |
+🤖 **Incentive o Desenvolvimento:** Se esta infraestrutura gerou valor para o seu SOC, mitigou incidentes ou economizou tempo da sua equipe MSSP, considere apoiar a manutenção dos servidores Cloudflare tornando-se membro institucional:
+👉 **[Apoie o Projeto via YouTube (Nível Sentinel / MSSP)](https://www.youtube.com/channel/UCs8isxhuF4phuQXimE52tOg/join)**
+
+---
+
+### 🏆 Hall da Fama: Parceiros MSSP
+
+Reconhecimento técnico aos Arquitetos e provedores MSSP que viabilizam o funcionamento ininterrupto desta arquitetura.
+
+| 🛡️ Analista / MSSP | 🔗 Perfil Profissional | 📅 Deploy Status |
 | :--- | :--- | :--- |
-| *@RodrigoAssinger* | *LinkedIn / Site* | *Agosto/2026* |
-| *Vaga disponível* | - | - |
-| *Vaga disponível* | - | - |
-
-> 💡 **Como ter o seu nome aqui?**
-> Se este projeto economiza tempo da sua equipe ou traz segurança para os seus clientes, considere apoiar a manutenção do código. Torne-se um membro **NetworkRA MSSP** no nosso canal do YouTube e faça parte da elite que mantém essa inteligência rodando!
-> 
-> 👉 **[Apoie o Projeto Aqui](https://www.youtube.com/@NetworkRA/join)**
+| *@RodrigoAssinger* | *LinkedIn / Site* | *Ativo (Desde Ago/2026)* |
+| *[ Slot Disponível ]* | - | - |
+| *[ Slot Disponível ]* | - | - |
 
 ---
 
-### 🤝 Créditos e Comunidade
+### 🤝 Intel Contributors
 
-O **NRA Sentinel & Osint edl** cresce graças ao feedback destes Especialistas que visitaram o Projeto e deixaram sua contribuição:
+O motor ganha robustez através dos *feedbacks* de engenharia dos nossos pares:
 
-*   **[@faustocaldeira](https://github.com/faustocaldeira/):** Pela sugestão da Safelist (AdGuard), ajudando a prevenir falsos positivos e erros humanos.
-*   **@RodrigoAssinger:** Pela sugestão da implementação (Multi-Tier), permitindo o suporte escalável para hardwares Mid-Range e High-End.
-*   **@MsAbreu000:** Pelo reporte do erro de autenticação envolvendo a criptografia (PBKDF2).
-
----
-
-### 👨‍💻 Sobre o Autor
-
-**Robert Alexandrino (NetworkRA)** - *Especialista em Segurança de Redes e Arquiteto MSSP*
+*   **[@faustocaldeira](https://github.com/faustocaldeira/):** Mapeamento e estruturação da Safelist (AdGuard), crucial na mitigação de Falsos Positivos (DNS Providers).
+*   **@RodrigoAssinger:** Design do algoritmo Multi-Tier, permitindo compatibilidade estável em clusters e caixas Entry-Level simultaneamente.
+*   **@MsAbreu000:** Correção e *troubleshooting* no fluxo de autenticação cifrada via PBKDF2.
 
 ---
 
-### ⚖️ Licença e Copyright
+### 👨‍💻 Desenvolvedor & Arquiteto
 
-Este projeto é desenvolvido e mantido por **Robert Alexandrino (NetworkRA)**.
+**Robert Alexandrino (NetworkRA)** 
+*Network Security Engineer & MSSP Solutions Architect*
 
-© 2026 NetworkRA. Todos os direitos reservados.
-O uso deste feed é **100% gratuito e aberto para toda a comunidade** de cibersegurança. Sinta-se livre para utilizá-lo na proteção dos seus ambientes e laboratórios.
+---
 
-🔗 **[LinkedIn - Robert Alexandrino](https://www.linkedin.com/in/networkra/)** | 📺 **[YouTube - NetworkRA](https://www.youtube.com/@NetworkRA)** | 🔗 **[Telegram - NRA Sentinel](https://t.me/+jHlbAlp-7Xg0MTJh)**
+### ⚖️ Licenciamento & EULA
+
+Arquitetura desenvolvida e mantida por **Robert Alexandrino (NetworkRA)**.
+© 2026 NetworkRA. All rights reserved.
+
+A distribuição e integração deste *Threat Feed* são **100% livres e abertas** para uso acadêmico, laboratorial e corporativo. 
+
+🔗 **[LinkedIn - Robert Alexandrino](https://www.linkedin.com/in/networkra/)** | 📺 **[YouTube - NetworkRA](https://www.youtube.com/@NetworkRA)** | 🔗 **[Telegram - SOC Comunnity](https://t.me/+jHlbAlp-7Xg0MTJh)**
