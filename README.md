@@ -171,4 +171,4 @@ O motor ganha robustez através dos feedbacks de engenharia dos nossos pares. Re
 
 © 2026 NetworkRA. All rights reserved. A distribuição e integração deste *Threat Feed* são **100% livres e abertas** para uso académico, laboratorial e corporativo. 
 
-🔗 **[LinkedIn](https://www.linkedin.com/in/networkra/)** | 📺 **[YouTube](https://www.youtube.com/@NetworkRA)** | 💬 **[Telegram - Alertas Táticos](https://t.me/+jHlbAlp-7Xg0MTJh)**
+🔗 **[LinkedIn](https://www.linkedin.com/in/networkra/)** | 📺 **[YouTube](https://www.youtube.com/@NetworkRA)** | 💬 **[Telegram - Alertas Táticos](https://t.me/+jHlbAlp-7Xg0MTJh)** | 🤖 **[Cloudflare](https://networkra.seg.br)**
