@@ -155,13 +155,13 @@ O ecossistema **NRA Sentinel & OSINT EDL** é mantido **100% gratuito e open-sou
 
 ---
 
-### ❯ Hall da Fama & Contributors
+### ❯ Hall da Fama & Reconhecimento Técnico
 
-O motor ganha robustez através dos feedbacks de engenharia dos nossos pares. Reconhecimento técnico aos Arquitetos que viabilizam esta arquitetura:
+O NRA Sentinel ganha robustez através do engajamento e feedback da comunidade. Nosso agradecimento aos especialistas que colaboraram diretamente com a evolução desta arquitetura:
 
-*   **[@faustocaldeira](https://github.com/faustocaldeira/):** Mapeamento e estruturação da Safelist (AdGuard), crucial na mitigação de Falsos Positivos.
-*   **@RodrigoAssinger:** Design do algoritmo Multi-Tier, permitindo compatibilidade estável em clusters e caixas Entry-Level simultaneamente.
-*   **@MsAbreu000:** Correção e troubleshooting no fluxo de autenticação cifrada via PBKDF2.
+* **[@faustocaldeira](https://github.com/faustocaldeira):** Mapeamento e estruturação da Safelist (AdGuard), crucial na mitigação de Falsos Positivos.
+* **[@RodrigoAssinger](https://github.com/RodrigoAssinger):** Insight estratégico do algoritmo Multi-Tier, permitindo a implantação das listas por camadas de hardware (Entry-Level, Midrange e High-End).
+* **[@MsAbreu000](https://github.com/MsAbreu000):** Correção e troubleshooting no fluxo de autenticação cifrada via PBKDF2.
 
 ---
 
