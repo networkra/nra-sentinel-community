@@ -162,6 +162,7 @@ O NRA Sentinel ganha robustez através do engajamento e feedback da comunidade. 
 * **[@faustocaldeira](https://github.com/faustocaldeira):** Mapeamento e estruturação da Safelist (AdGuard), crucial na mitigação de Falsos Positivos.
 * **@RodrigoAssinger:** Insight estratégico do algoritmo Multi-Tier, permitindo a implantação das listas por camadas de hardware (Entry-Level, Midrange e High-End).
 * **@MsAbreu000:** Correção e troubleshooting no fluxo de autenticação cifrada via PBKDF2.
+* **[@lcs1337](https://www.linkedin.com/in/lcs1337/):** Melhorias na safelist incluindo proteções por RFC. Exemplo: RFC_6598 Carrier-Grade NAT (CGNAT) - 100.64.0.0/10.
 
 ---
 
