@@ -63,9 +63,22 @@ Sob a premissa de ser um motor **Sniper** (precisão cirúrgica no lugar de volu
 
 ---
 
+### ⚠️ Política de Acesso e Limitações (Rate Limit)
+
+Para garantir a sustentabilidade da infraestrutura e mitigar o excesso de requisições simultâneas, nossa borda (Cloudflare Edge) aplica as seguintes políticas de tráfego:
+
+- **Tier Free (Comunidade):** Sincronização limitada a **1 requisição a cada 24 horas** por IP público. Tentativas de download num intervalo menor retornarão o erro `HTTP 429 (Too Many Requests)`. Recomendamos ajustar o agendamento do seu firewall para atualizações diárias.
+- **Tier PRO (Membros do Canal):** Consultas **ilimitadas e em tempo real** (sem bloqueios), ideais para sincronizações a cada 60 minutos ou menos em ambientes corporativos críticos. 
+
+🔓 **Como ativar o Acesso PRO (Whitelist de IP):**
+Apoiadores oficiais do projeto recebem prioridade de tráfego. Basta tornar-se membro (nível **Sentinel** ou **MSSP**) no nosso canal e registar o IP de saída do seu Firewall no formulário exclusivo disponível na aba "Comunidade". 
+👉 **[Desbloquear Acesso PRO](https://www.youtube.com/channel/UCs8isxhuF4phuQXimE52tOg/join)**
+
+---
+
 ### ❯ External Connectors URLs
 
-> ⚠️ **Update interval recomendado no Firewall:** `60 minutos`.
+> ⚠️ **Update interval recomendado:** `24 horas` (Plano Free) ou `60 minutos` (Plano PRO).
 
 **<mark>&nbsp;`TIER 1: ENTRY-LEVEL [ HW: 40F/60F/80F | MAX: 35k ]`&nbsp;</mark>**
 
