@@ -73,12 +73,10 @@ Sob a premissa de ser um motor **Sniper** (precisão cirúrgica no lugar de volu
 
 Para garantir a alta disponibilidade da nossa infraestrutura e a entrega contínua de inteligência curada, nossa borda (Cloudflare Edge) opera sob três modalidades de acesso:
 
-1. **Tier Free (Degustação / Lab):** Sincronização limitada a **1 requisição a cada 7 dias (168 horas)** por IP público. Tentativas de download em intervalo menor retornarão o erro `HTTP 429 (Too Many Requests)` no log do Firewall.
-2. **Membro YouTube (Nível Sentinel — Uso Pessoal/Lab):** Direito à liberação de **01 (um) único IP público fixo** na **Whitelist PRO** (sincronização a cada **60 minutos** sem bloqueios), exclusivo para uso em laboratório/ambiente próprio mediante validação via formulário na aba Comunidade.
-3. **Plano Business & Sustentação MSSP (Empresas e Consultores Parceiros):** Licenciamento corporativo para **múltiplos IPs / múltiplas caixas (SD-WAN)** em tempo real (60m), com emissão de **Relatório Executivo Mensal** e **PoC Gratuita de 7 dias**.
+**Tier Free (Degustação / Lab):** Sincronização limitada a **1 requisição a cada 7 dias (168 horas)** por IP público. Tentativas de download em intervalo menor retornarão o erro `HTTP 429 (Too Many Requests)` no log do Firewall.
+**Plano Business & Sustentação MSSP (Empresas e Consultores Parceiros):** Licenciamento corporativo para **múltiplos IPs / múltiplas caixas (SD-WAN)** em tempo real (60m), com emissão de **Relatório Executivo Mensal** e **PoC Gratuita de 7 dias**.
 
 🔓 **Ativação Rápida:**
-- 👉 **[1 IP Lab: Assinar Nível Sentinel no YouTube](https://www.youtube.com/channel/UCs8isxhuF4phuQXimE52tOg/join)**
 - 👉 **[Multi-IPs / Empresas: Solicitar PoC Corporativa de 7 Dias](https://networkra.seg.br/#Corporate)**
 
 ---
