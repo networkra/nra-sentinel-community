@@ -89,8 +89,7 @@ O ecossistema NRA Sentinel & OSINT opera como uma solução SaaS corporativa pri
 # B2B estrito do IP autorizado.
 # 
 # A redistribuição, cópia ou espelhamento público deste arquivo é ILEGAL.
-# Este documento contém Honeytokens e assinaturas de rastreamento. Vazamentos
-# resultarão em revogação imediata da licença e sanções judiciais (Lei 9.610/98).
+# Vazamentos resultarão em revogação imediata da licença adquirida.
 # ============================================================================
 ```
 
