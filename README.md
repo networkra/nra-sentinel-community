@@ -153,8 +153,8 @@ Desenhado para empresas e consultores de TI que já possuem administração téc
 Gestão contínua da segurança de borda combinando o motor proprietário NRA Sentinel & OSINT com suporte consultivo especializado Nível 3, maximizando a segurança da infraestrutura atual sem necessidade de troca de hardware.
 - **`>_` Whitelist PRO Multi-IPs:** Sincronização contínua a cada 60 minutos para múltiplas caixas ou links redundantes (SD-WAN) sem restrições de rate limit.
 - **`>_` Onboarding & Adequação Tática Inicial:** Estudo da topologia de borda e injeção guiada dos conectores em *Local-In Policy* seguindo as melhores práticas do fabricante e blindagem com Drop Silencioso.
-- **`>_` Governança Executiva Contínua:** Extração de dados, auditoria de logs e entrega mensal do Relatório Executivo de Mitigação (2h fixas alocadas da franquia mensal) para apresentação à diretoria.
-- **`>_` Franquia de 10 Horas Mensais Globais:** Inclui 8h livres mensais de engenharia Nível 3 para acionamentos de suporte, administração de regras, VPNs, SD-WAN, BGP e troubleshooting avançado.
+- **`>_` Relatório Executivo Mensal:** Emissão mensal de dossiê executivo em PDF consolidando o volume de bloqueios, IPs atacantes retidos e origens geográficas para apresentação à diretoria.
+- **`>_` Franquia de 15 Horas Mensais Globais:** Inclui 13h livres mensais de engenharia Nível 3 para acionamentos de suporte, administração de regras, VPNs, SD-WAN, BGP e troubleshooting avançado (24x7).
 
 #### 🚀 Solicitar PoC Gratuita de 7 Dias ou Proposta Comercial
 Valide a eficácia do **NRA Sentinel & OSINT** no seu próprio ambiente corporativo por **7 dias sem compromisso**, ou solicite uma proposta comercial / parceria enviando um e-mail para **`contato@networkra.seg.br`** com o assunto `[POC / PROPOSTA] NRA Sentinel PRO - NOME_DA_EMPRESA` e os dados abaixo:
@@ -194,9 +194,9 @@ soc@networkra.seg.br
 
 ---
 
-### ❯ Comunidade & Laboratório
+### ❯ Comunidade NetworkRA
 
-Para estudantes e profissionais que desejam liberar **01 IP fixo de laboratório** em tempo real (60m) e apoiar a criação de conteúdo técnico na comunidade brasileira de Cibersegurança, torne-se membro do canal no nível **Sentinel**:
+Para estudantes e profissionais que desejam apoiar a criação de conteúdo e incentivar o desenvolvimento das nossas ferramentas. Ao se tornar membro do canal, você fortalece o projeto e abre portas para ingressar no nosso Programa de Parcerias B2B (exclusivo para consultorias e MSSPs):
 👉 **[Assinar Nível Sentinel no YouTube](https://www.youtube.com/channel/UCs8isxhuF4phuQXimE52tOg/join)**
 
 ---
