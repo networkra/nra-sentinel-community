@@ -81,6 +81,19 @@ O ecossistema NRA Sentinel & OSINT opera como uma solução SaaS corporativa pri
 
 ---
 
+# ============================================================================
+# ⚠️ PROPRIEDADE INTELECTUAL - NETWORKRA MSSP
+# 
+# Este feed é um artefato comercial e confidencial, licenciado para uso 
+# B2B estrito do IP autorizado.
+# 
+# A redistribuição, cópia ou espelhamento público deste arquivo é ILEGAL.
+# Este documento contém Honeytokens e assinaturas de rastreamento. Vazamentos
+# resultarão em revogação imediata da licença e sanções judiciais (Lei 9.610/98).
+# ============================================================================
+
+---
+
 ### ❯ External Connectors URLs
 
 > ⚠️ **Update interval recomendado no FortiGate:** `7 dias / 10080 min` (Free) ou `60 minutos` (Whitelist PRO / Business).
