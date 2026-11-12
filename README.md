@@ -69,14 +69,14 @@ Sob a premissa de ser um motor **Sniper** (precisão cirúrgica no lugar de volu
 
 ---
 
-### ⚠️ Política de Acesso, Rate Limit & Whitelist PRO
+### ⚠️ Política de Acesso Estrito (Strict Whitelist)
 
-Para garantir a alta disponibilidade da nossa infraestrutura e a entrega contínua de inteligência curada, nossa borda (Cloudflare Edge) opera sob duas modalidades de acesso:
+O ecossistema NRA Sentinel & OSINT opera como uma solução SaaS corporativa privada (Zero Amostragem Pública). Para blindar a nossa inteligência e garantir a alta disponibilidade na borda (Cloudflare Edge), o acesso obedece a regras estritas:
 
-1. **Tier Free (Degustação / Lab):** Sincronização limitada a **1 requisição a cada 7 dias (168 horas)** por IP público. Tentativas de download em intervalo menor retornarão o erro `HTTP 429 (Too Many Requests)` no log do Firewall.
-2. **Plano Business & Sustentação MSSP (Empresas e Consultores Parceiros):** Licenciamento corporativo para **múltiplos IPs / múltiplas caixas (SD-WAN)** em tempo real (60m), com emissão de **Relatório Executivo Mensal** e **PoC Gratuita de 7 dias**.
+1. **Drop Lógico (Zero Amostragem):** O acesso direto aos conectores está **bloqueado por padrão**. Requisições originadas de IPs não cadastrados em nossa base retornarão imediatamente o erro `HTTP 403 (Forbidden)`. Não há mais camada gratuita ou *rate limit* semanal.
+2. **Plano Business & Sustentação MSSP (Empresas e Consultores Parceiros):** Licenciamento corporativo com autorização na Whitelist para **múltiplos IPs / múltiplas caixas (SD-WAN)**, sincronização contínua em tempo real (60m), emissão de **Relatório Executivo Mensal** e **PoC Gratuita de 7 dias**.
 
-🔓 **Ativação Rápida:**
+🔒 **Autorização de IP e Ativação Rápida:**
 - 👉 **[Multi-IPs / Empresas: Solicitar PoC Corporativa de 7 Dias](https://networkra.seg.br/#Corporate)**
 
 ---
