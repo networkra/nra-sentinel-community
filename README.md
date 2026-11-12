@@ -81,6 +81,7 @@ O ecossistema NRA Sentinel & OSINT opera como uma solução SaaS corporativa pri
 
 ---
 
+```text
 # ============================================================================
 # ⚠️ PROPRIEDADE INTELECTUAL - NETWORKRA MSSP
 # 
@@ -91,6 +92,7 @@ O ecossistema NRA Sentinel & OSINT opera como uma solução SaaS corporativa pri
 # Este documento contém Honeytokens e assinaturas de rastreamento. Vazamentos
 # resultarão em revogação imediata da licença e sanções judiciais (Lei 9.610/98).
 # ============================================================================
+```
 
 ---
 
